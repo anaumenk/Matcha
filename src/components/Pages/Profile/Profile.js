@@ -15,15 +15,12 @@ export default class Profile extends Component {
         this.contentChange = this.contentChange.bind(this);
     }
 
-    changeColor(element) {
+    changeColor(e) {
         let nav = document.getElementsByClassName('nav');
-        for(let i = 0, length = nav.length; i < length; i++) {
-            nav[i].style.color = 'rgba(19, 35, 47, 0.9)';
+        for (let element of nav) {
+            element.style.color = 'rgba(19, 35, 47, 0.9)';
         }
-        let elem = document.getElementsByClassName(element);
-        for(let j = 0, length = elem.length; j < length; j++) {
-            elem[j].style.color = '#179b77';
-        }
+        e.target.style.color = '#179b77';
     }
 
     contentChange(component) {
@@ -37,30 +34,30 @@ export default class Profile extends Component {
             <main>
                 <div className="nav_panel">
                     <ul id="profile_nav">
-                        <li><a className="nav f" onClick={() => {
+                        <li><a className="nav" onClick={(e) => {
                             this.contentChange(<UserProfile />);
-                            this.changeColor('f');
+                            this.changeColor(e);
                         }}>Profile</a></li>
-                        <li><a className="nav a" onClick={() => {
+                        <li><a className="nav" onClick={(e) => {
                             this.contentChange(<Setting />);
-                            this.changeColor('a');
+                            this.changeColor(e);
                         }}>Edit profile</a></li>
-                        <li><a className="nav b" onClick={() => {
+                        <li><a className="nav" onClick={(e) => {
                             this.contentChange(<Photos />);
-                            this.changeColor('b');
+                            this.changeColor(e);
                         }}>Photos</a></li>
 
-                        <li><a className="nav c" onClick={() => {
+                        <li><a className="nav" onClick={(e) => {
                             this.contentChange(<Views />);
-                            this.changeColor('c');
+                            this.changeColor(e);
                         }}>Views</a></li>
-                        <li><a className="nav d" onClick={() => {
+                        <li><a className="nav" onClick={(e) => {
                             this.contentChange(<Likes />);
-                            this.changeColor('d');
+                            this.changeColor(e);
                         }}>Likes</a></li>
-                        <li><a className="nav e" onClick={() => {
+                        <li><a className="nav" onClick={(e) => {
                             this.contentChange(<Chat />);
-                            this.changeColor('e');
+                            this.changeColor(e);
                         }}>Chat</a></li>
                     </ul>
                 </div>

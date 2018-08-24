@@ -34,8 +34,9 @@ header {
 
 #header {
   /*background: #179b77;*/
-  width: 250px;
+  /*width: 250px;*/
   /*margin-left: 65px;*/
+
   margin-left: 25px;
 
   height: 100%;
@@ -46,10 +47,10 @@ header {
 
 #header a {
   font-size: 3rem;
-  /*color: white;*/
+  /*!*color: white;*!*/
   color: #179b77;
 
-  text-align: center;
+  /*!*text-align: center;*!*/
   text-decoration: none;
   /*opacity: 0.6;*/
 }
