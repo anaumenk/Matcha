@@ -1,0 +1,28 @@
+.likes_views {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.user_like {
+    /*margin: 0 20px;*/
+    height: 150px;
+    width: 150px;
+    /*height: 80px;*/
+    /*width: 80px;*/
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(19, 35, 47, 0.9);
+    margin: 10px;
+}
+
+.user_like img {
+    height: 100%;
+    width: 100%;
+}
+
+.user_like:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 1s;
+}

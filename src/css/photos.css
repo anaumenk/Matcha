@@ -1,0 +1,42 @@
+#profile_photos {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    max-width: 600px;
+}
+#profile_photos div {
+    display: flex;
+}
+
+.photo {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    background-color: #aba6a1;
+    margin-right: 10px;
+    position: relative;
+    color: #c1bdba;
+    font-size: 30px;
+}
+
+.first {
+    width: 350px;
+    height: 350px;
+}
+
+.photo img {
+    height: 100%;
+    width: 100%;
+}
+
+.photo i {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.photo i:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
