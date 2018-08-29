@@ -15,20 +15,12 @@ const News = [
     },
 ];
 
-const Notific = props => {
-    const {
-        src,
-        alt,
-        notification,
-    } = props;
-
-    return (
-        <div className="news">
-            <div className="news_img"><img src={src} alt={alt} /></div>
-            <p>{notification}</p>
-        </div>
-    );
-};
+const Notific = props => (
+    <div className="news">
+        <div className="news_img"><img src={props.src} alt={props.alt} /></div>
+        <p>{props.notification}</p>
+    </div>
+);
 
 export default class Notifications extends Component {
     render() {

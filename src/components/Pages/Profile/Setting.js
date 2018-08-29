@@ -29,25 +29,25 @@ export default class Setting extends Component {
     state = userInfo;
 
 
-    birthYear() {
+    birthYear = () => {
         let select = [];
         let year = 1918;
         for (let i = 0; i < 84; i++) {
             select.push(<option value={year} key={i}>{year++}</option>);
         }
         return (select);
-    }
+    };
 
-    birthDay() {
+    birthDay = () => {
         let select = [];
         for (let i = 1; i < 32; i++) {
             select.push(<option value={i} key={i}>{i}</option>);
         }
         return (select);
-    }
+    };
 
     handleChange = (e) => {
-        this.setState({newTag: e.target.value}); //переписать в бд e.target.name + e.target.value
+        this.setState({[e.target.name]: e.target.value}); //переписать в бд e.target.name + e.target.value
     };
 
     tagList() {
@@ -165,23 +165,23 @@ export default class Setting extends Component {
                 </div>
                 <div className="edit_field">
                     <p>Occupation</p>
-                    <input type="text" value={occupation} onChange={(e) => this.handleChange(e)}/>
+                    <input type="text" value={occupation} name='occupation' onChange={(e) => this.handleChange(e)}/>
                 </div>
                 <div className="edit_field">
                     <p>Biography</p>
-                    <input id="bio" type="text" value={biography} onChange={(e) => this.handleChange(e)}/>
+                    <input id="bio" type="text" value={biography} name='biography' onChange={(e) => this.handleChange(e)}/>
                 </div>
                 <div className="edit_field">
                     <div id="birth_data">
                         <div id="birth_day">
                             <p>Day</p>
-                            <select defaultValue={birthDay} onChange={(e) => this.handleChange(e)}>
+                            <select defaultValue={birthDay} name='birthDay' onChange={(e) => this.handleChange(e)}>
                                 {this.birthDay()}
                             </select>
                         </div>
                         <div id="birth_month">
                             <p>Month</p>
-                            <select id="birth_month" value={birthMonth} onChange={(e) => this.handleChange(e)}>
+                            <select id="birth_month" value={birthMonth} name='birthMonth' onChange={(e) => this.handleChange(e)}>
                                 <option value="Jan">Jan</option>
                                 <option value="Feb">Feb</option>
                                 <option value="Mar">Mar</option>
@@ -199,7 +199,7 @@ export default class Setting extends Component {
                         </div>
                         <div id="birth_year">
                             <p>Year</p>
-                            <select value={birthYear} onChange={(e) => this.handleChange(e)}>
+                            <select value={birthYear} name='birthYear' onChange={(e) => this.handleChange(e)}>
                                 {this.birthYear()}
                             </select>
                         </div>
@@ -213,6 +213,7 @@ export default class Setting extends Component {
                     <input type="text"
                            onChange={this.handleChange}
                            value={newTag}
+                           name='newTag'
                            onKeyPress={(e) => this.handleKeyPress(e)}
                     />
                 </div>

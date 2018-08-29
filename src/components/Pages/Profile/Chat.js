@@ -246,24 +246,17 @@ class SendMessage extends Component {
     }
 }
 
-const Messages = props => {
-    const {
-        messages,
-        session,
-    } = props;
-
-    return (
-        <div id="message_form">
-            {messages.map(message => {
-                return (
-                    <div key={message.id} className={message.senderId === session ? 'message_user' : 'message_other'} >
-                        <p>{message.text}</p>
-                    </div>
-                )
-            })}
-        </div>
-    );
-};
+const Messages = props => (
+    <div id="message_form">
+        {props.messages.map(message => {
+            return (
+                <div key={message.id} className={message.senderId === props.session ? 'message_user' : 'message_other'} >
+                    <p>{message.text}</p>
+                </div>
+            )
+        })}
+    </div>
+);
 
 export default class Chat extends Component {
     state = {

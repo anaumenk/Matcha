@@ -43,19 +43,14 @@ const ViewDB = [
     },
 ];
 
-const View = props => {
-    const {
-        src,
-        name
-    } = props;
-    return (
-        <div className="user_like">
-            <a>
-                <img src={src} alt={name} />
-            </a>
-        </div>
-    );
-};
+const View = props => (
+    <div className="user_like">
+        <a>
+            <img src={props.src} alt={props.name} />
+        </a>
+    </div>
+);
+
 
 export default class Views extends Component {
     render() {

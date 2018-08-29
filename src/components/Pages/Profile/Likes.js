@@ -13,19 +13,13 @@ const LikeDB = [
     }
 ];
 
-const Like = props => {
-    const {
-        src,
-        whoName,
-    } = props;
-    return (
-        <div className="user_like">
-            <a>
-                <img src={src} alt={whoName} />
-            </a>
-        </div>
-    );
-};
+const Like = props => (
+    <div className="user_like">
+        <a>
+            <img src={props.src} alt={props.whoName} />
+        </a>
+    </div>
+);
 
 export default class Likes extends Component {
     render() {
