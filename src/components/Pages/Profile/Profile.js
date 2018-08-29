@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Setting from './Setting';
 import Views from './Views';
 import Likes from './Likes';
@@ -7,13 +8,9 @@ import Photos from './Photos';
 import UserProfile from './UserProfile';
 
 export default class Profile extends Component {
-    constructor () {
-        super();
-        this.state = {
-            content: <UserProfile />,
-        };
-        this.contentChange = this.contentChange.bind(this);
-    }
+    state = {
+        content: <UserProfile />,
+    };
 
     changeColor(e) {
         let nav = document.getElementsByClassName('nav');
@@ -23,9 +20,9 @@ export default class Profile extends Component {
         e.target.style.color = '#179b77';
     }
 
-    contentChange(component) {
+    contentChange = (component) => {
         this.setState({content: component});
-    }
+    };
 
     render() {
         const {content} = this.state;
@@ -60,6 +57,7 @@ export default class Profile extends Component {
                             this.changeColor(e);
                         }}>Chat</a></li>
                     </ul>
+
                 </div>
                 <div className="content">
                     {content}

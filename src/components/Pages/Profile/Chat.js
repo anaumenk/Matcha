@@ -209,29 +209,24 @@ const somebody = [
 ];
 
 class SendMessage extends Component {
-    constructor() {
-        super();
-        this.state = {
-            message: '',
-        };
-        this.handleChange = this.handleChange.bind(this);
-        this.handleKeyPress = this.handleKeyPress.bind(this);
-    }
+    state = {
+        message: '',
+    };
 
-    handleChange(e) {
+    handleChange = (e) =>{
         this.setState({
             message: e.target.value,
         })
-    }
+    };
 
-    handleKeyPress(e) {
+    handleKeyPress = (e) => {
         if (e.key === "Enter") {
             //на сервер
             this.setState({
                 message: ''
             });
         }
-    }
+    };
 
     render() {
         const {
@@ -251,39 +246,33 @@ class SendMessage extends Component {
     }
 }
 
-class Messages extends Component {
-    render() {
-        const {
-            messages,
-            session,
-        } = this.props;
+const Messages = props => {
+    const {
+        messages,
+        session,
+    } = props;
 
-        return (
-            <div id="message_form">
-                {messages.map(message => {
-                    return (
-                        <div key={message.id} className={message.senderId === session ? 'message_user' : 'message_other'} >
-                            <p>{message.text}</p>
-                        </div>
-                    )
-                })}
-            </div>
-        );
-    }
-}
+    return (
+        <div id="message_form">
+            {messages.map(message => {
+                return (
+                    <div key={message.id} className={message.senderId === session ? 'message_user' : 'message_other'} >
+                        <p>{message.text}</p>
+                    </div>
+                )
+            })}
+        </div>
+    );
+};
 
 export default class Chat extends Component {
-    constructor() {
-        super();
-        this.state = {
-            messages: [],
-            session: 'perborgen',
-            sender: 'janedoe'
-        };
-        this.selectUser = this.selectUser.bind(this);
-    }
+    state = {
+        messages: [],
+        session: 'perborgen',
+        sender: 'janedoe'
+    };
 
-    selectUser(e, user) {
+    selectUser = (e, user) => {
         let elements = document.getElementsByClassName('chat_user');
         for(let i = 0, length = elements.length; i < length; i++) {
             elements[i].style.backgroundColor = '#c1bdba';
@@ -299,7 +288,7 @@ export default class Chat extends Component {
         }
         document.getElementById('messages').style.display = 'unset';
         this.setState({messages: user});
-    }
+    };
 
     render() {
         const {

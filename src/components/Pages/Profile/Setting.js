@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import {PropTypes} from 'prop-types';
 // const google = window.google;
 
 const userInfo = {
@@ -27,11 +26,8 @@ export default class Setting extends Component {
     //     isAuthenticated: PropTypes.bool,
     // }
 
-    constructor() {
-        super();
-        this.state = userInfo;
-        this.handleChange = this.handleChange.bind(this);
-    }
+    state = userInfo;
+
 
     birthYear() {
         let select = [];
@@ -50,7 +46,7 @@ export default class Setting extends Component {
         return (select);
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         this.setState({newTag: e.target.value}); //переписать в бд e.target.name + e.target.value
     };
 

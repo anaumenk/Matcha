@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
 
 export default class UserProfile extends Component {
-    constructor() {
-        super();
-        this.state = {
-            firstName: 'Alexandra',
-            lastName: 'Naumenko',
-            orientation: 'straight',
-            gender: 'woman',
-            occupation: 'unit, it, something else',
-            biography: 'bla-bla-bla',
-            birthDay: '13',
-            birthMonth: 'May',
-            birthYear: '1994',
-            tags: JSON.parse(localStorage.getItem('tags')) ? JSON.parse(localStorage.getItem('tags')) : [],
-            rating: '100',
-        };
-    }
+    state = {
+        firstName: 'Alexandra',
+        lastName: 'Naumenko',
+        orientation: 'straight',
+        gender: 'woman',
+        occupation: 'unit, it, something else',
+        biography: 'bla-bla-bla',
+        birthDay: '13',
+        birthMonth: 'May',
+        birthYear: '1994',
+        tags: JSON.parse(localStorage.getItem('tags')) ? JSON.parse(localStorage.getItem('tags')) : [],
+        rating: '100',
+    };
 
     getAge() {
         let year = this.state.birthYear,

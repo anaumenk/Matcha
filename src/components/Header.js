@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-// import {PropTypes} from 'prop-types';
 
 export default class Header extends Component {
     constructor(props){
@@ -9,13 +8,12 @@ export default class Header extends Component {
             notification: '10',
             isAuthenticated: this.props.isAuthenticated,
         };
-        this.Logout = this.Logout.bind(this);
     }
 
-    Logout() {
+    Logout= () => {
         this.setState({isAuthenticated:false});
         // ????
-    }
+    };
 
     // static contextTypes = {
     //     color: PropTypes.string,
@@ -32,14 +30,14 @@ export default class Header extends Component {
         return (
             <header>
                 <div id="header">
-                    <Link to="/profile">Matcha</Link>
+                    <Link to="/">Matcha</Link>
                 </div>
                 {isAuthenticated &&
                     <div id="nav">
                         <ul>
                             <li><Link to="/notifications">Notifications</Link><sup
                                 style={{color: '#1ab188', fontWeight: 'bold'}}>{notification}</sup></li>
-                            <li><Link to="/profile">Profile</Link></li>
+                            <li><Link to="/">Profile</Link></li>
                             <li><Link to="/research">Search profiles</Link></li>
                             <li><Link to="/find">Find matches</Link></li>
                             <li><a onClick={this.Logout}>Log out</a></li>

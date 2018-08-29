@@ -11,23 +11,21 @@ const LikeDB = [
         src: require('../../../images/01.jpg'),
         whoName: 'name2',
     }
-]
+];
 
-class Like extends Component {
-    render() {
-        const {
-            src,
-            whoName,
-        } = this.props;
-        return (
-            <div className="user_like">
-                <a>
-                    <img src={src} alt={whoName} />
-                </a>
-            </div>
-        );
-    }
-}
+const Like = props => {
+    const {
+        src,
+        whoName,
+    } = props;
+    return (
+        <div className="user_like">
+            <a>
+                <img src={src} alt={whoName} />
+            </a>
+        </div>
+    );
+};
 
 export default class Likes extends Component {
     render() {

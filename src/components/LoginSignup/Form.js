@@ -2,16 +2,12 @@ import React, { Component } from 'react';
 import {FormErrors} from './FormErrors';
 
 class ForgotPass extends Component {
-    constructor() {
-        super();
-        this.state = {
-            login: '',
-            email: '',
-        };
-        this.handleUserInput = this.handleUserInput.bind(this);
-    }
+    state = {
+        login: '',
+        email: '',
+    };
 
-    handleUserInput(e) {
+    handleUserInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
         this.setState({[name]: value});
@@ -58,21 +54,18 @@ class ForgotPass extends Component {
 }
 
 class SignUpForm extends Component {
-    constructor() {
-        super();
-        this.state = {
-            login: '',
-            password: '',
-            firstName: '',
-            lastName: '',
-            email: '',
-            formErrors: {password: '', email: ''},
-            passwordValid: false,
-            emailValid: false,
-            formValid: false,
-        };
-        this.handleUserInput = this.handleUserInput.bind(this);
-    }
+    state = {
+        login: '',
+        password: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        formErrors: {password: '', email: ''},
+        passwordValid: false,
+        emailValid: false,
+        formValid: false,
+    };
+
 
     validateField(fieldName, value) {
         let fieldValidationErrors = this.state.formErrors;
@@ -82,7 +75,7 @@ class SignUpForm extends Component {
         switch(fieldName) {
             case 'email':
                 emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-                fieldValidationErrors.sigEmail = emailValid ? '' : ' is invalid';
+                fieldValidationErrors.email = emailValid ? '' : ' is invalid';
                 break;
             case 'password':
                 passwordValid = value.match(/[a-z]*[0-9]+[a-z]*[0-9]+[a-z]*/i);
@@ -103,7 +96,7 @@ class SignUpForm extends Component {
         this.setState({formValid: this.state.emailValid && this.state.passwordValid});
     }
 
-    handleUserInput(e) {
+    handleUserInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
         this.setState({[name]: value},
@@ -203,16 +196,12 @@ class SignUpForm extends Component {
 
 
 class LogInForm extends Component {
-    constructor() {
-        super();
-        this.state = {
-            login: '',
-            password: '',
-        };
-        this.handleUserInput = this.handleUserInput.bind(this);
-    }
+    state = {
+        login: '',
+        password: '',
+    };
 
-    handleUserInput(e) {
+    handleUserInput = (e) => {
         this.setState({[e.target.name]: e.target.value});
     };
 
@@ -261,21 +250,18 @@ class LogInForm extends Component {
 }
 
 export default class Form extends Component {
-    constructor() {
-        super();
-        this.state = {
-            active: {background: '#1ab188', color: '#ffffff'},
-            notactive: {},
-            form: null,
-        };
-    }
+    state = {
+        active: {background: '#1ab188', color: '#ffffff'},
+        notactive: {},
+        form: null,
+    };
 
     ForgotPass = () => {
         this.setState({
             form: <ForgotPass />,
             active: {},
         });
-    }
+    };
 
     ChooseForm(e) {
         if (e.target.innerHTML === 'Sign Up') {

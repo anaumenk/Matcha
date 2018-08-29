@@ -41,23 +41,21 @@ const ViewDB = [
         src: require('../../../images/01.jpg'),
         name: 'name8',
     },
-]
+];
 
-class View extends Component {
-    render() {
-        const {
-            src,
-            name
-        } = this.props;
-        return (
-            <div className="user_like">
-                <a>
-                    <img src={src} alt={name} />
-                </a>
-            </div>
-        );
-    }
-}
+const View = props => {
+    const {
+        src,
+        name
+    } = props;
+    return (
+        <div className="user_like">
+            <a>
+                <img src={src} alt={name} />
+            </a>
+        </div>
+    );
+};
 
 export default class Views extends Component {
     render() {

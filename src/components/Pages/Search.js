@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 
 export class Rating extends Component {
-    constructor() {
-        super();
-        this.state = {
-            start: 0,
-            end: 100,
-        };
-        this.handleChange = this.handleChange.bind(this);
-    }
+    state = {
+        start: 0,
+        end: 100,
+    };
 
-    handleChange() {
+    handleChange = () => {
         let parent = document.querySelector(".rating"),
             rangeS = parent.querySelectorAll("input[type=range]"),
             number1 = document.querySelector(".left_rating"),
@@ -29,7 +25,7 @@ export class Rating extends Component {
             };
         });
         this.setState({start: number1.innerHTML, end: number2.innerHTML});
-    }
+    };
 
     render() {
         const {
@@ -57,16 +53,12 @@ export class Rating extends Component {
 }
 
 export class Distance extends Component {
-    constructor() {
-        super();
-        this.state = {
-            start: 0,
-            end: 100,
-        };
-        this.handleChange = this.handleChange.bind(this);
-    }
+    state = {
+        start: 0,
+        end: 100,
+    };
 
-    handleChange() {
+    handleChange= () => {
         let parent = document.querySelector(".distance"),
             rangeS = parent.querySelectorAll("input[type=range]"),
             number1 = document.querySelector(".left_distance"),
@@ -85,7 +77,7 @@ export class Distance extends Component {
             };
         });
         this.setState({start: number1.innerHTML, end: number2.innerHTML});
-    }
+    };
 
     render() {
         const {
@@ -113,16 +105,12 @@ export class Distance extends Component {
 }
 
 export class Age extends Component {
-    constructor() {
-        super();
-        this.state = {
-            start: 18,
-            end: 30,
-        };
-        this.handleChange = this.handleChange.bind(this);
-    }
+    state = {
+        start: 18,
+        end: 30,
+    };
 
-    handleChange() {
+    handleChange = () => {
         let parent = document.querySelector(".age"),
             rangeS = parent.querySelectorAll("input[type=range]"),
             number1 = document.querySelector(".left_age"),
@@ -141,7 +129,7 @@ export class Age extends Component {
             };
         });
         this.setState({start: number1.innerHTML, end: number2.innerHTML});
-    }
+    };
 
     render() {
         const {
@@ -169,17 +157,13 @@ export class Age extends Component {
 }
 
 export default class Search extends Component {
-    constructor() {
-        super();
-        this.state = {
-            userInput: '',
-        };
-        this.handleUserInput = this.handleUserInput.bind(this);
-    }
+    state = {
+        userInput: '',
+    };
 
-    handleUserInput(e) {
+    handleUserInput = (e) => {
         this.setState({userInput: e.target.value});
-    }
+    };
 
     handleKeyPress(e) {
         if (e.key === "Enter" && this.state.userInput !== '') {

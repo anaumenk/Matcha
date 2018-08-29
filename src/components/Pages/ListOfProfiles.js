@@ -2,17 +2,13 @@ import React, { Component } from 'react';
 import {Rating, Distance, Age} from './Search';
 
 export default class Research extends Component {
-    constructor() {
-        super();
-        this.state = {
-            userInput: '',
-        };
-        this.handleUserInput = this.handleUserInput.bind(this);
-    }
+    state = {
+        userInput: '',
+    };
 
-    handleUserInput(e) {
+    handleUserInput = (e) => {
         this.setState({userInput: e.target.value});
-    }
+    };
 
     handleKeyPress(e) {
         if (e.key === "Enter" && this.state.userInput !== '') {
