@@ -10,9 +10,9 @@ export default class Header extends Component {
         };
     }
 
-    Logout= () => {
+    Logout = () => {
         this.setState({isAuthenticated:false});
-        // ????
+        // ???? return to App
     };
 
     // static contextTypes = {

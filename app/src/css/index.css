@@ -15,7 +15,7 @@ body {
 }
 
 footer {
-  background: rgba(19, 35, 47, 0.9);
+  /*background: rgba(19, 35, 47, 0.9);*/
   position: fixed;
   bottom: 0;
   height: 50px;

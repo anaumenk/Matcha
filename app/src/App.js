@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+// import {BrowserRouter as Router, Route} from 'react-router-dom';
+
 
 import './css/index.css';
 import './css/log_sig.css';
@@ -23,6 +24,7 @@ import RoutesList from './components/Routes';
 // import Profile from './components/Pages/Profile/Profile';
 // import Research from './components/Pages/ListOfProfiles';
 // import Search from './components/Pages/Search';
+
 
 export default class App extends Component {
     state = {

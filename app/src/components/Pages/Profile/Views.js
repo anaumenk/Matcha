@@ -51,7 +51,6 @@ const View = props => (
     </div>
 );
 
-
 export default class Views extends Component {
     render() {
         return (

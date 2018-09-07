@@ -10,12 +10,21 @@ export default class RoutesList extends Component {
     render() {
         return (
             <div>
-                <Route exact path='/notifications' component={Notifications} />
-                {/*<Route exact path='/profile' component={Profile} />*/}
                 <Route exact path='/' component={Profile} />
+                <Route exact path='/notifications' component={Notifications} />
                 <Route exact path='/research' component={Research} />
                 <Route exact path='/find' component={Search} />
+                {/*<Route path='/*' component={NotFound} />*/}
             </div>
         );
     }
 }
+
+// const NotFound = () => {
+//   return(
+//       <div>
+//           <p>Sorry, wrong page!</p>
+//           {/*<img src={require('../images/NotFound.jpg')} style={{height: 200}}/>*/}
+//       </div>
+//   );
+// };
