@@ -1,18 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
-
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import {Provider} from 'mobx-react';
+import myStore from './components/store/store';
 
 ReactDOM.render((
-    <Router>
-         <App />
-    </Router>
+    <Provider myStore={myStore}>
+             <App />
+    </Provider>
 ), document.getElementById('root'));
-
-// ReactDOM.render((
-//     <App />
-// ), document.getElementById('root'));
 
 registerServiceWorker();

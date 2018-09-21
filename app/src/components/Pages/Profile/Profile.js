@@ -7,24 +7,9 @@ import Chat from './Chat';
 import Photos from './Photos';
 import UserProfile from './UserProfile';
 
-// class Product extends Component {
-//     render() {
-//         return (
-//             <div>
-//                 <p>{this.props.firstName}</p>
-//                 <p>{this.props.lastName}</p>
-//                 <p>{this.props.email}</p>
-//
-//
-//             </div>
-//         );
-//     }
-// }
-
 export default class Profile extends Component {
     state = {
         content: <UserProfile />,
-        products:[],
     };
 
     changeColor(e) {
@@ -39,21 +24,9 @@ export default class Profile extends Component {
         this.setState({content: component});
     };
 
-    componentWillMount() {
-        fetch('../../../application/index.php')
-            .then(response => {
-            return response.json();
-        })
-            .then(data => {
-            console.log(data);
-        })
-            .catch(err => {
-            console.log(err);
-        });
-    }
 
     render() {
-        // const {content} = this.state;
+        const {content} = this.state;
 
         return (
             <main>
@@ -88,7 +61,7 @@ export default class Profile extends Component {
 
                 </div>
                 <div className="content">
-                    {/*{content}*/}
+                    {content}
                     {/*<div>*/}
                         {/*{this.state.products.map(product =>*/}
                             {/*<Product*/}

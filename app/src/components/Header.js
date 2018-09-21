@@ -1,30 +1,28 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-
+// import {inject, observer} from 'mobx-react';
+//
+// @inject('myStore')
+// @observer
 export default class Header extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             notification: '10',
             isAuthenticated: this.props.isAuthenticated,
-        };
+        }
     }
 
-    Logout = () => {
-        this.setState({isAuthenticated:false});
-        // ???? return to App
-    };
-
-    // static contextTypes = {
-    //     color: PropTypes.string,
+    // logOut() {
+    //     this.setState({
+    //         isAuthenticated: false,
+    //     });
     // }
 
     render() {
-        // console.log(this.context.color);
-
         const {
-            isAuthenticated,
             notification,
+            isAuthenticated
         } = this.state;
 
         return (
@@ -40,7 +38,7 @@ export default class Header extends Component {
                             <li><Link to="/">Profile</Link></li>
                             <li><Link to="/research">Search profiles</Link></li>
                             <li><Link to="/find">Find matches</Link></li>
-                            <li><a onClick={this.Logout}>Log out</a></li>
+                            <li><a>Log out</a></li>
                         </ul>
                     </div>
                 }

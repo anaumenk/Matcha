@@ -1,15 +1,15 @@
 <?php
 
+namespace application\lib;
+
 use PDO;
 
 class Db {
     protected $db;
 
     public function __construct() {
-        $DB_DSN = "mysql:host=localhost; dbname=matcha";
-        $DB_USER = "root";
-        $DB_PASSWORD = "fktrcfylhf";
-        $this->db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
+        $config = require 'application/config/db.php';
+        $this->db = new PDO("mysql:host=$config[host];dbname=$config[dbname]", $config['user'], $config['password']);
     }
 
     public function query($sql, $params = []) {

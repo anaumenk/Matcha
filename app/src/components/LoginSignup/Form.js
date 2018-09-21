@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {FormErrors} from './FormErrors';
+import {fetchPost} from "../../fetch";
+// import {inject, observer} from 'mobx-react';
 
 class ForgotPass extends Component {
     state = {
@@ -100,7 +102,7 @@ class SignUpForm extends Component {
         const name = e.target.name;
         const value = e.target.value;
         this.setState({[name]: value},
-            () => { this.validateField(name, value) });
+            () => {this.validateField(name, value)});
     };
 
     render() {
@@ -194,27 +196,79 @@ class SignUpForm extends Component {
     }
 }
 
-
+// @inject('myStore')
+// @observer
 class LogInForm extends Component {
     state = {
         login: '',
         password: '',
+        formErrors: {password: '', login: ''},
+        passwordValid: false,
+        loginValid: false,
+        formValid: false,
     };
+
+
+    validateField(fieldName) {
+        let fieldValidationErrors = this.state.formErrors;
+        let loginValid = this.state.loginValid;
+        let passwordValid = this.state.passwordValid;
+        let error = 'is incorrect';
+
+        switch(fieldName) {
+            case 'login':
+                fieldValidationErrors.login = error;
+                break;
+            case 'password':
+                fieldValidationErrors.password = error;
+                break;
+            default:
+                break;
+        }
+        this.setState({formErrors: fieldValidationErrors,
+            loginValid: loginValid,
+            passwordValid: passwordValid
+        }, this.validateForm);
+    }
+
+    validateForm() {
+        this.setState({formValid: this.state.loginValid && this.state.passwordValid});
+    }
 
     handleUserInput = (e) => {
         this.setState({[e.target.name]: e.target.value});
     };
+
+    noErrors() {
+        this.setState({formErrors: {password: '', login: ''}});
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        this.noErrors();
+        let params = `login=${this.state.login}&password=${this.state.password}`;
+        fetchPost('login', params).then(response => {
+            let array = JSON.parse(response);
+            if (array['error']) {
+                this.validateField(array['fieldName']);
+            }
+            else {
+               // this.props.myStore.LogIn();
+            }
+        });
+    }
 
     render() {
         const {ForgotPass} = this.props;
         const {
             login,
             password,
+            formErrors,
         } = this.state;
 
         return(
             <div id="login">
-                <form>
+                <form onSubmit={(e) =>this.handleSubmit(e)}>
                     <div className="field-wrap">
                         <input
                             className="input"
@@ -244,6 +298,7 @@ class LogInForm extends Component {
                     >Log In</button>
 
                 </form>
+                <FormErrors formErrors={formErrors} />
             </div>
         );
     }
