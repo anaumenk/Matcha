@@ -8,9 +8,8 @@ export function fetchGet(url) {
         throw new Error(response.statusText);
     })
         .then(function(response) {
-            // console.log(response);
             return response;
-        })
+        });
 }
 
 export function fetchPost(url, params) {
@@ -30,3 +29,4 @@ export function fetchPost(url, params) {
             return response;
         });
 }
+

@@ -3,7 +3,7 @@
 namespace application\models;
 
 use application\core\Model;
-
+session_start();
 class Profile extends Model{
 
     public function getUser() {

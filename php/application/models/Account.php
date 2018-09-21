@@ -3,7 +3,7 @@
 namespace application\models;
 
 use application\core\Model;
-
+session_start();
 class Account extends Model{
 
     public function getUser($login) {

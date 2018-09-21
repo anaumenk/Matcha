@@ -1,13 +1,14 @@
 <?php
 
+
 namespace application\controllers;
 
 use application\core\Controller;
 
 use application\lib\Db;
+session_start();
 
 class AccountController extends Controller {
-
     public function loginAction() {
         $login = $_REQUEST['login'];
         $password = $_REQUEST['password'];
@@ -35,15 +36,13 @@ class AccountController extends Controller {
     }
 
     public function authenticatedAction() {
-         if ($_SESSION['user'] == '') {
-             echo 'false';
-//             $response = ['isAuthenticated' => 'false'];
-         }
-         else {
-             echo 'true';
-//             $response = ['isAuthenticated' => 'true'];
-         }
-//        echo json_encode($response);
+        session_start();
+        $bool = $_SESSION['user'] ? 'true' : 'false';
+        echo json_encode(['isAuthenticated' => $bool]);
+    }
+
+    public function logoutAction() {
+        $_SESSION['user'] = '';
     }
 
 }

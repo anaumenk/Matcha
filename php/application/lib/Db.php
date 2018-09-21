@@ -3,7 +3,7 @@
 namespace application\lib;
 
 use PDO;
-
+session_start();
 class Db {
     protected $db;
 

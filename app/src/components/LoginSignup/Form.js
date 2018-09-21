@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {FormErrors} from './FormErrors';
 import {fetchPost} from "../../fetch";
-// import {inject, observer} from 'mobx-react';
+import {inject, observer} from 'mobx-react';
 
 class ForgotPass extends Component {
     state = {
@@ -196,8 +196,8 @@ class SignUpForm extends Component {
     }
 }
 
-// @inject('myStore')
-// @observer
+@inject('myStore')
+@observer
 class LogInForm extends Component {
     state = {
         login: '',
@@ -253,6 +253,7 @@ class LogInForm extends Component {
                 this.validateField(array['fieldName']);
             }
             else {
+                this.props.myStore.LogIn(array['login']);
                // this.props.myStore.LogIn();
             }
         });
