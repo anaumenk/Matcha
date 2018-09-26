@@ -11,9 +11,15 @@ return [
         'controller' => 'account',
         'action' => 'register',
     ],
-    'authenticated' => [
+
+    'user' => [
         'controller' => 'account',
-        'action' => 'authenticated',
+        'action' => 'user',
+    ],
+
+    'photo' => [
+        'controller' => 'account',
+        'action' => 'photo',
     ],
 //    'setting' => [
 //        'controller' => 'profile',

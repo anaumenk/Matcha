@@ -21,11 +21,13 @@
 .user_profile_photo i {
     position: absolute;
     cursor: pointer;
+    /*border-radius: 50%;*/
 }
 
 .fa-arrow-right {
     right: 5px;
     align-self: center;
+    /*box-shadow: 0 0 30px black;*/
 }
 
 .fa-arrow-left {
@@ -64,5 +66,5 @@
 
 .new_tag {
     margin: 10px;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }

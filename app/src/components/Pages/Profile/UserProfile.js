@@ -1,59 +1,103 @@
 import React, { Component } from 'react';
+import {inject, observer} from 'mobx-react';
 
+@inject('User')
+@inject('Photo')
+@observer
 export default class UserProfile extends Component {
-    state = {
-        firstName: 'Alexandra',
-        lastName: 'Naumenko',
-        orientation: 'straight',
-        gender: 'woman',
-        occupation: 'unit, it, something else',
-        biography: 'bla-bla-bla',
-        birthDay: '13',
-        birthMonth: 'May',
-        birthYear: '1994',
-        tags: JSON.parse(localStorage.getItem('tags')) ? JSON.parse(localStorage.getItem('tags')) : [],
-        rating: '100',
-    };
-
     getAge() {
-        let year = this.state.birthYear,
-            month = this.state.birthMonth,
-            day = this.state.birthDay,
+        let year = this.props.User.birthYear,
+            month = this.props.User.birthMonth,
+            day = this.props.User.birthDay,
             date = `${year}-${month}-${day}`;
         return ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)) | 0;
     }
 
     tagList() {
         let array = [];
-        this.state.tags.map(tag =>
+        let tags = this.props.User.tags.split(', ');
+        let i = 0;
+        for (let tag of tags) {
             array.push(
                 <div
                     className={"new_tag"}
-                    key={tag.id}
+                    key={i++}
                 >
-                    {tag.text}
-                </div>));
+                    #{tag}
+                </div>
+            )
+        }
         return array;
+    }
+
+    componentWillMount() {
+        this.props.User.push();
+        this.props.Photo.push();
+    }
+
+    PhotoRight() {
+        let newPhoto = this.props.Photo.currPhoto;
+        if (this.props.Photo.currPhoto === this.props.Photo.one) {
+            if (this.props.Photo.two) {
+                newPhoto = this.props.Photo.two;
+            }
+        }
+        else if (this.props.Photo.currPhoto === this.props.Photo.two) {
+            if (this.props.Photo.three) {
+                newPhoto = this.props.Photo.three;
+            }
+        }
+        else if (this.props.Photo.currPhoto === this.props.Photo.three) {
+            if (this.props.Photo.four) {
+                newPhoto = this.props.Photo.four;
+            }
+        }
+        else if (this.props.Photo.currPhoto === this.props.Photo.four) {
+            if (this.props.Photo.five) {
+                newPhoto = this.props.Photo.five;
+            }
+        }
+        this.props.Photo.currPhoto = newPhoto;
+    }
+
+    PhotoLeft() {
+        let newPhoto = this.props.Photo.currPhoto;
+        if (this.props.Photo.currPhoto === this.props.Photo.five) {
+            newPhoto = this.props.Photo.four;
+        }
+        else if (this.props.Photo.currPhoto === this.props.Photo.four) {
+            newPhoto = this.props.Photo.three;
+        }
+        else if (this.props.Photo.currPhoto === this.props.Photo.three) {
+            newPhoto = this.props.Photo.two;
+        }
+        else if (this.props.Photo.currPhoto === this.props.Photo.two) {
+            newPhoto = this.props.Photo.one;
+        }
+        this.props.Photo.currPhoto = newPhoto;
     }
 
     render() {
         const {
             firstName,
             lastName,
+            login,
             orientation,
             gender,
             occupation,
             biography,
             rating,
-        } = this.state;
+        } = this.props.User;
 
         return (
             <div id="user_profile">
-                <div className="user_profile_photo">
-                    <img src={require('../../../images/02.jpg')} alt="name" />
-                    <i className="fas fa-arrow-right"></i>
-                    <i className="fas fa-arrow-left"></i>
-                </div>
+                {this.props.Photo.one &&
+                    <div className="user_profile_photo">
+                        <img src={require(`../../../${this.props.Photo.currPhoto}`)} alt={login}/>
+                        <i className="fas fa-arrow-right" onClick={() => this.PhotoRight()}></i>
+                        <i className="fas fa-arrow-left" onClick={() => this.PhotoLeft()}></i>
+                    </div>
+                }
                 <div id="user_profile_info">
                     <p style={{fontWeight: 'bold', margin: '10px 0'}}>{firstName} {lastName}, {this.getAge()}</p>
                     <p>{orientation}, {gender}</p>

@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import {Provider} from 'mobx-react';
-import myStore from './components/store/store';
+import Login from './components/store/LoginSignup';
+import User from './components/store/UserInfo';
+import Photo from './components/store/UserPhotos'
 
 ReactDOM.render((
-    <Provider myStore={myStore}>
+    <Provider Login={Login} User={User} Photo={Photo}>
              <App />
     </Provider>
 ), document.getElementById('root'));

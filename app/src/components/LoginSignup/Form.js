@@ -55,6 +55,8 @@ class ForgotPass extends Component {
     }
 }
 
+@inject('Login')
+@observer
 class SignUpForm extends Component {
     state = {
         login: '',
@@ -62,17 +64,20 @@ class SignUpForm extends Component {
         firstName: '',
         lastName: '',
         email: '',
-        formErrors: {password: '', email: ''},
+        gender: 1,
+        formErrors: {password: '', email: '', login: ''},
         passwordValid: false,
         emailValid: false,
+        loginValid: false,
         formValid: false,
     };
 
 
     validateField(fieldName, value) {
-        let fieldValidationErrors = this.state.formErrors;
-        let emailValid = this.state.emailValid;
-        let passwordValid = this.state.passwordValid;
+        let fieldValidationErrors = this.state.formErrors,
+            emailValid = this.state.emailValid,
+            passwordValid = this.state.passwordValid,
+            loginValid = this.state.loginValid;
 
         switch(fieldName) {
             case 'email':
@@ -85,17 +90,22 @@ class SignUpForm extends Component {
                     (value.length >= 6 ? ' must contains chars and minimum 2 numbers' : ' is too short')
                     :(value.length >= 6 ? '' : ' is too short');
                 break;
+            case 'qlogin':
+                loginValid = false;
+                fieldValidationErrors.login = 'already exist';
+                break;
             default:
                 break;
         }
         this.setState({formErrors: fieldValidationErrors,
             emailValid: emailValid,
-            passwordValid: passwordValid
+            passwordValid: passwordValid,
+            loginValid: loginValid,
         }, this.validateForm);
     }
 
     validateForm() {
-        this.setState({formValid: this.state.emailValid && this.state.passwordValid});
+        this.setState({formValid: this.state.emailValid && this.state.passwordValid && this.state.loginValid});
     }
 
     handleUserInput = (e) => {
@@ -103,6 +113,28 @@ class SignUpForm extends Component {
         const value = e.target.value;
         this.setState({[name]: value},
             () => {this.validateField(name, value)});
+    };
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        // this.noErrors();
+        let params = `firstName=${this.state.firstName}&lastName=${this.state.lastName}&
+        email=${this.state.email}&login=${this.state.login}&password=${this.state.password}&
+        gender=${this.state.gender}`;
+        fetchPost('register', params).then(response => {
+            // console.log(response);
+            let array = JSON.parse(response);
+            if (array['error'] === 'true') {
+                this.validateField(array['fieldName']);
+            }
+            else if (array['error'] === 'false') {
+                this.props.Login.LogIn(this.state.login);
+            }
+            // else {
+            //     this.props.Login.LogIn(array['login']);
+            //     // this.props.myStore.LogIn();
+            // }
+        });
     };
 
     render() {
@@ -117,7 +149,7 @@ class SignUpForm extends Component {
 
         return(
             <div id="signup">
-                <form>
+                <form onSubmit={(e) => this.handleSubmit(e)}>
                     <div className="top-row">
                         <div className="field-wrap">
                             <input
@@ -155,10 +187,9 @@ class SignUpForm extends Component {
                         </div>
 
                         <div className="field-wrap">
-                            <select id="gender" defaultValue="1">
-                                <option disabled value="1">Gender</option>
-                                <option value="2">Man</option>
-                                <option value="3">Woman</option>
+                            <select id="gender" name="gender" onClick={(e) => this.handleUserInput(e)}>
+                                <option value="1">Man</option>
+                                <option value="2">Woman</option>
                             </select>
                         </div>
                     </div>
@@ -196,7 +227,8 @@ class SignUpForm extends Component {
     }
 }
 
-@inject('myStore')
+@inject('Login')
+@inject('User')
 @observer
 class LogInForm extends Component {
     state = {
@@ -243,8 +275,8 @@ class LogInForm extends Component {
         this.setState({formErrors: {password: '', login: ''}});
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
+    handleSubmit(e) {
+        e.preventDefault();
         this.noErrors();
         let params = `login=${this.state.login}&password=${this.state.password}`;
         fetchPost('login', params).then(response => {
@@ -253,8 +285,9 @@ class LogInForm extends Component {
                 this.validateField(array['fieldName']);
             }
             else {
-                this.props.myStore.LogIn(array['login']);
-               // this.props.myStore.LogIn();
+                this.props.Login.LogIn(array[0]['userId']);
+                // this.props.User.pushInfo(array[0]);
+                // console.log(this.props.User.userId);
             }
         });
     }

@@ -20,14 +20,14 @@ import RoutesList from './components/Routes';
 import {BrowserRouter as Router} from 'react-router-dom';
 // import {fetchGet} from "./fetch";
 
-// import myStore from './components/store/store'
+// import Login from './components/store/LoginSignup'
 import {inject, observer} from 'mobx-react';
 
-@inject('myStore')
+@inject('Login')
 @observer
 class App extends Component {
     render() {
-        const {isAuthenticated} = this.props.myStore;
+        const {isAuthenticated} = this.props.Login;
         return (
             <Router>
                 <div>

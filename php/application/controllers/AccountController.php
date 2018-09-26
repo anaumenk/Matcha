@@ -9,36 +9,55 @@ use application\lib\Db;
 session_start();
 
 class AccountController extends Controller {
+
     public function loginAction() {
         $login = $_REQUEST['login'];
         $password = $_REQUEST['password'];
-        $sql = $this->model->getUser($login);
+        $sql = $this->model->getUserLogin($login);
         if ($sql) {
             foreach ($sql as $data) {
-                if ($data['password'] == hash("whirlpool", $password)) {
-                    $_SESSION['user'] = $login;
+                if ($data['password'] === hash("whirlpool", $password)) {
                     $response = $sql;
                 }
                 else {
-                    $response = ['fieldName' => 'password', 'error' => true];
+                    $response = ["fieldName" => "password", "error" => true];
                 }
             }
         } else {
-            $response = ['fieldName' => 'login', 'error' => true];
+            $response = $response = ["fieldName" => "login", "error" => true];
         }
         echo json_encode($response);
     }
 
-    public function registerAction() {
-        $result = $this->model->getUser();
-        var_dump($result);
-        echo '<p>Register</p>';
+    public function userAction() {
+        $userId = $_REQUEST['userId'];
+        $sql = $this->model->getUserId($userId);
+        echo json_encode($sql);
     }
 
-    public function authenticatedAction() {
-        session_start();
-        $bool = $_SESSION['user'] ? 'true' : 'false';
-        echo json_encode(['isAuthenticated' => $bool]);
+    public function photoAction() {
+        $userId = $_REQUEST['userId'];
+        $sql = $this->model->getUserPhoto($userId);
+        echo json_encode($sql);
+    }
+
+    public function registerAction() {
+        $firstName = $_REQUEST['firstName'];
+        $lastName = $_REQUEST['lastName'];
+        $email = $_REQUEST['email'];
+        $login = $_REQUEST['login'];
+        $password = $_REQUEST['password'];
+        $gender = $_REQUEST['gender'];
+
+        $sql = $this->model->getUserLogin($login);
+        if ($sql) {
+            $response = ['fieldName' => 'qlogin', 'error' => 'true'];
+        }
+        else {
+            $this->model->createUser($firstName, $lastName, $email, $login, $password, $gender);
+            $response = ['error' => 'false'];
+        }
+        echo json_encode($response);
     }
 
     public function logoutAction() {

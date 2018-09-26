@@ -2,19 +2,16 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {inject, observer} from 'mobx-react';
 
-@inject('myStore')
+@inject('Login')
 @observer
 export default class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            notification: '10',
-        }
-    }
+    state = {
+        notification: '10',
+    };
 
     render() {
         const {notification} = this.state;
-        const {isAuthenticated} = this.props.myStore;
+        const {isAuthenticated} = this.props.Login;
 
         return (
             <header>
@@ -29,7 +26,7 @@ export default class Header extends Component {
                             <li><Link to="/">Profile</Link></li>
                             <li><Link to="/research">Search profiles</Link></li>
                             <li><Link to="/find">Find matches</Link></li>
-                            <li><a onClick={() => this.props.myStore.LogOut()}>Log out</a></li>
+                            <li><a onClick={() => this.props.Login.LogOut()}>Log out</a></li>
                         </ul>
                     </div>
                 }
