@@ -1,7 +1,7 @@
 <?php
 
 namespace application\core;
-session_start();
+
 abstract class Controller {
 
     public $route;

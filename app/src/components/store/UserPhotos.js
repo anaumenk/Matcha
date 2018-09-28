@@ -3,6 +3,7 @@ import {fetchPost} from "../../fetch";
 
 class UserPhotos {
     @observable currPhoto = '';
+    @observable newPhoto = '';
     @observable one = '';
     @observable two = '';
     @observable three = '';

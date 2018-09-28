@@ -17,6 +17,7 @@
     position: relative;
     color: #c1bdba;
     font-size: 30px;
+    Justify-content: flex-end;
 }
 
 .first {
@@ -37,6 +38,11 @@
 }
 
 .photo i:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.photo div:hover i{
     transform: scale(1.1);
     transition: 1s;
 }

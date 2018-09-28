@@ -15,7 +15,7 @@ export default class UserProfile extends Component {
 
     tagList() {
         let array = [];
-        let tags = this.props.User.tags.split(', ');
+        let tags = this.props.User.tags.split(',');
         let i = 0;
         for (let tag of tags) {
             array.push(

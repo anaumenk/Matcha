@@ -21,6 +21,8 @@ class UserInfo {
     @observable siteColor = '';
     @observable siteLanguage = '';
 
+    @observable newTag = '';
+
     @action push() {
         fetchPost('user', `userId=${localStorage.getItem('userId')}`).then(response => {
             let array = JSON.parse(response);

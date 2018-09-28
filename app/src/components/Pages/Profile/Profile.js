@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import {inject, observer} from 'mobx-react';
+import {inject, observer} from 'mobx-react';
 
 import Setting from './Setting';
 import Views from './Views';
@@ -8,11 +8,9 @@ import Chat from './Chat';
 import Photos from './Photos';
 import UserProfile from './UserProfile';
 
+@inject('Profile')
+@observer
 export default class Profile extends Component {
-    state = {
-        content: <UserProfile />,
-    };
-
     changeColor(e) {
         let nav = document.getElementsByClassName('nav');
         for (let element of nav) {
@@ -21,41 +19,36 @@ export default class Profile extends Component {
         e.target.style.color = '#179b77';
     }
 
-    contentChange = (component) => {
-        this.setState({content: component});
-    };
-
-
     render() {
-        const {content} = this.state;
+        const {content} = this.props.Profile;
 
         return (
             <main>
                 <div className="nav_panel">
                     <ul id="profile_nav">
                         <li><a className="nav" onClick={(e) => {
-                            this.contentChange(<UserProfile />);
+                            this.props.Profile.contentChange(<UserProfile />);
                             this.changeColor(e);
                         }}>Profile</a></li>
                         <li><a className="nav" onClick={(e) => {
-                            this.contentChange(<Setting />);
+                            this.props.Profile.contentChange(<Setting />);
                             this.changeColor(e);
                         }}>Edit profile</a></li>
                         <li><a className="nav" onClick={(e) => {
-                            this.contentChange(<Photos />);
+                            this.props.Profile.contentChange(<Photos />);
                             this.changeColor(e);
                         }}>Photos</a></li>
 
                         <li><a className="nav" onClick={(e) => {
-                            this.contentChange(<Views />);
+                            this.props.Profile.contentChange(<Views />);
                             this.changeColor(e);
                         }}>Views</a></li>
                         <li><a className="nav" onClick={(e) => {
-                            this.contentChange(<Likes />);
+                            this.props.Profile.contentChange(<Likes />);
                             this.changeColor(e);
                         }}>Likes</a></li>
                         <li><a className="nav" onClick={(e) => {
-                            this.contentChange(<Chat />);
+                            this.props.Profile.contentChange(<Chat />);
                             this.changeColor(e);
                         }}>Chat</a></li>
                     </ul>

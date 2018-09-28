@@ -1,34 +1,13 @@
 import React, { Component } from 'react';
+import {inject, observer} from 'mobx-react';
+import {fetchPost} from "../../../fetch";
+// import UserProfile from './UserProfile';
 // const google = window.google;
 
-const userInfo = {
-        firstName: 'alexandra',
-        lastName: 'naumenko',
-        login: 'anaumenk',
-        email: 'al13ra@gmail.com',
-        orientation: 'straight',
-        gender: 'woman',
-        occupation: 'unit, it, something else',
-        biography: 'bla-bla-bla',
-        birthDay: 13,
-        birthMonth: 'May',
-        birthYear: '1994',
-        latitude: '-34.397',
-        longitude: '150.644',
-        tags: JSON.parse(localStorage.getItem('tags')) ? JSON.parse(localStorage.getItem('tags')) : [],
-        newTag: '',
-        map: '',
-    }
-;
-
+@inject('User')
+@inject('Profile')
+@observer
 export default class Setting extends Component {
-    // static contextTypes = {
-    //     isAuthenticated: PropTypes.bool,
-    // }
-
-    state = userInfo;
-
-
     birthYear = () => {
         let select = [];
         let year = 1918;
@@ -47,60 +26,84 @@ export default class Setting extends Component {
     };
 
     handleChange = (e) => {
-        this.setState({[e.target.name]: e.target.value}); //переписать в бд e.target.name + e.target.value
+        // let emailValid = this.state.emailValid;
+        // switch(e.target.name) {
+        //     case 'email':
+        //         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        //         fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+        //         break;
+        //     default:
+        //         break;
+        // }
+        this.props.User[e.target.name] = e.target.value;
     };
 
     tagList() {
         let array = [];
-        this.state.tags.map(tag =>
+        let tags = this.props.User.tags.split(',');
+        let i = 0;
+        for (let tag of tags) {
             array.push(
                 <div
                     className={"new_tag"}
-                    key={tag.id}
-                    style={{cursor: 'text'}}
-                    onClick={() => this.remove(tag.id)}
+                    style={{cursor: 'pointer'}}
+                    onClick={(e) => e.target.remove()}
+                    key={i++}
                 >
-                    {tag.text}
-                </div>));
+                    #{tag}
+                </div>
+            )
+        }
         return array;
     }
 
-    remove(id) {
-        let array = [];
-
-        for (let tag of this.state.tags) {
-            if (id !== tag.id) {
-                array = [...array, tag];
-            }
-        }
-        this.setState({tags: array});
-    }
+    // remove(id) {
+    //     let array = [];
+    //     let tags = this.props.User.tags.split(', ');
+    //     let i = 0;
+    //
+    //     for (let tag of tags) {
+    //         if (id !== i++) {
+    //             array = [...array, tag];
+    //         }
+    //     }
+    //     this.props.User.tags = array;
+    // }
 
     handleKeyPress(e) {
-        if (e.key === "Enter" && this.state.newTag !== '') {
-            let i;
-            for (let tag of this.state.tags) {
-                i = tag.id;
-            }
-            i = i ? i : 0;
-            this.setState({
-                tags: [...this.state.tags, {id: ++i, text: `#${this.state.newTag}`}],
-                newTag: ''
-            });
+        if (e.key === "Enter" && this.props.User.newTag !== '') {
+            this.props.User.tags += `,${this.props.User.newTag}`;
+            this.props.User.newTag = '';
         }
     }
 
-    saveToLocalStorage() {
-        const tags = JSON.stringify(this.state.tags);
+    saveChanges() {
+        const {
+            firstName,
+            lastName,
+            email,
+            orientation,
+            gender,
+            occupation,
+            biography,
+            birthDay,
+            birthMonth,
+            birthYear,
+            // latitude,
+            // longitude,
+            // tags,
+            // map,
+        } = this.props.User;
 
-        localStorage.setItem('tags', tags);
+        let params = `userId=${localStorage.getItem('userId')}&firstName=${firstName}&lastName=${lastName}
+        &email=${email}&orientation=${orientation}&gender=${gender}
+        &occupation=${occupation}&biography=${biography}
+        &birthDay=${birthDay}&birthMonth=${birthMonth}
+        &birthYear=${birthYear}`;
+        fetchPost('editInfo', params);
+        // this.props.Profile.contentChange(<UserProfile />);
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (prevState.tags !== this.state.tags) {
-            this.saveToLocalStorage();
-        }
-    }
     // componentDidMount() {
     //     let center = {lat: Number(this.state.latitude), lng: Number(this.state.longitude)};
     //     let map = new google.maps.Map(
@@ -109,12 +112,9 @@ export default class Setting extends Component {
     // }
 
     render() {
-        // console.log(this.context);
-
         const {
             firstName,
             lastName,
-            login,
             email,
             orientation,
             gender,
@@ -128,7 +128,7 @@ export default class Setting extends Component {
             // tags,
             newTag,
             // map,
-        } = this.state;
+        } = this.props.User;
 
         return (
             <div style={{maxWidth: 300}}>
@@ -139,10 +139,6 @@ export default class Setting extends Component {
                 <div className="edit_field">
                     <p>Last name</p>
                     <input type="text" value={lastName}  name="lastName" onChange={(e) => this.handleChange(e)} />
-                </div>
-                <div className="edit_field">
-                    <p>Login</p>
-                    <input type="text" value={login} name="login" onChange={(e) => this.handleChange(e)} />
                 </div>
                 <div className="edit_field">
                     <p>Email adress</p>
@@ -223,6 +219,11 @@ export default class Setting extends Component {
                     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlgtB5jjzXNhwEUU3RLUmj62ZGD1wzUKg"
                             async defer></script>
                 </div>
+                <button
+                    className="button"
+                    style={{width: 300,}}
+                    onClick={() => this.saveChanges()}
+                >Save</button>
             </div>
 
         );

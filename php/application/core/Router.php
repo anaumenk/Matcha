@@ -1,7 +1,7 @@
 <?php
 
 namespace application\core;
-session_start();
+
 class Router {
 
     protected $routes = [];

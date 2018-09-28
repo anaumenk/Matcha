@@ -4,9 +4,7 @@
 namespace application\controllers;
 
 use application\core\Controller;
-
 use application\lib\Db;
-session_start();
 
 class AccountController extends Controller {
 
@@ -38,16 +36,22 @@ class AccountController extends Controller {
     public function photoAction() {
         $userId = $_REQUEST['userId'];
         $sql = $this->model->getUserPhoto($userId);
+        if (!$sql) {
+            $this->model->createPhoto($userId);
+            $this->photoAction();
+            return ;
+        }
         echo json_encode($sql);
     }
 
+
     public function registerAction() {
-        $firstName = $_REQUEST['firstName'];
-        $lastName = $_REQUEST['lastName'];
-        $email = $_REQUEST['email'];
-        $login = $_REQUEST['login'];
-        $password = $_REQUEST['password'];
-        $gender = $_REQUEST['gender'];
+        $firstName = trim($_REQUEST['firstName']);
+        $lastName = trim($_REQUEST['lastName']);
+        $email = trim($_REQUEST['email']);
+        $login = trim($_REQUEST['login']);
+        $password = trim($_REQUEST['password']);
+        $gender = trim($_REQUEST['gender']);
 
         $sql = $this->model->getUserLogin($login);
         if ($sql) {
@@ -60,8 +64,19 @@ class AccountController extends Controller {
         echo json_encode($response);
     }
 
-    public function logoutAction() {
-        $_SESSION['user'] = '';
-    }
+    public function viewsAction() {
+        $userId = $_REQUEST['userId'];
+        $sql = $this->model->getUserViews($userId);
+        $response = [];
+        if ($sql) {
+//            foreach ($sql as $data) {
+//                $login = $data['login'];
+//
+//            }
+//            $response = ['userId' => $userId, 'login' => $login, 'photo' => $photo];
+        }
 
+
+//        echo json_encode();
+    }
 }

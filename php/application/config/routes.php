@@ -21,9 +21,24 @@ return [
         'controller' => 'account',
         'action' => 'photo',
     ],
-//    'setting' => [
-//        'controller' => 'profile',
-//        'action' => 'setting',
-//    ],
 
+    'editInfo' => [
+        'controller' => 'profile',
+        'action' => 'editInfo',
+    ],
+
+    'editPhotos' => [
+        'controller' => 'profile',
+        'action' => 'editPhotos',
+    ],
+
+    'addPhoto' => [
+        'controller' => 'profile',
+        'action' => 'addPhoto',
+    ],
+
+    'views' => [
+        'controller' => 'account',
+        'action' => 'views',
+    ],
 ];

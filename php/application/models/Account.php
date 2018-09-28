@@ -3,7 +3,7 @@
 namespace application\models;
 
 use application\core\Model;
-session_start();
+
 class Account extends Model{
 
     public function getUserLogin($login) {
@@ -32,28 +32,23 @@ class Account extends Model{
 
     public function createUser($firstName, $lastName, $email, $login, $password, $gender) {
         $password = hash('whirlpool', $password);
-//        $params = [
-//            'firstName' => $firstName,
-//            'lastName' => $lastName,
-//            'login' => $login,
-//            'email' => $email,
-//            'password' => $password,
-//            'gender' => $gender,
-//            'occupation' => '',
-//            'biography' => '',
-//            'latitude' => '',
-//            'longitude' => '',
-//            'tags' => '',
-//        ];
-//        $this->db->query("INSERT INTO `users` (`firstName`, `lastName`, `login`, `email`, `password`,
-//                                               `gender`, `occupation`, `biography`, `latitude`,
-//                                               `longitude`, `tags`)
-//                          VALUES (:firstName, :lastName, :login, :email, :password, :gender,
-//                                  :occupation, :biography, :latitude, :longitude, :tags)", $params);
         $this->db->query("INSERT INTO `users` (`firstName`, `lastName`, `login`, `email`, `password`,
                                                 `gender`, `occupation`, `biography`, `latitude`,
                                                 `longitude`, `tags`)
                           VALUES ('$firstName', '$lastName', '$login', '$email', '$password',
                                   '$gender', '', '', '', '', '')");
+    }
+
+    public function createPhoto($userId) {
+        $this->db->query("INSERT INTO `photos` (`userId`, `1`, `2`, `3`, `4`, `5`)
+                          VALUES ('$userId', '', '', '', '', '')");
+    }
+
+    public function getUserViews($userId) {
+        $params = [
+            'userId' => $userId,
+        ];
+        $result = $this->db->row("SELECT * FROM `views` WHERE userId = :userId", $params);
+        return $result;
     }
 }
