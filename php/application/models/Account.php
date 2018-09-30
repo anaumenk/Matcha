@@ -44,11 +44,20 @@ class Account extends Model{
                           VALUES ('$userId', '', '', '', '', '')");
     }
 
-    public function getUserViews($userId) {
+    public function getUserLikesViews($userId, $action) {
         $params = [
             'userId' => $userId,
         ];
-        $result = $this->db->row("SELECT * FROM `views` WHERE userId = :userId", $params);
+        $result = ($action === 'likes')
+            ? $this->db->row("SELECT users.userId, users.login, photos.1 AS photo FROM users
+                              INNER JOIN photos ON users.userId = photos.userId
+                              INNER JOIN likes ON users.userId = likes.userWho
+                              WHERE likes.userWhom = :userId", $params)
+            : $this->db->row("SELECT users.userId, users.login, photos.1 AS photo FROM users
+                              INNER JOIN photos ON users.userId = photos.userId
+                              INNER JOIN views ON users.userId = views.userWho
+                              WHERE views.userWhom = :userId", $params);
         return $result;
     }
 }
+

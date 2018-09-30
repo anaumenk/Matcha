@@ -1,243 +1,30 @@
 import React, { Component } from 'react';
+import {inject, observer} from 'mobx-react';
 
-const janedoe = [
-    {
-        id:1,
-        senderId: "perborgen",
-        text: "who'll win?fsghdgjhdgjfgxjgxhnbnxfghvxcn`dfhjmnbvdfghjkl;jhgfdsdftjkhjgfdsfghjkmhngbfdsfgh tgbfzdzgxhdjnbgfvds rdahfbzvcxf rfadg vzc gh asdgvz  dfgbxcvb dfgdf g gxfbx"
-    },
-    {
-        id:2,
-        senderId: "janedoe",
-        text: "I will!"
-    },
-    {
-        id:3,
-        senderId: "perborgen",
-        text: "3"
-    },
-    {
-        id:4,
-        senderId: "janedoe",
-        text: "4"
-    },
-    {
-        id:5,
-        senderId: "perborgen",
-        text: "5"
-    },
-    {
-        id:6,
-        senderId: "janedoe",
-        text: "6   "
-    },
-    {
-        id:7,
-        senderId: "perborgen",
-        text: "7c"
-    },
-    {
-        id:8,
-        senderId: "janedoe",
-        text: "fsghdgjhdgjfgxjgxhnbnxfghvxcn`dfhjmnbvdfghjkl;jhgfdsdftjkhjgfdsfghjkmhngbfdsfgh tgbfzdzgxhdjnbgfvds rdahfbzvcxf rfadg vzc gh asdgvz  dfgbxcvb dfgdf g gxfbx"
-
-    },
-    {
-        id:9,
-        senderId: "janedoe",
-        text: "4"
-    },
-    {
-        id:10,
-        senderId: "perborgen",
-        text: "5"
-    },
-    {
-        id:11,
-        senderId: "janedoe",
-        text: "6   "
-    },
-    {
-        id:12,
-        senderId: "perborgen",
-        text: "7c"
-    },
-    {
-        id:13,
-        senderId: "janedoe",
-        text: "4"
-    },
-    {
-        id:14,
-        senderId: "perborgen",
-        text: "5"
-    },
-    {
-        id:15,
-        senderId: "janedoe",
-        text: "6   "
-    },
-    {
-        id:16,
-        senderId: "perborgen",
-        text: "7c"
-    },
-    {
-        id:17,
-        senderId: "janedoe",
-        text: "4"
-    },
-    {
-        id:18,
-        senderId: "perborgen",
-        text: "5"
-    },
-    {
-        id:19,
-        senderId: "janedoe",
-        text: "6   "
-    },
-    {
-        id:20,
-        senderId: "perborgen",
-        text: "7c"
-    },
-];
-
-const newnew = [
-    {
-        id:1,
-        senderId: "perborgen",
-        text: "who'll win?fsghdgjhdgjfgxjgxhnbnxfghvxcn`dfhjmnbvdfghjkl;jhgfdsdftjkhjgfdsfghjkmhngbfdsfgh tgbfzdzgxhdjnbgfvds rdahfbzvcxf rfadg vzc gh asdgvz  dfgbxcvb dfgdf g gxfbx"
-    },
-    {
-        id:2,
-        senderId: "newnew",
-        text: "I will!"
-    },
-    {
-        id:3,
-        senderId: "perborgen",
-        text: "3"
-    },
-    {
-        id:4,
-        senderId: "newnew",
-        text: "4"
-    },
-    {
-        id:5,
-        senderId: "newnew",
-        text: "5"
-    },
-    {
-        id:10,
-        senderId: "perborgen",
-        text: "5"
-    },
-    {
-        id:14,
-        senderId: "perborgen",
-        text: "5"
-    },
-    {
-        id:15,
-        senderId: "newnew",
-        text: "6   "
-    },
-    {
-        id:16,
-        senderId: "perborgen",
-        text: "7c"
-    },
-    {
-        id:17,
-        senderId: "newnew",
-        text: "4"
-    },
-    {
-        id:18,
-        senderId: "perborgen",
-        text: "5"
-    },
-    {
-        id:19,
-        senderId: "newnew",
-        text: "6   "
-    },
-    {
-        id:20,
-        senderId: "perborgen",
-        text: "7c"
-    },
-];
-
-const name = [
-    {
-        id:1,
-        senderId: "perborgen",
-        text: "who'll win?fsghdgjhdgjfgxjgxhnbnxfghvxcn`dfhjmnbvdfghjkl;jhgfdsdftjkhjgfdsfghjkmhngbfdsfgh tgbfzdzgxhdjnbgfvds rdahfbzvcxf rfadg vzc gh asdgvz  dfgbxcvb dfgdf g gxfbx"
-    },
-    {
-        id:2,
-        senderId: "name",
-        text: "I will!"
-    },
-    {
-        id:3,
-        senderId: "perborgen",
-        text: "3"
-    },
-    {
-        id:4,
-        senderId: "name",
-        text: "4"
-    },
-    {
-        id:20,
-        senderId: "perborgen",
-        text: "7c"
-    },
-];
-
-const somebody = [
-    {
-        id:1,
-        senderId: "perborgen",
-        text: "Hello"
-    },
-];
-
+@inject('Chat')
+@observer
 class SendMessage extends Component {
-    state = {
-        message: '',
-    };
-
     handleChange = (e) =>{
-        this.setState({
-            message: e.target.value,
-        })
+        this.props.Chat.newMessage = e.target.value;
     };
 
     handleKeyPress = (e) => {
         if (e.key === "Enter") {
-            //на сервер
-            this.setState({
-                message: ''
-            });
+            this.props.Chat.sendMessage(this.props.Chat.newMessage, this.props.Chat.friendId);
+            this.props.Chat.newMessage = '';
         }
     };
 
     render() {
         const {
-            message,
-        } = this.state;
+            newMessage,
+        } = this.props.Chat;
 
         return (
             <div id="send_message">
                 <input
                     type="text"
-                    value={message}
+                    value={newMessage}
                     onChange={this.handleChange}
                     onKeyPress={(e) => this.handleKeyPress(e)}
                 />
@@ -246,26 +33,23 @@ class SendMessage extends Component {
     }
 }
 
-const Messages = props => (
-    <div id="message_form">
-        {props.messages.map(message => {
-            return (
-                <div key={message.id} className={message.senderId === props.session ? 'message_user' : 'message_other'} >
-                    <p>{message.text}</p>
-                </div>
-            )
-        })}
-    </div>
-);
+// const Messages = props => (
+//     <div id="message_form">
+//         {props.messages.map(message => {
+//             console.log(message);
+//             return (
+//                 <div key={message.id} className={message.senderId === localStorage.getItem('userId') ? 'message_user' : 'message_other'} >
+//                     <p>{message.text}</p>
+//                 </div>
+//             )
+//         })}
+//     </div>
+// );
 
+@inject('Chat')
+@observer
 export default class Chat extends Component {
-    state = {
-        messages: [],
-        session: 'perborgen',
-        sender: 'janedoe'
-    };
-
-    selectUser = (e, user) => {
+    selectUser = (e, userId) => {
         let elements = document.getElementsByClassName('chat_user');
         for(let i = 0, length = elements.length; i < length; i++) {
             elements[i].style.backgroundColor = '#c1bdba';
@@ -280,48 +64,55 @@ export default class Chat extends Component {
             e.target.parentNode.style.backgroundColor = '#aba6a1';
         }
         document.getElementById('messages').style.display = 'unset';
-        this.setState({messages: user});
+        this.props.Chat.friendId = userId;
+        this.props.Chat.selectUser();
     };
 
-    render() {
-        const {
-            messages,
-            session,
-            // sender,
-        } = this.state;
+    componentWillMount() {
+        this.props.Chat.pushFriends();
+    }
 
+    friendsList() {
+        let friends = this.props.Chat.friends,
+            array = [];
+        for (let friend of friends) {
+            array.push(
+                <div key={friend.userId} className="chat_user" onClick={(e) => this.selectUser(e, friend.userId)}>
+                    <div className="chat_user_image">
+                        <img src={require(`../../../${friend.photo}`)} alt={friend.login} />
+                    </div>
+                    <p>{friend.login}</p>
+                </div>
+            );
+        }
+        return array;
+    }
+
+    Messages() {
+        let messages = this.props.Chat.messages,
+            array = [];
+        for (let message of messages) {
+            array.push(
+                <div id="message_form">
+                    <div key={message.id} className={message.senderId === localStorage.getItem('userId') ? 'message_user' : 'message_other'} >
+                        <p>{message.text}</p>
+                    </div>
+                </div>
+            )
+        }
+        return array;
+    }
+
+    render() {
         return (
             <div id="chat">
                 <div id="list_of_people">
-                    <div className="chat_user" onClick={(e) => this.selectUser(e, janedoe)}>
-                        <div className="chat_user_image">
-                            <img src={require('../../../images/test.jpg')} alt="name" />
-                        </div>
-                        <p>janedoe</p>
-                    </div>
-                    <div className="chat_user" onClick={(e) => this.selectUser(e, newnew)}>
-                        <div className="chat_user_image">
-                            <img src={require('../../../images/test.jpg')} alt="name" />
-                        </div>
-                        <p>newnew</p>
-                    </div>
-                    <div className="chat_user" onClick={(e) => this.selectUser(e, name)}>
-                        <div className="chat_user_image">
-                            <img src={require('../../../images/test.jpg')} alt="name" />
-                        </div>
-                        <p>Name</p>
-                    </div>
-                    <div className="chat_user" onClick={(e) => this.selectUser(e, somebody)}>
-                        <div className="chat_user_image">
-                            <img src={require('../../../images/test.jpg')} alt="name" />
-                        </div>
-                        <p>Somebody</p>
-                    </div>
+                    {this.friendsList()}
                 </div>
                 <div id="messages">
-                    <Messages messages={messages} session={session} />
+                    {this.Messages()}
+                    {/*<Messages messages={this.props.Chat.messages}/>*/}
                     <SendMessage />
-
                 </div>
             </div>
         );

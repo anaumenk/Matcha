@@ -1,39 +1,38 @@
 import React, { Component } from 'react';
-
-const LikeDB = [
-    {
-        id: 0,
-        src: require('../../../images/test.jpg'),
-        whoName: 'name',
-    },
-    {
-        id: 1,
-        src: require('../../../images/01.jpg'),
-        whoName: 'name2',
-    }
-];
+import {inject, observer} from 'mobx-react';
 
 const Like = props => (
     <div className="user_like">
         <a>
-            <img src={props.src} alt={props.whoName} />
+            <img src={require(`../../../${props.src}`)} alt={props.alt} />
         </a>
     </div>
 );
 
+@inject('Likes')
+@observer
 export default class Likes extends Component {
+    componentWillMount() {
+        this.props.Likes.push();
+    }
+
+    Like() {
+        let likes = this.props.Likes.LikeDB, arr = [];
+        for (let like of likes) {
+            arr.push(
+                <Like
+                    key={like.userId}
+                    src={like.photo}
+                    alt={like.login}
+                />);
+        }
+        return arr;
+    }
+
     render() {
         return (
             <div className="likes_views">
-                {
-                    LikeDB.map(like =>
-                        <Like
-                            key={like.id}
-                            src={like.src}
-                            alt={like.whoName}
-                        />
-                    )
-                }
+                {this.Like()}
             </div>
         );
     }

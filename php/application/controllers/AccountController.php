@@ -14,12 +14,9 @@ class AccountController extends Controller {
         $sql = $this->model->getUserLogin($login);
         if ($sql) {
             foreach ($sql as $data) {
-                if ($data['password'] === hash("whirlpool", $password)) {
-                    $response = $sql;
-                }
-                else {
-                    $response = ["fieldName" => "password", "error" => true];
-                }
+                $response = ($data['password'] === hash("whirlpool", $password))
+                    ? $sql
+                    : ["fieldName" => "password", "error" => true];
             }
         } else {
             $response = $response = ["fieldName" => "login", "error" => true];
@@ -64,19 +61,11 @@ class AccountController extends Controller {
         echo json_encode($response);
     }
 
-    public function viewsAction() {
+
+    public function likesViewsAction() {
         $userId = $_REQUEST['userId'];
-        $sql = $this->model->getUserViews($userId);
-        $response = [];
-        if ($sql) {
-//            foreach ($sql as $data) {
-//                $login = $data['login'];
-//
-//            }
-//            $response = ['userId' => $userId, 'login' => $login, 'photo' => $photo];
-        }
-
-
-//        echo json_encode();
+        $action = $_REQUEST['action'];
+        $sql = $this->model->getUserLikesViews($userId, $action);
+        echo json_encode($sql);
     }
 }

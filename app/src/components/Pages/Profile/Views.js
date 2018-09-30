@@ -4,7 +4,7 @@ import {inject, observer} from 'mobx-react';
 const View = props => (
     <div className="user_like">
         <a>
-            <img src={props.src} alt={props.name} />
+            <img src={require(`../../../${props.src}`)} alt={props.alt} />
         </a>
     </div>
 );
@@ -12,20 +12,27 @@ const View = props => (
 @inject('Views')
 @observer
 export default class Views extends Component {
-    render() {
-        const {ViewDB} = this.props.Views;
+    componentWillMount() {
+        this.props.Views.push();
+    }
 
+    View() {
+        let views = this.props.Views.ViewDB, arr = [];
+        for (let view of views) {
+            arr.push(
+                <View
+                    key={view.userId}
+                    src={view.photo}
+                    alt={view.login}
+                />);
+        }
+        return arr;
+    }
+
+    render() {
         return (
             <div className="likes_views">
-                {
-                    ViewDB.map(like =>
-                        <View
-                            key={like.id}
-                            src={like.src}
-                            alt={like.name}
-                        />
-                    )
-                }
+                {this.View()}
             </div>
         );
     }

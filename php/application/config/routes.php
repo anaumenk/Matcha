@@ -37,8 +37,23 @@ return [
         'action' => 'addPhoto',
     ],
 
-    'views' => [
+    'likesViews' => [
         'controller' => 'account',
-        'action' => 'views',
+        'action' => 'likesViews',
+    ],
+
+    'friendsList' => [
+        'controller' => 'chat',
+        'action' => 'friendsList',
+    ],
+
+    'selectChat' => [
+        'controller' => 'chat',
+        'action' => 'selectChat',
+    ],
+
+    'sendMessage' => [
+        'controller' => 'chat',
+        'action' => 'sendMessage',
     ],
 ];

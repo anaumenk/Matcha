@@ -15,6 +15,7 @@ class UserPhotos {
             let array = JSON.parse(response);
             this.one = array[0][1];
             this.currPhoto = this.one;
+
             this.two = array[0][2];
             this.three = array[0][3];
             this.four = array[0][4];
