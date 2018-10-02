@@ -56,4 +56,9 @@ return [
         'controller' => 'chat',
         'action' => 'sendMessage',
     ],
+
+    'search' => [
+        'controller' => 'search',
+        'action' => 'search',
+    ],
 ];

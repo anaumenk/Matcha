@@ -7,13 +7,14 @@ use application\core\Model;
 class Profile extends Model{
 
     public function editUser($userId, $firstName, $lastName, $email, $gender, $orientation, $occupation,
-                             $biography, $birthDay, $birthMonth, $birthYear) {
-        $this->db->query("UPDATE `users` SET `firstName` = '$firstName', `lastName` = '$lastName',
+                             $biography, $birth, $siteColor, $tags) {
+        $this->db->query("UPDATE `users`
+                          SET `firstName` = '$firstName', `lastName` = '$lastName',
                                             `email` = '$email', `gender` = '$gender',
                                             `orientation` = '$orientation', `occupation` = '$occupation',
-                                            `biography` = '$biography', `birthDay` = '$birthDay',
-                                            `birthMonth` = '$birthMonth', `birthYear` = '$birthYear'
-                          WHERE `userId` = '$userId'");
+                                            `biography` = '$biography', `birth` = '$birth',
+                                            siteColor = '$siteColor', tags = '$tags'
+                         WHERE `userId` = '$userId'");
     }
 
     public function editPhoto($userId, $one, $two, $three, $four, $five) {

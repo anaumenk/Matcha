@@ -33,18 +33,17 @@ class SendMessage extends Component {
     }
 }
 
-// const Messages = props => (
-//     <div id="message_form">
-//         {props.messages.map(message => {
-//             console.log(message);
-//             return (
-//                 <div key={message.id} className={message.senderId === localStorage.getItem('userId') ? 'message_user' : 'message_other'} >
-//                     <p>{message.text}</p>
-//                 </div>
-//             )
-//         })}
-//     </div>
-// );
+const Messages = props => (
+    <div id="message_form">
+        {props.messages.map(message => {
+            return (
+                <div key={message.id} className={message.senderId === localStorage.getItem('userId') ? 'message_user' : 'message_other'} >
+                    <p>{message.text}</p>
+                </div>
+            )
+        })}
+    </div>
+);
 
 @inject('Chat')
 @observer
@@ -88,21 +87,6 @@ export default class Chat extends Component {
         return array;
     }
 
-    Messages() {
-        let messages = this.props.Chat.messages,
-            array = [];
-        for (let message of messages) {
-            array.push(
-                <div id="message_form">
-                    <div key={message.id} className={message.senderId === localStorage.getItem('userId') ? 'message_user' : 'message_other'} >
-                        <p>{message.text}</p>
-                    </div>
-                </div>
-            )
-        }
-        return array;
-    }
-
     render() {
         return (
             <div id="chat">
@@ -110,8 +94,7 @@ export default class Chat extends Component {
                     {this.friendsList()}
                 </div>
                 <div id="messages">
-                    {this.Messages()}
-                    {/*<Messages messages={this.props.Chat.messages}/>*/}
+                    <Messages messages={this.props.Chat.messages}/>
                     <SendMessage />
                 </div>
             </div>

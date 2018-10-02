@@ -3,7 +3,6 @@
 namespace application\controllers;
 
 use application\core\Controller;
-use application\lib\Db;
 
 class ProfileController extends Controller {
 
@@ -16,12 +15,12 @@ class ProfileController extends Controller {
         $orientation = trim($_REQUEST['orientation']);
         $occupation = trim($_REQUEST['occupation']);
         $biography = trim($_REQUEST['biography']);
-        $birthDay = trim($_REQUEST['birthDay']);
-        $birthMonth = trim($_REQUEST['birthMonth']);
-        $birthYear = trim($_REQUEST['birthYear']);
+        $birth = trim($_REQUEST['birth']);
+        $siteColor = trim($_REQUEST['siteColor']);
+        $tags = trim($_REQUEST['tags']);
 
         $this->model->editUser($userId, $firstName, $lastName, $email, $gender, $orientation, $occupation,
-            $biography, $birthDay, $birthMonth, $birthYear);
+            $biography, $birth, $siteColor, $tags);
     }
 
     public function editPhotosAction() {

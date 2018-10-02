@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
-import {fetchPost} from "../../../fetch";
 // import UserProfile from './UserProfile';
 // const google = window.google;
 
@@ -25,6 +24,14 @@ export default class Setting extends Component {
         return (select);
     };
 
+    birthMonth = () => {
+        let select = [];
+        for (let i = 1; i < 13; i++) {
+            select.push(<option value={i} key={i}>{i}</option>);
+        }
+        return (select);
+    };
+
     handleChange = (e) => {
         // let emailValid = this.state.emailValid;
         // switch(e.target.name) {
@@ -39,71 +46,36 @@ export default class Setting extends Component {
     };
 
     tagList() {
-        let array = [];
-        let tags = this.props.User.tags.split(',');
-        let i = 0;
-        for (let tag of tags) {
-            array.push(
-                <div
-                    className={"new_tag"}
-                    style={{cursor: 'pointer'}}
-                    onClick={(e) => e.target.remove()}
-                    key={i++}
-                >
-                    #{tag}
-                </div>
-            )
+        let array = [],
+            i = 1;
+        if (this.props.User.tags) {
+            let tags = this.props.User.tags.split(',');
+            for (let tag of tags) {
+                array.push(
+                    <div
+                        className={"new_tag"}
+                        key={i++}
+                        style={{cursor: 'pointer'}}
+                        onClick={(e) => {
+                            let text = e.target.innerHTML;
+                            // e.target.remove();
+                            this.props.User.removeTag(text);
+                        }}
+                    >
+                        {`${tag}`}
+                    </div>
+                )
+            }
         }
         return array;
     }
 
-    // remove(id) {
-    //     let array = [];
-    //     let tags = this.props.User.tags.split(', ');
-    //     let i = 0;
-    //
-    //     for (let tag of tags) {
-    //         if (id !== i++) {
-    //             array = [...array, tag];
-    //         }
-    //     }
-    //     this.props.User.tags = array;
-    // }
-
     handleKeyPress(e) {
         if (e.key === "Enter" && this.props.User.newTag !== '') {
-            this.props.User.tags += `,${this.props.User.newTag}`;
+            this.props.User.tags += ',' + this.props.User.newTag;
             this.props.User.newTag = '';
         }
     }
-
-    saveChanges() {
-        const {
-            firstName,
-            lastName,
-            email,
-            orientation,
-            gender,
-            occupation,
-            biography,
-            birthDay,
-            birthMonth,
-            birthYear,
-            // latitude,
-            // longitude,
-            // tags,
-            // map,
-        } = this.props.User;
-
-        let params = `userId=${localStorage.getItem('userId')}&firstName=${firstName}&lastName=${lastName}
-        &email=${email}&orientation=${orientation}&gender=${gender}
-        &occupation=${occupation}&biography=${biography}
-        &birthDay=${birthDay}&birthMonth=${birthMonth}
-        &birthYear=${birthYear}`;
-        fetchPost('editInfo', params);
-        // this.props.Profile.contentChange(<UserProfile />);
-    }
-
     // componentDidMount() {
     //     let center = {lat: Number(this.state.latitude), lng: Number(this.state.longitude)};
     //     let map = new google.maps.Map(
@@ -123,6 +95,7 @@ export default class Setting extends Component {
             birthDay,
             birthMonth,
             birthYear,
+            siteColor,
             // latitude,
             // longitude,
             // tags,
@@ -171,26 +144,14 @@ export default class Setting extends Component {
                     <div id="birth_data">
                         <div id="birth_day">
                             <p>Day</p>
-                            <select defaultValue={birthDay} name='birthDay' onChange={(e) => this.handleChange(e)}>
+                            <select value={birthDay} name='birthDay' onChange={(e) => this.handleChange(e)}>
                                 {this.birthDay()}
                             </select>
                         </div>
                         <div id="birth_month">
                             <p>Month</p>
                             <select id="birth_month" value={birthMonth} name='birthMonth' onChange={(e) => this.handleChange(e)}>
-                                <option value="Jan">Jan</option>
-                                <option value="Feb">Feb</option>
-                                <option value="Mar">Mar</option>
-                                <option value="Apr">Apr</option>
-                                <option value="May">May</option>
-                                <option value="Jun">Jun</option>
-
-                                <option value="Jul">Jul</option>
-                                <option value="Aug">Aug</option>
-                                <option value="Sep">Sep</option>
-                                <option value="Oct">Oct</option>
-                                <option value="Nov">Nov</option>
-                                <option value="Dec">Dec</option>
+                                {this.birthMonth()}
                             </select>
                         </div>
                         <div id="birth_year">
@@ -200,6 +161,13 @@ export default class Setting extends Component {
                             </select>
                         </div>
                     </div>
+                </div>
+                <div className="edit_field">
+                    <p>Site color</p>
+                    <select value={siteColor} name='siteColor' onChange={(e) => this.handleChange(e)}>
+                        <option>default</option>
+                        <option>dark</option>
+                    </select>
                 </div>
                 <div className="tags" style={{fontSize: 'large', marginTop: 5,}}>
                     <p className="name">Tags</p>
@@ -213,16 +181,16 @@ export default class Setting extends Component {
                            onKeyPress={(e) => this.handleKeyPress(e)}
                     />
                 </div>
-                <div id="location">
-                    <p>Location</p>
-                    <div id="map"></div>
-                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlgtB5jjzXNhwEUU3RLUmj62ZGD1wzUKg"
-                            async defer></script>
-                </div>
+                {/*<div id="location">*/}
+                    {/*<p>Location</p>*/}
+                    {/*<div id="map"></div>*/}
+                    {/*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlgtB5jjzXNhwEUU3RLUmj62ZGD1wzUKg"*/}
+                            {/*async defer></script>*/}
+                {/*</div>*/}
                 <button
                     className="button"
                     style={{width: 300,}}
-                    onClick={() => this.saveChanges()}
+                    onClick={() => this.props.User.saveChanges()}
                 >Save</button>
             </div>
 

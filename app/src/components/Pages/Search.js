@@ -1,187 +1,146 @@
 import React, { Component } from 'react';
+import {inject, observer} from 'mobx-react';
 
-export class Rating extends Component {
-    state = {
-        start: 0,
-        end: 100,
-    };
-
-    handleChange = () => {
-        let parent = document.querySelector(".rating"),
-            rangeS = parent.querySelectorAll("input[type=range]"),
-            number1 = document.querySelector(".left_rating"),
-            number2 = document.querySelector(".right_rating");
-
-        rangeS.forEach(function(el) {
-            el.oninput = function() {
-                let slide1 = parseFloat(rangeS[0].value),
-                    slide2 = parseFloat(rangeS[1].value);
-
-                if (slide1 > slide2) {
-                    [slide1, slide2] = [slide2, slide1];
-                }
-                number1.innerHTML = slide1;
-                number2.innerHTML = slide2;
-            };
-        });
-        this.setState({start: number1.innerHTML, end: number2.innerHTML});
-    };
-
-    render() {
-        const {
-            start,
-            end,
-        } = this.state;
-
-        return (
-            <div className="sort_line">
-                <div className="text">
-                    <p className="name">Rating</p>
-                    <div className="interval">
-                        <p className="left_rating">{start}</p>
-                        <p>-</p>
-                        <p className="right_rating">{end}</p>
-                    </div>
-                </div>
-                <div className="line rating">
-                    <input value={start} min="0" max="100" step="1" type="range" onChange={this.handleChange}/>
-                    <input value={end} min="0" max="100" step="1" type="range" onChange={this.handleChange} />
-                </div>
-            </div>
-        );
-    }
+function getAge(data) {
+    let array = data.split('-'),
+        year = array[0],
+        month = array[1] | 0,
+        day = array[2] | 0,
+        date = year-month-day;
+    return ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)) | 0;
 }
 
-export class Distance extends Component {
-    state = {
-        start: 0,
-        end: 100,
-    };
-
-    handleChange= () => {
-        let parent = document.querySelector(".distance"),
-            rangeS = parent.querySelectorAll("input[type=range]"),
-            number1 = document.querySelector(".left_distance"),
-            number2 = document.querySelector(".right_distance");
-
-        rangeS.forEach(function(el) {
-            el.oninput = function() {
-                let slide1 = parseFloat(rangeS[0].value),
-                    slide2 = parseFloat(rangeS[1].value);
-
-                if (slide1 > slide2) {
-                    [slide1, slide2] = [slide2, slide1];
-                }
-                number1.innerHTML = slide1;
-                number2.innerHTML = slide2;
-            };
-        });
-        this.setState({start: number1.innerHTML, end: number2.innerHTML});
-    };
-
-    render() {
-        const {
-            start,
-            end,
-        } = this.state;
-
-        return (
-            <div className="sort_line">
-                <div className="text">
-                    <p className="name">Distance</p>
-                    <div className="interval">
-                        <p className="left_distance">{start}</p>
-                        <p>-</p>
-                        <p className="right_distance">{end}</p>
+export const People = props => (
+    <div className="content">
+        {props.listOfPeople.map(people => {
+            return(
+                <div key={people.userId} className="user_profile_result">
+                    <div className="user_profile_result_img">
+                        <img src={require(`../../${people.photo}`)} alt={people.firstName}/>
+                    </div>
+                    <div className="user_profile_result_info">
+                    <p>{`${people.lastName} ${people.firstName}`}</p>
+                    <p>{getAge(people.birth)}</p>
                     </div>
                 </div>
-                <div className="line distance">
-                    <input value={start} min="0" max="100" step="1" type="range" onChange={this.handleChange}/>
-                    <input value={end} min="0" max="100" step="1" type="range" onChange={this.handleChange} />
-                </div>
-            </div>
-        );
-    }
-}
+            )
+        })}
+    </div>
+);
 
-export class Age extends Component {
-    state = {
-        start: 18,
-        end: 30,
-    };
-
-    handleChange = () => {
-        let parent = document.querySelector(".age"),
-            rangeS = parent.querySelectorAll("input[type=range]"),
-            number1 = document.querySelector(".left_age"),
-            number2 = document.querySelector(".right_age");
-
-        rangeS.forEach(function(el) {
-            el.oninput = function() {
-                let slide1 = parseFloat(rangeS[0].value),
-                    slide2 = parseFloat(rangeS[1].value);
-
-                if (slide1 > slide2) {
-                    [slide1, slide2] = [slide2, slide1];
-                }
-                number1.innerHTML = slide1;
-                number2.innerHTML = slide2;
-            };
-        });
-        this.setState({start: number1.innerHTML, end: number2.innerHTML});
-    };
-
-    render() {
-        const {
-            start,
-            end,
-        } = this.state;
-
-        return (
-            <div className="sort_line">
-                <div className="text">
-                    <p className="name">Age</p>
-                    <div className="interval">
-                        <p className="left_age">{start}</p>
-                        <p>-</p>
-                        <p className="right_age">{end}</p>
-                    </div>
-                </div>
-                <div className="line age">
-                    <input value={start} min="18" max="100" step="1" type="range" onChange={this.handleChange}/>
-                    <input value={end} min="18" max="100" step="1" type="range" onChange={this.handleChange} />
-                </div>
-            </div>
-        );
-    }
-}
-
-export default class Search extends Component {
-    state = {
-        userInput: '',
-    };
+@inject('Research')
+@observer
+export class Tags extends Component {
 
     handleUserInput = (e) => {
-        this.setState({userInput: e.target.value});
+        this.props.Research.userInput = e.target.value;
     };
 
     handleKeyPress(e) {
-        if (e.key === "Enter" && this.state.userInput !== '') {
+        if (e.key === "Enter" && this.props.Research.userInput !== '') {
             let parent = document.getElementsByClassName('tag_list'),
                 newelement = document.createElement('div');
-            newelement.innerHTML = `#${this.state.userInput}`;
+            newelement.innerHTML = `#${this.props.Research.userInput}`;
             newelement.className = 'new_tag';
-            newelement.onclick = function () {
-                this.remove();
+            newelement.style.cursor = 'pointer';
+            newelement.onclick = (e) => {
+                this.props.Research.removeTag(e.target.innerHTML);
+                e.target.remove();
             };
             parent[0].appendChild(newelement);
-
-            this.setState({userInput: ''});
+            this.props.Research.tags.push(this.props.Research.userInput);
+            this.props.Research.userInput = '';
         }
     }
+    render() {
+        const {userInput} = this.props.Research;
+
+        return (
+            <div className="tags">
+                <p className="name">Tags</p>
+                <div className="tag_list">
+                </div>
+                <input type="text"
+                       onChange={this.handleUserInput}
+                       value={userInput}
+                       onKeyPress={(e) => this.handleKeyPress(e)}
+                />
+            </div>
+        );
+    }
+}
+
+@inject('Research')
+@observer
+export class Slider extends Component {
+    handleChange = () => {
+        let parent = document.querySelector(`.${this.props.name}`),
+            rangeS = parent.querySelectorAll("input[type=range]"),
+            number1 = document.querySelector(`.left_${this.props.name}`),
+            number2 = document.querySelector(`.right_${this.props.name}`);
+
+        rangeS.forEach(function(el) {
+            el.oninput = function() {
+                let slide1 = parseFloat(rangeS[0].value),
+                    slide2 = parseFloat(rangeS[1].value);
+
+                if (slide1 > slide2) {
+                    [slide1, slide2] = [slide2, slide1];
+                }
+                number1.innerHTML = slide1;
+                number2.innerHTML = slide2;
+            };
+        });
+        this.props.Research[`${this.props.name}Start`] = number1.innerHTML;
+        this.props.Research[`${this.props.name}End`] = number2.innerHTML;
+    };
 
     render() {
-        const {userInput} = this.state;
+        const {name} = this.props;
+        return (
+            <div className="sort_line">
+                <div className="text">
+                    <p className="name">{name}</p>
+                    <div className="interval">
+                        <p className={`left_${name}`}>{this.props.Research[`${name}Start`]}</p>
+                        <p>-</p>
+                        <p className={`right_${name}`}>{this.props.Research[`${name}End`]}</p>
+                    </div>
+                </div>
+                <div className={`line ${name}`}>
+                    <input
+                        value={this.props.Research[`${name}Start`]}
+                        min={this.props.Research[`min${name}`]}
+                        max={this.props.Research[`max${name}`]}
+                        step="1"
+                        type="range"
+                        onChange={this.handleChange}
+                    />
+                    <input
+                        value={this.props.Research[`${name}End`]}
+                        min={this.props.Research[`min${name}`]}
+                        max={this.props.Research[`max${name}`]}
+                        step="1"
+                        type="range"
+                        onChange={this.handleChange} />
+                </div>
+            </div>
+        );
+    }
+}
+
+@inject('Research')
+@observer
+export default class Search extends Component {
+    handleChange = (e) => {
+        this.props.Research[e.target.name] = e.target.value;
+    };
+
+    render() {
+        const {
+            sortBy,
+            listOfPeople
+        } = this.props.Research;
 
         return (
             <main>
@@ -189,41 +148,25 @@ export default class Search extends Component {
                     <div className="filters">
                         <div id="sort_by">
                             <p className="name">Sort by</p>
-                            <select>
+                            <select name="sortBy" value={sortBy} onChange={(e) => this.handleChange(e)}>
                                 <option>Age</option>
                                 <option>Distance</option>
                                 <option>Rating</option>
                             </select>
                         </div>
-                        <Age />
-                        <Distance />
-                        <Rating />
-                        <div className="tags">
-                            <p className="name">Tags</p>
-                            <div className="tag_list">
-
-                            </div>
-                            <input type="text"
-                                   onChange={this.handleUserInput}
-                                   value={userInput}
-                                   onKeyPress={(e) => this.handleKeyPress(e)}
-                            />
-                        </div>
-
+                        <Slider name='Age' />
+                        <Slider name='Distance' />
+                        <Slider name='Rating' />
+                        <Tags />
+                        <button
+                            className='button'
+                            onClick={() => this.props.Research.search()}
+                        >Search</button>
                     </div>
                 </div>
-                <div className="content">
-                    <div className="user_profile_result">
-                        <div className="user_profile_result_img">
-                            <img src={require('../../images/test.jpg')} alt="name"/>
-                        </div>
-                        <div className="user_profile_result_info">
-                            <p>Name</p>
-                            <p>Age</p>
-                        </div>
-                    </div>
-
-                </div>
+                {
+                    listOfPeople && <People listOfPeople={listOfPeople}/>
+                }
             </main>
         );
     }
