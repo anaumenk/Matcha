@@ -30,13 +30,13 @@ class Account extends Model{
         return $result;
     }
 
-    public function createUser($firstName, $lastName, $email, $login, $password, $gender) {
+    public function createUser($firstName, $lastName, $email, $login, $password, $gender, $token) {
         $password = hash('whirlpool', $password);
         $this->db->query("INSERT INTO `users` (`firstName`, `lastName`, `login`, `email`, `password`,
                                                 `gender`, `occupation`, `biography`, `latitude`,
-                                                `longitude`, `tags`)
+                                                `longitude`, `tags`, `token`)
                           VALUES ('$firstName', '$lastName', '$login', '$email', '$password',
-                                  '$gender', '', '', '', '', '')");
+                                  '$gender', '', '', '', '', '', '$token')");
     }
 
     public function createPhoto($userId) {
@@ -58,6 +58,12 @@ class Account extends Model{
                               INNER JOIN views ON users.userId = views.userWho
                               WHERE views.userWhom = :userId", $params);
         return $result;
+    }
+
+    public function activateAccount($token) {
+        $this->db->query("UPDATE `users`
+                          SET `token` = ''
+                         WHERE `token` = '$token'");
     }
 }
 

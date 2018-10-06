@@ -6,6 +6,7 @@ import {fetchPost} from "../../../fetch";
 @observer
 export default class Photos extends Component {
     addPhoto(e) {
+        e.preventDefault();
         let file = e.target.files[0],
            photoId;
         photoId = this.props.Photo.one === '' ? 1 : (this.props.Photo.two === '' ? 2 :
@@ -15,9 +16,7 @@ export default class Photos extends Component {
            reader.addEventListener('load', () => {
                this.props.Photo.newPhoto = reader.result;
                let params = `userId=${localStorage.getItem('userId')}&newPhoto=${this.props.Photo.newPhoto}&photoId=${photoId}`;
-               fetchPost('addPhoto', params).then(a => {
-                   console.log(a);
-               });
+               fetchPost('addPhoto', params);
            });
            reader.readAsDataURL(file);
         }

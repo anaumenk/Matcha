@@ -18,9 +18,6 @@ import Footer from './components/Footer';
 
 import RoutesList from './components/Routes';
 import {BrowserRouter as Router} from 'react-router-dom';
-// import {fetchGet} from "./fetch";
-
-// import Login from './components/store/LoginSignup'
 import {inject, observer} from 'mobx-react';
 
 @inject('Login')

@@ -4,6 +4,7 @@ import {fetchPost} from "../../fetch";
 import {inject, observer} from 'mobx-react';
 
 class ForgotPass extends Component {
+
     state = {
         login: '',
         email: '',
@@ -20,11 +21,11 @@ class ForgotPass extends Component {
             login,
             email,
         } = this.state;
+
         return (
             <div id="forgot">
 
                 <form>
-
                     <div className="field-wrap">
                         <input
                             className="input"
@@ -35,7 +36,6 @@ class ForgotPass extends Component {
                             onChange={(e) => this.handleUserInput(e)}
                         />
                     </div>
-
                     <div className="field-wrap">
                         <input
                             className="input"
@@ -46,9 +46,7 @@ class ForgotPass extends Component {
                             onChange={(e) => this.handleUserInput(e)}
                         />
                     </div>
-
                     <button className="button button-block">Recover</button>
-
                 </form>
             </div>
         );
@@ -58,6 +56,7 @@ class ForgotPass extends Component {
 @inject('Login')
 @observer
 class SignUpForm extends Component {
+
     state = {
         login: '',
         password: '',
@@ -71,7 +70,6 @@ class SignUpForm extends Component {
         loginValid: false,
         formValid: false,
     };
-
 
     validateField(fieldName, value) {
         let fieldValidationErrors = this.state.formErrors,
@@ -113,27 +111,26 @@ class SignUpForm extends Component {
         const value = e.target.value;
         this.setState({[name]: value},
             () => {this.validateField(name, value)});
+        if (name === 'login') {
+            this.setState({
+                formErrors: {login: ''}
+            });
+        }
     };
 
     handleSubmit = (e) => {
         e.preventDefault();
-        // this.noErrors();
-        let params = `firstName=${this.state.firstName}&lastName=${this.state.lastName}&
-        email=${this.state.email}&login=${this.state.login}&password=${this.state.password}&
-        gender=${this.state.gender}`;
+        let params = `firstName=${this.state.firstName}&lastName=${this.state.lastName}&email=${
+            this.state.email}&login=${this.state.login}&password=${this.state.password
+        }&gender=${this.state.gender}`;
         fetchPost('register', params).then(response => {
-            // console.log(response);
             let array = JSON.parse(response);
             if (array['error'] === 'true') {
                 this.validateField(array['fieldName']);
             }
             else if (array['error'] === 'false') {
-                this.props.Login.LogIn(this.state.login);
+                this.props.LoginFormOpen();
             }
-            // else {
-            //     this.props.Login.LogIn(array['login']);
-            //     // this.props.myStore.LogIn();
-            // }
         });
     };
 
@@ -231,15 +228,15 @@ class SignUpForm extends Component {
 @inject('User')
 @observer
 class LogInForm extends Component {
+
     state = {
         login: '',
         password: '',
-        formErrors: {password: '', login: ''},
+        formErrors: {password: '', login: '', account: ''},
         passwordValid: false,
         loginValid: false,
         formValid: false,
     };
-
 
     validateField(fieldName) {
         let fieldValidationErrors = this.state.formErrors;
@@ -253,6 +250,9 @@ class LogInForm extends Component {
                 break;
             case 'password':
                 fieldValidationErrors.password = error;
+                break;
+            case 'account':
+                fieldValidationErrors.account = 'not activate';
                 break;
             default:
                 break;
@@ -286,8 +286,6 @@ class LogInForm extends Component {
             }
             else {
                 this.props.Login.LogIn(array[0]['userId']);
-                // this.props.User.pushInfo(array[0]);
-                // console.log(this.props.User.userId);
             }
         });
     }
@@ -339,6 +337,7 @@ class LogInForm extends Component {
 }
 
 export default class Form extends Component {
+
     state = {
         active: {background: '#1ab188', color: '#ffffff'},
         notactive: {},
@@ -352,6 +351,14 @@ export default class Form extends Component {
         });
     };
 
+    LoginFormOpen = () => {
+      this.setState({
+          form: <LogInForm />,
+          active: {background: '#1ab188', color: '#ffffff'},
+          notactive: {}
+      });
+    };
+
     ChooseForm(e) {
         if (e.target.innerHTML === 'Sign Up') {
             this.setState({
@@ -361,6 +368,7 @@ export default class Form extends Component {
                     password={this.state.password}
                     firstName={this.state.firstName}
                     lastName={this.state.lastName}
+                    LoginFormOpen={this.LoginFormOpen}
                 />,
                 active: {},
                 notactive: {background: '#1ab188', color: '#ffffff'},
@@ -381,7 +389,7 @@ export default class Form extends Component {
         const {
             active,
             form,
-            notactive,
+            notactive
         } = this.state;
 
         return (

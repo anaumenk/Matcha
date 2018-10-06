@@ -104,7 +104,7 @@ export default class UserProfile extends Component {
                             {this.tagList()}
                         </div>
                     </div>
-                    <p style={{fontWeight: 'bold'}}>Rating <span style={{color: '#179b77'}}>{rating}</span></p>
+                    <p style={{fontWeight: 'bold', margin: '10px 0'}}>Rating <span style={{color: '#179b77'}}>{rating}</span></p>
                 </div>
 
             </div>

@@ -17,9 +17,11 @@ class SearchController extends Controller {
         $RatingEnd = trim($_REQUEST['RatingEnd']);
         $tags = trim($_REQUEST['tags']);
         $search = trim($_REQUEST['search']);
+        $gender = trim($_REQUEST['gender']);
+        $orientation = trim($_REQUEST['orientation']);
 
         $response = $this->model->doSeach($userId, $sortBy, $AgeStart, $AgeEnd, $DistanceStart, $DistanceEnd, $RatingStart,
-            $RatingEnd, $tags, $search);
+            $RatingEnd, $tags, $search, $gender, $orientation);
 
         echo json_encode($response);
     }

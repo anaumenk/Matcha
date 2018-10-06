@@ -61,4 +61,15 @@ return [
         'controller' => 'search',
         'action' => 'search',
     ],
+
+    'activateAccount' => [
+        'controller' => 'account',
+        'action' => 'activateAccount',
+    ],
+
+    'prewUser' => [
+        'controller' => 'account',
+        'action' => 'prewUser',
+    ],
+
 ];

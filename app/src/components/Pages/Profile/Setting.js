@@ -1,12 +1,28 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
-// import UserProfile from './UserProfile';
+import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 // const google = window.google;
+
+@inject('Profile')
+@observer
+class Popup extends Component {
+    render() {
+        return (
+            <div className="popup">
+                <p>Saved succesfully</p>
+                <button
+                    className="button"
+                    onClick={() => this.props.Profile.popup = false}
+                >OK</button>
+            </div>
+        );
+    }
+}
 
 @inject('User')
 @inject('Profile')
 @observer
-export default class Setting extends Component {
+class Setting extends Component {
     birthYear = () => {
         let select = [];
         let year = 1918;
@@ -34,14 +50,20 @@ export default class Setting extends Component {
 
     handleChange = (e) => {
         // let emailValid = this.state.emailValid;
-        // switch(e.target.name) {
-        //     case 'email':
-        //         emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
-        //         fieldValidationErrors.email = emailValid ? '' : ' is invalid';
-        //         break;
-        //     default:
-        //         break;
-        // }
+
+        switch(e.target.name) {
+            case 'email':
+                console.log(e.target.value);
+                if (!e.target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+                    this.props.Profile.style = '1px solid red';
+                }
+                else {
+                    this.props.Profile.style = 'none';
+                }
+                break;
+            default:
+                break;
+        }
         this.props.User[e.target.name] = e.target.value;
     };
 
@@ -72,16 +94,13 @@ export default class Setting extends Component {
 
     handleKeyPress(e) {
         if (e.key === "Enter" && this.props.User.newTag !== '') {
-            this.props.User.tags += ',' + this.props.User.newTag;
-            this.props.User.newTag = '';
+            this.props.User.addNewTag();
         }
     }
-    // componentDidMount() {
-    //     let center = {lat: Number(this.state.latitude), lng: Number(this.state.longitude)};
-    //     let map = new google.maps.Map(
-    //         document.getElementById('map'), {zoom: 8, center: center});
-    //     new google.maps.Marker({position: center, map: map});
-    // }
+
+    Position(marker, map) {
+        console.log(marker);
+    }
 
     render() {
         const {
@@ -96,11 +115,9 @@ export default class Setting extends Component {
             birthMonth,
             birthYear,
             siteColor,
-            // latitude,
-            // longitude,
-            // tags,
+            latitude,
+            longitude,
             newTag,
-            // map,
         } = this.props.User;
 
         return (
@@ -115,7 +132,13 @@ export default class Setting extends Component {
                 </div>
                 <div className="edit_field">
                     <p>Email adress</p>
-                    <input type="email" value={email} name="email" onChange={(e) => this.handleChange(e)}/>
+                    <input
+                        type="email"
+                        value={email}
+                        name="email"
+                        onChange={(e) => this.handleChange(e)}
+                        style={{border: this.props.Profile.style}}
+                    />
                 </div>
                 <div className="edit_field">
                     <p>Orientation</p>
@@ -181,19 +204,46 @@ export default class Setting extends Component {
                            onKeyPress={(e) => this.handleKeyPress(e)}
                     />
                 </div>
-                {/*<div id="location">*/}
-                    {/*<p>Location</p>*/}
-                    {/*<div id="map"></div>*/}
-                    {/*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlgtB5jjzXNhwEUU3RLUmj62ZGD1wzUKg"*/}
-                            {/*async defer></script>*/}
-                {/*</div>*/}
+                <div id="location">
+                    <p>Location</p>
+                    <div id="map">
+                        <Map
+                            google={this.props.google}
+                            zoom={14}
+                            initialCenter= {{
+                                 lat: latitude,
+                                 lng: longitude
+                            }}
+                        >
+                            <Marker
+                                draggable={true}
+                                onDragend={this.Position}
+                                // position={{
+                                //      lat: latitude,
+                                //      lng: longitude
+                                // }}
+                            />
+                        </Map>
+                    </div>
+                </div>
                 <button
                     className="button"
-                    style={{width: 300,}}
-                    onClick={() => this.props.User.saveChanges()}
+                    style={{width: 300, marginTop: 10}}
+                    onClick={() => {console.log(this.props.Profile.style);
+                        if (this.props.Profile.style === 'none') {
+
+                            this.props.User.saveChanges();
+                            this.props.Profile.popup = true;
+                        }
+                    }}
                 >Save</button>
+                {this.props.Profile.popup && <Popup />}
             </div>
 
         );
     }
 }
+
+export default GoogleApiWrapper({
+    apiKey: ("AIzaSyAqLNucodvPuxX_30MWoh6g1YT6hWnvzS4")
+})(Setting)

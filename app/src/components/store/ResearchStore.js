@@ -3,7 +3,6 @@ import {fetchPost} from "../../fetch";
 
 class ResearchStore {
 
-    @observable userInput = '';
     @observable sortBy = 'Age';
 
     @observable AgeStart = 18;
@@ -20,22 +19,40 @@ class ResearchStore {
     @observable minRating = 0;
     @observable maxRating = 200;
 
-    @observable tags = [];
+    @observable tags = '';
+    @observable newTag = '';
 
     @observable listOfPeople = [];
 
+    // @observable gender = '';
+    // @observable orientation = '';
+
     @action removeTag = (tagForDel) => {
-        let array = [];
+        let array = '';
         tagForDel = tagForDel.replace('#', '');
-        for (let tag of this.tags) {
+        let tags = this.tags.split(',');
+        for (let tag of tags) {
             if (tag !== tagForDel) {
-                array.push(tag);
+                array += ',' + tag;
             }
         }
         this.tags = array;
+        console.log(this.tags);
     };
 
-    @action search = () => {
+    @action addNewTag() {
+        let tags = this.tags.split(',');
+        for (let tag of tags) {
+            if (tag === this.newTag) {
+                this.newTag = '';
+                return false;
+            }
+        }
+        this.tags += ',' + this.newTag;
+        this.newTag = '';
+    }
+
+    @action search = (gender, orientation) => {
         let params = `userId=${localStorage.getItem('userId')}
             &sortBy=${this.sortBy}
             &AgeStart=${this.AgeStart}
@@ -45,7 +62,9 @@ class ResearchStore {
             &RatingStart=${this.RatingStart}
             &RatingEnd=${this.RatingEnd}
             &tags=${this.tags}
-            &search=research`;
+            &search=research
+            &gender=${gender}
+            &orientation=${orientation}`;
         fetchPost('search', params).then(response => {
             this.listOfPeople = JSON.parse(response);
 
@@ -53,6 +72,18 @@ class ResearchStore {
         this.display = true;
     };
 
+    @action ifTag() {
+        if (this.tags) {
+            let tags = this.tags.split(',');
+            for (let tag of tags) {
+                if (tag === this.newTag) {
+                    this.newTag = '';
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }
 
 const Research = new ResearchStore();

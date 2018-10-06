@@ -30,24 +30,24 @@ export default class Profile extends Component {
                             this.props.Profile.contentChange(<UserProfile />);
                             this.changeColor(e);
                         }}>Profile</a></li>
-                        <li><a className="nav" onClick={(e) => {
+                        <li><a className="nav SettingLink" onClick={(e) => {
                             this.props.Profile.contentChange(<Setting />);
                             this.changeColor(e);
                         }}>Edit profile</a></li>
-                        <li><a className="nav" onClick={(e) => {
+                        <li><a className="nav PhotosLink" onClick={(e) => {
                             this.props.Profile.contentChange(<Photos />);
                             this.changeColor(e);
                         }}>Photos</a></li>
 
-                        <li><a className="nav" onClick={(e) => {
+                        <li><a className="nav ViewsLink" onClick={(e) => {
                             this.props.Profile.contentChange(<Views />);
                             this.changeColor(e);
                         }}>Views</a></li>
-                        <li><a className="nav" onClick={(e) => {
+                        <li><a className="nav LikesLink" onClick={(e) => {
                             this.props.Profile.contentChange(<Likes />);
                             this.changeColor(e);
                         }}>Likes</a></li>
-                        <li><a className="nav" onClick={(e) => {
+                        <li><a className="nav ChatLink" onClick={(e) => {
                             this.props.Profile.contentChange(<Chat />);
                             this.changeColor(e);
                         }}>Chat</a></li>

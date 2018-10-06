@@ -32,6 +32,7 @@
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(19, 35, 47, 0.9);
     overflow: hidden;
+    background-color: #aba6a1;
 }
 
 .chat_user:hover {
@@ -50,14 +51,15 @@
 #messages {
     width: 50%;
     display: none;
+    /*height: 100%;*/
 }
 
 #message_form {
     list-style: none;
     padding: 0 10px 20px;
-    margin-bottom: 10px;
-    overflow: auto;
-
+    margin-top: 10px;
+    /*max-height: 70%;*/
+    overflow-y: auto;
 }
 
 .message_other,  .message_user{
@@ -102,4 +104,5 @@
     background-color: #c1bdba;
     outline: none;
     box-shadow: 0 0 10px rgba(19, 35, 47, 0.9);
+    margin-left: 10px;
 }

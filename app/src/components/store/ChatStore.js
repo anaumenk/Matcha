@@ -14,9 +14,11 @@ class ChatStore {
     }
 
     @action selectUser() {
-        fetchPost('selectChat', `userId=${localStorage.getItem('userId')}&friendId=${this.friendId}`).then(response => {
-            this.messages = JSON.parse(response);
-        });
+        if (this.friendId) {
+            fetchPost('selectChat', `userId=${localStorage.getItem('userId')}&friendId=${this.friendId}`).then(response => {
+                this.messages = JSON.parse(response);
+            });
+        }
     }
 
     @action sendMessage() {

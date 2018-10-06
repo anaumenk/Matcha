@@ -16,14 +16,18 @@ class UserInfo {
     @observable birthMonth = '';
     @observable birthYear = '';
     @observable age = '';
+
     @observable latitude = '';
     @observable longitude = '';
+
     @observable tags = '';
     @observable rating = '';
     @observable siteColor = '';
     @observable siteLanguage = '';
 
     @observable newTag = '';
+
+    // @observable google = {};
 
     @action push() {
         fetchPost('user', `userId=${localStorage.getItem('userId')}`).then(response => {
@@ -33,8 +37,10 @@ class UserInfo {
             this.login = array[0]['login'];
             this.email = array[0]['email'];
             this.password = array[0]['password'];
+
             this.orientation = array[0]['orientation'];
             this.gender = array[0]['gender'];
+
             this.occupation = array[0]['occupation'];
             this.biography = array[0]['biography'];
             this.birth = array[0]['birth'];
@@ -42,24 +48,22 @@ class UserInfo {
             this.latitude = array[0]['latitude'];
             this.longitude = array[0]['longitude'];
             this.tags = array[0]['tags'];
-            console.log(this.tags);
             this.rating = array[0]['rating'];
             this.siteColor = array[0]['siteColor'];
             this.siteLanguage = array[0]['siteLanguage'];
         });
     }
 
-    @action birthData(data) {
-        let array = data.split('-');
+    @action birthData(date) {
+        let array = date.split('-');
         this.birthYear = array[0];
         this.birthMonth = array[1] | 0;
         this.birthDay = array[2] | 0;
-        this.age = ((new Date().getTime() - new Date(data)) / (24 * 3600 * 365.25 * 1000)) | 0;
+        this.age = ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)) | 0;
     }
 
     @action removeTag = (tagForDel) => {
         let array = '';
-        tagForDel = tagForDel.replace('#', '');
         let tags = this.tags.split(',');
         for (let tag of tags) {
             if (tag !== tagForDel) {
@@ -68,6 +72,19 @@ class UserInfo {
         }
         this.tags = array;
     };
+
+    @action addNewTag() {
+        let tags = this.tags.split(',');
+        for (let tag of tags) {
+            if (tag === this.newTag) {
+                this.newTag = '';
+                return false;
+            }
+        }
+        this.tags += (this.tags) ? (',' + this.newTag) : this.newTag;
+
+        this.newTag = '';
+    }
 
     @action saveChanges() {
         const {

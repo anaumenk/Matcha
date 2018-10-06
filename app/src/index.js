@@ -12,6 +12,7 @@ import Views from './components/store/ViewsStore';
 import Likes from './components/store/LikesStore';
 import Chat from './components/store/ChatStore';
 import Research from './components/store/ResearchStore';
+import Register from './components/store/RegisterStore';
 
 ReactDOM.render((
     <Provider
@@ -23,8 +24,9 @@ ReactDOM.render((
         Likes={Likes}
         Chat={Chat}
         Research={Research}
+        Register={Register}
     >
-             <App />
+        <App />
     </Provider>
 ), document.getElementById('root'));
 

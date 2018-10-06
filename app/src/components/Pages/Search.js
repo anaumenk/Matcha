@@ -13,14 +13,19 @@ function getAge(data) {
 export const People = props => (
     <div className="content">
         {props.listOfPeople.map(people => {
+            if (!people.photo) {
+                props.style.backgroundColor = '#aba6a1';
+            }
             return(
                 <div key={people.userId} className="user_profile_result">
-                    <div className="user_profile_result_img">
-                        <img src={require(`../../${people.photo}`)} alt={people.firstName}/>
+                    <div className="user_profile_result_img" style={props.style}>
+                        {people.photo && <img src={require(`../../${people.photo}`)} alt={people.firstName}/>}
                     </div>
                     <div className="user_profile_result_info">
                     <p>{`${people.lastName} ${people.firstName}`}</p>
                     <p>{getAge(people.birth)}</p>
+                        <p>gender: {people.gender}</p>
+                        <p>orienation: {people.orientation}</p>
                     </div>
                 </div>
             )
@@ -33,27 +38,30 @@ export const People = props => (
 export class Tags extends Component {
 
     handleUserInput = (e) => {
-        this.props.Research.userInput = e.target.value;
+        this.props.Research.newTag = e.target.value;
     };
 
     handleKeyPress(e) {
-        if (e.key === "Enter" && this.props.Research.userInput !== '') {
-            let parent = document.getElementsByClassName('tag_list'),
-                newelement = document.createElement('div');
-            newelement.innerHTML = `#${this.props.Research.userInput}`;
-            newelement.className = 'new_tag';
-            newelement.style.cursor = 'pointer';
-            newelement.onclick = (e) => {
-                this.props.Research.removeTag(e.target.innerHTML);
-                e.target.remove();
-            };
-            parent[0].appendChild(newelement);
-            this.props.Research.tags.push(this.props.Research.userInput);
-            this.props.Research.userInput = '';
+        if (e.key === "Enter" && this.props.Research.newTag !== '') {
+            if (this.props.Research.ifTag()) {
+                let parent = document.getElementsByClassName('tag_list'),
+                    newelement = document.createElement('div');
+                newelement.innerHTML = `#${this.props.Research.newTag}`;
+                newelement.className = 'new_tag';
+                newelement.style.cursor = 'pointer';
+                newelement.onclick = (e) => {
+                    let text = e.target.innerHTML;
+                    e.target.remove();
+                    this.props.Research.removeTag(text);
+                };
+                parent[0].appendChild(newelement);
+                this.props.Research.tags += this.props.Research.tags ? ',' + this.props.Research.newTag : this.props.Research.newTag;
+                this.props.Research.newTag = '';
+            }
         }
     }
     render() {
-        const {userInput} = this.props.Research;
+        const {newTag} = this.props.Research;
 
         return (
             <div className="tags">
@@ -62,7 +70,7 @@ export class Tags extends Component {
                 </div>
                 <input type="text"
                        onChange={this.handleUserInput}
-                       value={userInput}
+                       value={newTag}
                        onKeyPress={(e) => this.handleKeyPress(e)}
                 />
             </div>
@@ -129,6 +137,7 @@ export class Slider extends Component {
     }
 }
 
+@inject('User')
 @inject('Research')
 @observer
 export default class Search extends Component {
@@ -136,11 +145,20 @@ export default class Search extends Component {
         this.props.Research[e.target.name] = e.target.value;
     };
 
+    componentWillMount() {
+        this.props.User.push();
+    }
+
     render() {
         const {
             sortBy,
             listOfPeople
         } = this.props.Research;
+
+        const {
+            gender,
+            orientation
+        } = this.props.User;
 
         return (
             <main>
@@ -160,12 +178,13 @@ export default class Search extends Component {
                         <Tags />
                         <button
                             className='button'
-                            onClick={() => this.props.Research.search()}
+                            style={{marginTop:10}}
+                            onClick={() => this.props.Research.search(gender, orientation)}
                         >Search</button>
                     </div>
                 </div>
                 {
-                    listOfPeople && <People listOfPeople={listOfPeople}/>
+                    listOfPeople && <People listOfPeople={listOfPeople} style={{backgroundColor: ''}}/>
                 }
             </main>
         );

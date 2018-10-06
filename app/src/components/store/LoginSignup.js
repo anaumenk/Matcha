@@ -4,10 +4,6 @@ class LoginStore {
 
     @observable isAuthenticated = localStorage.getItem('userId');
 
-    // @action nameChange = (newname) => {
-    //     this.name = newname;
-    // };
-
     @action LogIn = (userId) => {
         localStorage.setItem('userId', userId);
         this.isAuthenticated = true;

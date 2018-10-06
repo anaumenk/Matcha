@@ -27,7 +27,8 @@ class Chat extends Model{
         $result = $this->db->row("SELECT id, sender AS senderId, `user` AS userId, messages AS text
                                   FROM chat
                                   WHERE (chat.sender = :userId OR chat.sender = :friendId)
-                                  AND (chat.user = :userId OR chat.user = :friendId)", $params);
+                                  AND (chat.user = :userId OR chat.user = :friendId)
+                                  ORDER BY id DESC", $params);
         return $result;
     }
 
