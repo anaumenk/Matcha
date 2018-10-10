@@ -22,6 +22,13 @@ class UserPhotos {
             this.five = array[0][5];
         });
     }
+
+    @action addPhoto() {
+        let photoId = this.one === '' ? 1 : (this.two === '' ? 2 :
+            (this.three === '' ? 3 : (this.four === '' ? 4 : 5))),
+            params = `userId=${localStorage.getItem('userId')}&newPhoto=${this.newPhoto}&photoId=${photoId}`;
+        fetchPost('addPhoto', params);
+    }
 }
 
 const Photo = new UserPhotos();

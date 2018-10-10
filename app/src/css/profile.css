@@ -46,10 +46,10 @@ main {
 }
 
 .popup {
-    height: 300px;
+    height: 100px;
     width: 50%;
     position: absolute;
-    /*top: 0;*/
+    top: 0;
     right: 0;
     left: 0;
     bottom: 0;
@@ -61,6 +61,7 @@ main {
     justify-content: center;
     align-items: center;
     font-size: large;
+    z-index: 3;
 }
 
 .popup button {

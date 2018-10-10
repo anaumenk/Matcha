@@ -35,7 +35,7 @@
     align-self: center;
 }
 
-.user_profile_photo i:hover {
+.user_profile_photo i:hover, #user_profile .closeForm:hover{
     transform: scale(1.1);
     transition: 1s;
 }
@@ -67,4 +67,53 @@
 
 .new_tag {
     margin: 10px;
+}
+
+.profileButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.profileButtons div {
+    width: 100%;
+}
+
+.profileButtons div button {
+    width: 80px;
+    padding: 10px 0;
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    text-transform: uppercase;
+
+    color: #ffffff;
+    transition: all 0.5s ease;
+    -webkit-appearance: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.redButton {
+    background: #ad5e4a;
+}
+
+.redButton:hover, .redButton:hover {
+    background: #a05249;
+}
+
+.greenButton {
+    background: #1ab188;
+}
+
+.greenButton:hover, .greenButton:focus {
+    background: #179b77;
+}
+
+.profileButtons i {
+    font-size: 30px;
+    margin-right: 10px;
+    text-align: right;
+    cursor: pointer;
+    align-self: center;
 }

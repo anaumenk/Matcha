@@ -22,7 +22,7 @@ import {inject, observer} from 'mobx-react';
 
 @inject('Login')
 @observer
-class App extends Component {
+export default class App extends Component {
     render() {
         const {isAuthenticated} = this.props.Login;
         return (
@@ -41,5 +41,3 @@ class App extends Component {
         );
     }
 }
-
-export default App;

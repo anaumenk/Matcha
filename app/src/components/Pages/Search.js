@@ -1,67 +1,70 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
+import Popup from "./Profile/Setting";
 
-function getAge(data) {
-    let array = data.split('-'),
-        year = array[0],
-        month = array[1] | 0,
-        day = array[2] | 0,
-        date = year-month-day;
+function getAge(date) {
     return ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)) | 0;
 }
 
-export const People = props => (
-    <div className="content">
-        {props.listOfPeople.map(people => {
-            if (!people.photo) {
-                props.style.backgroundColor = '#aba6a1';
-            }
-            return(
-                <div key={people.userId} className="user_profile_result">
-                    <div className="user_profile_result_img" style={props.style}>
-                        {people.photo && <img src={require(`../../${people.photo}`)} alt={people.firstName}/>}
-                    </div>
-                    <div className="user_profile_result_info">
-                    <p>{`${people.lastName} ${people.firstName}`}</p>
-                    <p>{getAge(people.birth)}</p>
-                        <p>gender: {people.gender}</p>
-                        <p>orienation: {people.orientation}</p>
-                    </div>
-                </div>
-            )
-        })}
-    </div>
-);
+@inject('Search')
+@inject('Profile')
+@observer
+export class People extends Component {
+    render() {
+        return (
+            <div className="content">
+                {this.props.Search.listOfPeople.map(people => {
+                    return (
+                        <div key={people.userId} className="user_profile_result">
+                            <div
+                                className="user_profile_result_img"
+                                onClick={() => this.props.Profile.openUserProfile(people.userId)}
+                            >
+                                {people.photo && <img src={require(`../../${people.photo}`)} alt={people.firstName}/>}
+                            </div>
+                            <div className="user_profile_result_info">
+                                <p>{`${people.lastName} ${people.firstName}`}</p>
+                                <p>{getAge(people.birth)}</p>
+                                <p>gender: {people.gender}</p>
+                                <p>orienation: {people.orientation}</p>
+                            </div>
+                        </div>
+                    )
+                })}
+            </div>
+        );
+    }
+}
 
-@inject('Research')
+@inject('Search')
 @observer
 export class Tags extends Component {
 
     handleUserInput = (e) => {
-        this.props.Research.newTag = e.target.value;
+        this.props.Search.newTag = e.target.value;
     };
 
     handleKeyPress(e) {
-        if (e.key === "Enter" && this.props.Research.newTag !== '') {
-            if (this.props.Research.ifTag()) {
+        if (e.key === "Enter" && this.props.Search.newTag !== '') {
+            if (this.props.Search.ifTag()) {
                 let parent = document.getElementsByClassName('tag_list'),
                     newelement = document.createElement('div');
-                newelement.innerHTML = `#${this.props.Research.newTag}`;
+                newelement.innerHTML = `#${this.props.Search.newTag}`;
                 newelement.className = 'new_tag';
                 newelement.style.cursor = 'pointer';
                 newelement.onclick = (e) => {
                     let text = e.target.innerHTML;
                     e.target.remove();
-                    this.props.Research.removeTag(text);
+                    this.props.Search.removeTag(text);
                 };
                 parent[0].appendChild(newelement);
-                this.props.Research.tags += this.props.Research.tags ? ',' + this.props.Research.newTag : this.props.Research.newTag;
-                this.props.Research.newTag = '';
+                this.props.Search.tags += this.props.Search.tags ? ',' + this.props.Search.newTag : this.props.Search.newTag;
+                this.props.Search.newTag = '';
             }
         }
     }
     render() {
-        const {newTag} = this.props.Research;
+        const {newTag} = this.props.Search;
 
         return (
             <div className="tags">
@@ -78,7 +81,8 @@ export class Tags extends Component {
     }
 }
 
-@inject('Research')
+@inject('Search')
+@inject('Profile')
 @observer
 export class Slider extends Component {
     handleChange = () => {
@@ -99,8 +103,8 @@ export class Slider extends Component {
                 number2.innerHTML = slide2;
             };
         });
-        this.props.Research[`${this.props.name}Start`] = number1.innerHTML;
-        this.props.Research[`${this.props.name}End`] = number2.innerHTML;
+        this.props.Search[`${this.props.name}Start`] = number1.innerHTML;
+        this.props.Search[`${this.props.name}End`] = number2.innerHTML;
     };
 
     render() {
@@ -110,24 +114,24 @@ export class Slider extends Component {
                 <div className="text">
                     <p className="name">{name}</p>
                     <div className="interval">
-                        <p className={`left_${name}`}>{this.props.Research[`${name}Start`]}</p>
+                        <p className={`left_${name}`}>{this.props.Search[`${name}Start`]}</p>
                         <p>-</p>
-                        <p className={`right_${name}`}>{this.props.Research[`${name}End`]}</p>
+                        <p className={`right_${name}`}>{this.props.Search[`${name}End`]}</p>
                     </div>
                 </div>
                 <div className={`line ${name}`}>
                     <input
-                        value={this.props.Research[`${name}Start`]}
-                        min={this.props.Research[`min${name}`]}
-                        max={this.props.Research[`max${name}`]}
+                        value={this.props.Search[`${name}Start`]}
+                        min={this.props.Search[`min${name}`]}
+                        max={this.props.Search[`max${name}`]}
                         step="1"
                         type="range"
                         onChange={this.handleChange}
                     />
                     <input
-                        value={this.props.Research[`${name}End`]}
-                        min={this.props.Research[`min${name}`]}
-                        max={this.props.Research[`max${name}`]}
+                        value={this.props.Search[`${name}End`]}
+                        min={this.props.Search[`min${name}`]}
+                        max={this.props.Search[`max${name}`]}
                         step="1"
                         type="range"
                         onChange={this.handleChange} />
@@ -138,11 +142,12 @@ export class Slider extends Component {
 }
 
 @inject('User')
-@inject('Research')
+@inject('Search')
+@inject('Profile')
 @observer
 export default class Search extends Component {
     handleChange = (e) => {
-        this.props.Research[e.target.name] = e.target.value;
+        this.props.Search[e.target.name] = e.target.value;
     };
 
     componentWillMount() {
@@ -153,7 +158,7 @@ export default class Search extends Component {
         const {
             sortBy,
             listOfPeople
-        } = this.props.Research;
+        } = this.props.Search;
 
         const {
             gender,
@@ -179,13 +184,13 @@ export default class Search extends Component {
                         <button
                             className='button'
                             style={{marginTop:10}}
-                            onClick={() => this.props.Research.search(gender, orientation)}
+                            onClick={() => this.props.Search.search(gender, orientation)}
                         >Search</button>
                     </div>
                 </div>
-                {
-                    listOfPeople && <People listOfPeople={listOfPeople} style={{backgroundColor: ''}}/>
-                }
+                {listOfPeople && <People />}
+                {this.props.Profile.profile}
+                {this.props.Profile.popup && <Popup />}
             </main>
         );
     }

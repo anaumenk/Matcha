@@ -5,15 +5,20 @@ import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 @inject('Profile')
 @observer
-class Popup extends Component {
+export class Popup extends Component {
+
+    componentWillMount() {
+        setTimeout(() => this.close(), 1000);
+    }
+
+    close() {
+        this.props.Profile.popup = false;
+    }
+
     render() {
         return (
             <div className="popup">
-                <p>Saved succesfully</p>
-                <button
-                    className="button"
-                    onClick={() => this.props.Profile.popup = false}
-                >OK</button>
+                <p>{this.props.Profile.popupText}</p>
             </div>
         );
     }
@@ -229,15 +234,15 @@ class Setting extends Component {
                 <button
                     className="button"
                     style={{width: 300, marginTop: 10}}
-                    onClick={() => {console.log(this.props.Profile.style);
+                    onClick={() => {
                         if (this.props.Profile.style === 'none') {
 
                             this.props.User.saveChanges();
+                            this.props.Profile.popupText = 'Saved succesfully';
                             this.props.Profile.popup = true;
                         }
                     }}
                 >Save</button>
-                {this.props.Profile.popup && <Popup />}
             </div>
 
         );

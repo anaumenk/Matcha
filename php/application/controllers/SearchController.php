@@ -7,21 +7,20 @@ use application\core\Controller;
 class SearchController extends Controller {
 
     public function searchAction() {
-        $userId = trim($_REQUEST['userId']);
-        $sortBy = trim($_REQUEST['sortBy']);
-        $AgeStart = trim($_REQUEST['AgeStart']);
-        $AgeEnd = trim($_REQUEST['AgeEnd']);
-        $DistanceStart = trim($_REQUEST['DistanceStart']);
-        $DistanceEnd = trim($_REQUEST['DistanceEnd']);
-        $RatingStart = trim($_REQUEST['RatingStart']);
-        $RatingEnd = trim($_REQUEST['RatingEnd']);
-        $tags = trim($_REQUEST['tags']);
-        $search = trim($_REQUEST['search']);
-        $gender = trim($_REQUEST['gender']);
-        $orientation = trim($_REQUEST['orientation']);
+        $userId = $_REQUEST['userId'];
+        $sortBy = $_REQUEST['sortBy'];
+        $AgeStart = $_REQUEST['AgeStart'];
+        $AgeEnd = $_REQUEST['AgeEnd'];
+        $DistanceStart = $_REQUEST['DistanceStart'];
+        $DistanceEnd = $_REQUEST['DistanceEnd'];
+        $RatingStart = $_REQUEST['RatingStart'];
+        $RatingEnd = $_REQUEST['RatingEnd'];
+        $tags = $_REQUEST['tags'];
+        $gender = $_REQUEST['gender'];
+        $orientation = $_REQUEST['orientation'];
 
         $response = $this->model->doSeach($userId, $sortBy, $AgeStart, $AgeEnd, $DistanceStart, $DistanceEnd, $RatingStart,
-            $RatingEnd, $tags, $search, $gender, $orientation);
+            $RatingEnd, $tags, $gender, $orientation);
 
         echo json_encode($response);
     }

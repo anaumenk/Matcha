@@ -22,6 +22,20 @@ class Account extends Model{
         return $result;
     }
 
+    public function getUserBlocked($userId) {
+        $blocked = $this->db->row("SELECT idWhom AS blocked
+                                        FROM block
+                                        WHERE idWho = '$userId'");
+        return $blocked;
+    }
+
+    public function getUserLiked($userId) {
+        $liked = $this->db->row("SELECT userWhom AS liked
+                                      FROM likes
+                                      WHERE userWho = '$userId'");
+        return $liked;
+    }
+
     public function getUserPhoto($userId) {
         $params = [
             'userId' => $userId,
@@ -35,13 +49,13 @@ class Account extends Model{
         $this->db->query("INSERT INTO `users` (`firstName`, `lastName`, `login`, `email`, `password`,
                                                 `gender`, `occupation`, `biography`, `latitude`,
                                                 `longitude`, `tags`, `token`)
-                          VALUES ('$firstName', '$lastName', '$login', '$email', '$password',
-                                  '$gender', '', '', '', '', '', '$token')");
+                               VALUES ('$firstName', '$lastName', '$login', '$email', '$password',
+                               '$gender', '', '', '', '', '', '$token')");
     }
 
     public function createPhoto($userId) {
         $this->db->query("INSERT INTO `photos` (`userId`, `1`, `2`, `3`, `4`, `5`)
-                          VALUES ('$userId', '', '', '', '', '')");
+                               VALUES ('$userId', '', '', '', '', '')");
     }
 
     public function getUserLikesViews($userId, $action) {
@@ -60,10 +74,31 @@ class Account extends Model{
         return $result;
     }
 
-    public function activateAccount($token) {
-        $this->db->query("UPDATE `users`
-                          SET `token` = ''
-                         WHERE `token` = '$token'");
+    public function activateAccount($token, $login) {
+        $sql = $this->db->row("SELECT * FROM users 
+                                    WHERE login = '$login'");
+        if ($sql) {
+            if ($sql[0]['token'] != '') {
+                $this->db->query("UPDATE `users`
+                                       SET `token` = ''
+                                       WHERE `token` = '$token'");
+                $response = 'Congratulations!';
+            }
+            else {
+                $response = 'You already confirmed your account.';
+            }
+        }
+        else {
+            $response = 'Wrong login!';
+        }
+        return $response;
+    }
+
+    public function changePass($password, $login, $email) {
+        $this->db->query("UPDATE users 
+                               SET `password` = '$password' 
+                               WHERE `login` = '$login'
+                               AND `email` = '$email'");
     }
 }
 

@@ -8,6 +8,7 @@ class View extends Component {
 
     componentWillMount() {
         this.props.Views.push();
+        this.props.Profile.profile = '';
     }
 
     render () {

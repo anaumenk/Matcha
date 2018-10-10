@@ -7,6 +7,7 @@ import Likes from './Likes';
 import Chat from './Chat';
 import Photos from './Photos';
 import UserProfile from './UserProfile';
+import {Popup} from "./Setting";
 
 @inject('Profile')
 @observer
@@ -56,16 +57,7 @@ export default class Profile extends Component {
                 </div>
                 <div className="content">
                     {content}
-                    {/*<div>*/}
-                        {/*{this.state.products.map(product =>*/}
-                            {/*<Product*/}
-                                {/*key={product.userId}*/}
-                                {/*firstName={product.firstName}*/}
-                                {/*lastName={product.lastName}*/}
-                                {/*email={product.email}*/}
-                            {/*/>*/}
-                        {/*)}*/}
-                    {/*</div>*/}
+                    {this.props.Profile.popup && <Popup />}
                 </div>
             </main>
         );

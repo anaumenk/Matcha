@@ -5,22 +5,33 @@ import {inject, observer} from 'mobx-react';
 @observer
 class FriendsList extends Component {
     selectUser = (e, userId) => {
-        let elements = document.getElementsByClassName('chat_user');
-        for(let i = 0, length = elements.length; i < length; i++) {
-            elements[i].style.backgroundColor = '#c1bdba';
-        }
-        if (e.target.className === 'chat_user') {
-            e.target.style.backgroundColor = '#aba6a1';
-        }
-        else if (e.target.parentNode.className === 'chat_user_image') {
-            e.target.parentNode.parentNode.style.backgroundColor = '#aba6a1';
+        if (this.props.Chat.friendId !== userId) {
+            let elements = document.getElementsByClassName('chat_user');
+            for(let i = 0, length = elements.length; i < length; i++) {
+                elements[i].style.backgroundColor = '#c1bdba';
+            }
+            if (e.target.className === 'chat_user') {
+                e.target.style.backgroundColor = '#aba6a1';
+            }
+            else if (e.target.parentNode.className === 'chat_user_image') {
+                e.target.parentNode.parentNode.style.backgroundColor = '#aba6a1';
+            }
+            else {
+                e.target.parentNode.style.backgroundColor = '#aba6a1';
+            }
+            document.getElementById('messages').style.display = 'unset';
+            this.props.Chat.friendId = userId;
+            this.props.Chat.selectUser();
         }
         else {
-            e.target.parentNode.style.backgroundColor = '#aba6a1';
+            let elements = document.getElementsByClassName('chat_user');
+            for(let i = 0, length = elements.length; i < length; i++) {
+                elements[i].style.backgroundColor = '#c1bdba';
+            }
+            document.getElementById('messages').style.display = 'none';
+            this.props.Chat.friendId = '';
         }
-        document.getElementById('messages').style.display = 'unset';
-        this.props.Chat.friendId = userId;
-        this.props.Chat.selectUser();
+
     };
 
     render() {

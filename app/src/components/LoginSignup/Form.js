@@ -3,29 +3,80 @@ import {FormErrors} from './FormErrors';
 import {fetchPost} from "../../fetch";
 import {inject, observer} from 'mobx-react';
 
+@inject('Login')
+@observer
 class ForgotPass extends Component {
 
     state = {
         login: '',
         email: '',
+        formErrors: {login: '', email: ''},
+        emailValid: false,
+        loginValid: false,
+        formValid: false,
     };
 
     handleUserInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
         this.setState({[name]: value});
+        this.setState({
+                formErrors: {login: '', email: ''}
+            });
     };
+
+    validateField(fieldName) {
+        let fieldValidationErrors = this.state.formErrors,
+            loginValid = this.state.loginValid,
+            emailValid = this.state.emailValid;
+        switch(fieldName) {
+            case 'login':
+                fieldValidationErrors.login = 'wrong';
+                break;
+            case 'email':
+                fieldValidationErrors.email = 'нет такого';
+                break;
+            default:
+                break;
+        }
+        this.setState({formErrors: fieldValidationErrors,
+            loginValid: loginValid,
+            emailValid: emailValid
+        }, this.validateForm);
+    }
+
+    validateForm() {
+        console.log(this.state.formErrors);
+        this.setState({formValid: this.state.loginValid && this.state.emailValid});
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        let params = `login=${this.state.login}&email=${this.state.email}`;
+        fetchPost('forgotPass', params).then(response => {
+            let array = JSON.parse(response);
+
+            if (array['error'] === true) {
+                console.log(array);
+                this.validateField(array['fieldName']);
+            }
+            else {
+                this.props.LoginFormOpen();
+            }
+        });
+    }
 
     render() {
         const {
             login,
             email,
+            formErrors
         } = this.state;
 
         return (
             <div id="forgot">
 
-                <form>
+                <form onSubmit={(e) =>this.handleSubmit(e)}>
                     <div className="field-wrap">
                         <input
                             className="input"
@@ -48,6 +99,7 @@ class ForgotPass extends Component {
                     </div>
                     <button className="button button-block">Recover</button>
                 </form>
+                <FormErrors formErrors={formErrors} />
             </div>
         );
     }
@@ -63,7 +115,7 @@ class SignUpForm extends Component {
         firstName: '',
         lastName: '',
         email: '',
-        gender: 1,
+        gender: 'man',
         formErrors: {password: '', email: '', login: ''},
         passwordValid: false,
         emailValid: false,
@@ -185,8 +237,8 @@ class SignUpForm extends Component {
 
                         <div className="field-wrap">
                             <select id="gender" name="gender" onClick={(e) => this.handleUserInput(e)}>
-                                <option value="1">Man</option>
-                                <option value="2">Woman</option>
+                                <option value="man">Man</option>
+                                <option value="woman">Woman</option>
                             </select>
                         </div>
                     </div>
@@ -346,7 +398,7 @@ export default class Form extends Component {
 
     ForgotPass = () => {
         this.setState({
-            form: <ForgotPass />,
+            form: <ForgotPass LoginFormOpen={this.LoginFormOpen} />,
             active: {},
         });
     };

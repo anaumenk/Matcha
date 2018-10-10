@@ -72,4 +72,29 @@ return [
         'action' => 'prewUser',
     ],
 
+    'fakeUser' => [
+        'controller' => 'profile',
+        'action' => 'fakeUser',
+    ],
+
+    'blockUser' => [
+        'controller' => 'profile',
+        'action' => 'blockUser',
+    ],
+
+    'likeUser' => [
+        'controller' => 'profile',
+        'action' => 'likeUser',
+    ],
+
+    'unLikeUser' => [
+        'controller' => 'profile',
+        'action' => 'unLikeUser',
+    ],
+
+    'forgotPass' => [
+        'controller' => 'account',
+        'action' => 'forgotPass',
+    ],
+
 ];
