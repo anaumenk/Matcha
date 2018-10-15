@@ -32,7 +32,8 @@ class AccountController extends Controller {
         $user = $this->model->getUserId($userId);
         $blocked = $this->model->getUserBlocked($userId);
         $liked = $this->model->getUserLiked($userId);
-        array_push($user, $blocked, $liked);
+        $tags = $this->model->getUserTags($userId);
+        array_push($user, $blocked, $liked, $tags);
         echo json_encode($user);
     }
 
@@ -56,6 +57,8 @@ class AccountController extends Controller {
         $login = $_REQUEST['login'];
         $password = $_REQUEST['password'];
         $gender = $_REQUEST['gender'];
+        $latitude = $_REQUEST['latitude'];
+        $longitude = $_REQUEST['longitude'];
 
         $sql = $this->model->getUserLogin($login);
         if ($sql) {
@@ -64,10 +67,10 @@ class AccountController extends Controller {
         else {
             $token = hash('whirlpool', $email.time());
 
-            $this->model->createUser($firstName, $lastName, $email, $login, $password, $gender, $token);
+            $this->model->createUser($firstName, $lastName, $email, $login, $password, $gender, $token, $latitude, $longitude);
             $response = ['error' => 'false'];
 
-            $message = "<p>Hello, $lastName $firstName!</p><p>You need to confirm your email address to complete your Matcha account.</p><p>It's easy — just click <a href='http://localhost:8080/php/activateAccount?token=$token&login=$login'>HERE</a>.</p>";
+            $message = "<p>Hello, $lastName $firstName!</p><p>You need to confirm your email address to complete your Matcha account.</p><p>It's easy — just click <a href='http://localhost:8080/php/activateAccount?token=$token'>HERE</a>.</p>";
             $subject = "Matcha";
             $subject_preferences = array(
                 "input-charset" => "utf-8",
@@ -96,17 +99,22 @@ class AccountController extends Controller {
 
     public function activateAccountAction() {
         $token = $_REQUEST['token'];
-        $login = $_REQUEST['login'];
-        $response = $this->model->activateAccount($token, $login);
+        $this->model->activateAccount($token);
         header("Location: http://localhost:3000/");
     }
 
     public function prewUserAction() {
-        $userId = $_REQUEST['userId'];
-        $user = $this->model->getUserId($userId);
-        $photo = $this->model->getUserPhoto($userId);
-        $result = array_merge($user, $photo);
-        echo json_encode($result);
+        $idWho = $_REQUEST['idWho'];
+        $idWhom = $_REQUEST['idWhom'];
+        $user = $this->model->getUserId($idWhom);
+        if ($user[0]['connection'] != 'online') {
+            $user[0]['connection'] = $this->model->lastConnection($user[0]['connection']);
+        }
+        $photo = $this->model->getUserPhoto($idWhom);
+        $tags = $this->model->getUserTags($idWhom);
+        $this->model->getViewed($idWho, $idWhom);
+        array_push($user, $photo, $tags);
+        echo json_encode($user);
     }
 
     public function forgotPassAction() {
@@ -145,5 +153,12 @@ class AccountController extends Controller {
             $response = ["fieldName" => "login", "error" => true];
         }
         echo json_encode($response);
+    }
+
+    public function changeConnectionAction() {
+        $userId = $_REQUEST['userId'];
+        $connection = $_REQUEST['connection'];
+
+        $this->model->changeConnection($userId, $connection);
     }
 }

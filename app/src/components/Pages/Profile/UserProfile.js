@@ -2,28 +2,29 @@ import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
 
 @inject('User')
+@observer
+class Tags extends Component {
+    render() {
+        const {tags} = this.props.User;
+        return (
+            tags.map(tag => {
+                return (
+                    <div
+                        className={"new_tag"}
+                        key={tag.tagId}
+                    >
+                        {`#${tag.text}`}
+                    </div>
+                );
+            })
+        );
+    }
+}
+
+@inject('User')
 @inject('Photo')
 @observer
 export default class UserProfile extends Component {
-    tagList() {
-        let array = [];
-        let i = 0;
-        if (this.props.User.tags) {
-            let tags = this.props.User.tags.split(',');
-            for (let tag of tags) {
-                array.push(
-                    <div
-                        className={"new_tag"}
-                        key={i++}
-                    >
-                        {`#${tag}`}
-                    </div>
-                )
-            }
-        }
-        return array;
-    }
-
     componentWillMount() {
         this.props.User.push();
         this.props.Photo.push();
@@ -101,7 +102,7 @@ export default class UserProfile extends Component {
                     <div className="tags" style={{width: 350, marginTop: 10}}>
                         <p className="name">Tags</p>
                         <div className="tag_list">
-                            {this.tagList()}
+                            <Tags />
                         </div>
                     </div>
                     <p style={{fontWeight: 'bold', margin: '10px 0'}}>Rating <span style={{color: '#179b77'}}>{rating}</span></p>

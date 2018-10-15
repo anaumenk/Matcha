@@ -13,6 +13,7 @@ import Likes from './components/store/LikesStore';
 import Chat from './components/store/ChatStore';
 import Search from './components/store/SearchStore';
 import Register from './components/store/RegisterStore';
+import Prew from './components/store/PrewProfileStore';
 
 ReactDOM.render((
     <Provider
@@ -25,6 +26,7 @@ ReactDOM.render((
         Chat={Chat}
         Search={Search}
         Register={Register}
+        Prew={Prew}
     >
         <App />
     </Provider>

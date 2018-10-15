@@ -7,7 +7,7 @@
     padding-left: 10px;
 }
 
-.edit_field input, .edit_field select {
+.edit_field input, .edit_field select, #inputLocation input {
     height: 30px;
     font-size: medium;
     outline: none;
@@ -40,6 +40,40 @@
 #map {
     height: 300px;
     width: 100%;
-    margin-top: 10px;
+    margin: 10px 0 40px 0;
     position: relative;
+}
+
+#location_input{
+    display: flex;
+    /*background-color: black;*/
+    height: 30px;
+    margin: 10px 0;
+}
+
+#location_input input {
+    font-size: medium;
+    outline: none;
+    box-shadow: 0 0 10px rgba(19, 35, 47, 0.9);
+    background-color: #aba6a1;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+#location_select {
+    display: flex;
+    margin-top: 10px;
+
+}
+
+#location_select input {
+    margin-right: 10px;
+    align-self: center;
+}
+
+#location_select p {
+    font-size: medium;
+    font-weight: normal;
 }

@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
 
 @inject('Likes')
-@inject('Profile')
+@inject('Prew')
+@inject('User')
 @observer
 class Like extends Component {
 
     componentWillMount() {
         this.props.Likes.push();
-        this.props.Profile.profile = '';
+        this.props.Prew.profile = '';
     }
 
     render () {
@@ -19,7 +20,7 @@ class Like extends Component {
                     <div
                         key={like.userId}
                         className="user_like"
-                        onClick={() => this.props.Profile.openUserProfile(like.userId)}
+                        onClick={() => this.props.Prew.openUserProfile(this.props.User.userId, like.userId)}
                     >
                         <a>
                             {like.photo && <img src={require(`../../../${like.photo}`)} alt={like.login} />}
@@ -31,14 +32,20 @@ class Like extends Component {
     }
 }
 
-@inject('Profile')
+@inject('Prew')
+@inject('User')
 @observer
 export default class Likes extends Component {
+
+    componentWillMount() {
+        this.props.User.push();
+    }
+
     render() {
         return (
             <div className="likes_views">
                 <Like />
-                {this.props.Profile.profile}
+                {this.props.Prew.profile}
             </div>
         );
     }

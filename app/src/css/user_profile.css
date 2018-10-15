@@ -1,5 +1,6 @@
 #user_profile {
     max-width: 350px;
+    z-index: 2;
 }
 
 .user_profile_photo {
@@ -69,17 +70,31 @@
     margin: 10px;
 }
 
-.profileButtons {
+#profileConnection {
     display: flex;
-    flex-direction: row;
     justify-content: flex-end;
 }
 
-.profileButtons div {
+#profileConnection p {
+    margin-left: 2px;
+    /*color: #179b77;*/
+    align-self: center;
     width: 100%;
 }
 
-.profileButtons div button {
+#profileConnection div i {
+    font-size: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+    align-self: center;
+}
+
+.profileButtons {
+    display: flex;
+    flex-direction: row;
+}
+
+.profileButtons button {
     width: 80px;
     padding: 10px 0;
     border: 0;
@@ -91,7 +106,7 @@
     transition: all 0.5s ease;
     -webkit-appearance: none;
     cursor: pointer;
-    margin: 5px;
+    margin-right: 5px;
 }
 
 .redButton {
@@ -108,12 +123,4 @@
 
 .greenButton:hover, .greenButton:focus {
     background: #179b77;
-}
-
-.profileButtons i {
-    font-size: 30px;
-    margin-right: 10px;
-    text-align: right;
-    cursor: pointer;
-    align-self: center;
 }

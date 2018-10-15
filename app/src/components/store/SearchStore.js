@@ -19,41 +19,33 @@ class SearchStore {
     @observable minRating = 0;
     @observable maxRating = 200;
 
-    @observable tags = '';
+    @observable tags = [];
     @observable newTag = '';
 
     @observable listOfPeople = [];
 
-    // @observable gender = '';
-    // @observable orientation = '';
-
     @action removeTag = (tagForDel) => {
-        let array = '';
-        tagForDel = tagForDel.replace('#', '');
-        let tags = this.tags.split(',');
-        for (let tag of tags) {
-            if (tag !== tagForDel) {
-                array += ',' + tag;
+        tagForDel = tagForDel.substring(1, tagForDel.length);
+        for (let i = 0; i < this.tags.length; i++) {
+            if (this.tags[i] === tagForDel) {
+                this.tags.splice(i);
             }
         }
-        this.tags = array;
-        console.log(this.tags);
     };
 
-    @action addNewTag() {
-        let tags = this.tags.split(',');
-        for (let tag of tags) {
-            if (tag === this.newTag) {
-                this.newTag = '';
-                return false;
+    @action ifTag() {
+        if (this.tags) {
+            for (let tag of this.tags) {
+                if (tag === this.newTag) {
+                    this.newTag = '';
+                    return false;
+                }
             }
         }
-        this.tags += ',' + this.newTag;
-        this.newTag = '';
+        return true;
     }
 
-    @action search = (gender, orientation) => {
-        console.log(this.sortBy);
+    @action search(latitude, longitude) {
         let params = `userId=${localStorage.getItem('userId')
         }&sortBy=${this.sortBy
         }&AgeStart=${this.AgeStart
@@ -62,27 +54,52 @@ class SearchStore {
         }&DistanceEnd=${this.DistanceEnd
         }&RatingStart=${this.RatingStart
         }&RatingEnd=${this.RatingEnd
-        }&tags=${this.tags
-        }&gender=${gender
-        }&orientation=${orientation}`;
+        }&tags=${this.tags}&latitude=${latitude}&longitude=${longitude}`;
+        console.log(params);
         fetchPost('search', params).then(response => {
             this.listOfPeople = JSON.parse(response);
-
         });
         this.display = true;
     };
 
-    @action ifTag() {
-        if (this.tags) {
-            let tags = this.tags.split(',');
-            for (let tag of tags) {
-                if (tag === this.newTag) {
-                    this.newTag = '';
-                    return false;
-                }
-            }
-        }
-        return true;
+    @action findMatches = (gender, orientation, latitude, longitude) => {
+        let params = `userId=${localStorage.getItem('userId')
+            }&sortBy=${this.sortBy
+            }&AgeStart=${this.AgeStart
+            }&AgeEnd=${this.AgeEnd
+            }&DistanceStart=${this.DistanceStart
+            }&DistanceEnd=${this.DistanceEnd
+            }&RatingStart=${this.RatingStart
+            }&RatingEnd=${this.RatingEnd
+            }&tags=${this.tags
+            }&gender=${gender
+            }&orientation=${orientation}&latitude=${latitude}&longitude=${longitude}`;
+        fetchPost('findMatches', params).then(response => {
+            this.listOfPeople = JSON.parse(response);
+        });
+        this.display = true;
+    };
+
+    @action clear() {
+        this.sortBy = 'Age';
+        this.AgeStart = 18;
+        this.AgeEnd = 30;
+        this.DistanceStart = 0;
+        this.DistanceEnd = 100;
+        this.RatingStart = 0;
+        this.RatingEnd = 200;
+
+        this.minAge = 18;
+        this.maxAge = 100;
+        this.minDistance = 0;
+        this.maxDistance = 100;
+        this.minRating = 0;
+        this.maxRating = 200;
+
+        // this.tags = '';
+        this.newTag = '';
+
+        this.listOfPeople = [];
     }
 }
 

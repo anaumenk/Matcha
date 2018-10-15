@@ -1,4 +1,5 @@
 import {observable, action} from 'mobx';
+import {fetchPost} from "../../fetch";
 
 class LoginStore {
 
@@ -10,6 +11,7 @@ class LoginStore {
     };
 
     @action LogOut() {
+        fetchPost('changeConnection', `userId=${localStorage.getItem('userId')}`);
         localStorage.setItem('userId', '');
         this.isAuthenticated = false;
     };

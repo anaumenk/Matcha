@@ -17,10 +17,12 @@ class ProfileController extends Controller {
         $biography = $_REQUEST['biography'];
         $birth = $_REQUEST['birth'];
         $siteColor = $_REQUEST['siteColor'];
-        $tags = $_REQUEST['tags'];
+        $latitude = $_REQUEST['latitude'];
+        $longitude = $_REQUEST['longitude'];
+        $locationChecked = $_REQUEST['locationChecked'];
 
         $this->model->editUser($userId, $firstName, $lastName, $email, $gender, $orientation, $occupation,
-            $biography, $birth, $siteColor, $tags);
+            $biography, $birth, $siteColor, $latitude, $longitude, $locationChecked);
     }
 
     public function editPhotosAction() {
@@ -78,5 +80,31 @@ class ProfileController extends Controller {
         $whom = $_REQUEST['whom'];
 
         $this->model->unLikeUser($who, $whom);
+    }
+
+    public function notificationAction() {
+        $userId = $_REQUEST['userId'];
+
+        $response = $this->model->getNotifications($userId);
+        echo json_encode($response);
+    }
+
+    public function clearNotificationAction() {
+        $userId = $_REQUEST['userId'];
+        $this->model->clearNotifications($userId);
+    }
+
+    public function newTagAction() {
+        $userId = $_REQUEST['userId'];
+        $newTag = $_REQUEST['newTag'];
+
+        $this->model->addNewTag($userId, $newTag);
+    }
+
+    public function delTagAction() {
+        $userId = $_REQUEST['userId'];
+        $tagForDel = $_REQUEST['tagForDel'];
+
+        $this->model->delTag($userId, $tagForDel);
     }
 }

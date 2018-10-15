@@ -21,6 +21,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import {inject, observer} from 'mobx-react';
 
 @inject('Login')
+@inject('User')
 @observer
 export default class App extends Component {
     render() {

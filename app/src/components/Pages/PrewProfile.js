@@ -2,15 +2,34 @@ import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
 import {fetchPost} from "../../fetch";
 
+@inject('Prew')
+@observer
+class Tags extends Component {
+    render() {
+        const {tags} = this.props.Prew;
+        return (
+            tags.map(tag => {
+                return (
+                    <div
+                        className={"new_tag"}
+                        key={tag.tagId}
+                    >
+                        {`#${tag.text}`}
+                    </div>
+                );
+            })
+        );
+    }
+}
+
 @inject('Profile')
 @inject('User')
-@inject('Photo')
+@inject('Prew')
 @observer
 export default class PrewProfile extends Component {
     state = {
-        currPhoto: this.props.userInfo[1][1],
-        likeUnlike: !this.props.User.ifInLike(this.props.userInfo[0]['userId']) ? this.Like() : this.Unlike(),
-        blockBlocked: !this.props.User.ifInBlock(this.props.userInfo[0]['userId']) ? this.Block() : <button className='redButton'>Blocked</button>,
+        likeUnlike: !this.props.User.ifInLike(this.props.Prew.userId) ? this.Like() : this.Unlike(),
+        blockBlocked: !this.props.User.ifInBlock(this.props.Prew.userId) ? this.Block() : <button className='redButton'>Blocked</button>,
     };
 
     Block() {
@@ -18,8 +37,8 @@ export default class PrewProfile extends Component {
             <button
                 className='redButton'
                 onClick={() => {
-                    this.props.Profile.blockUser(this.props.userInfo[0]['userId'], this.props.User.userId);
-                    this.props.Profile.openUserProfile(this.props.userInfo[0]['userId']);
+                    this.props.Prew.blockUser(this.props.Prew.userId, this.props.User.userId);
+                    this.props.Prew.openUserProfile(this.props.User.userId, this.props.Prew.userId);
                     this.setState({blockBlocked: <button className='redButton'>Blocked</button>});
                 }}
             >Block</button>
@@ -32,7 +51,8 @@ export default class PrewProfile extends Component {
                 className='greenButton'
                 onClick={() => {
                     if (this.props.Photo.one) {
-                        this.props.Profile.likeUser(this.props.userInfo[0]['userId'], this.props.User.userId);
+                        this.props.Prew.likeUser(this.props.Prew.userId, this.props.User.userId);
+                        this.props.Prew.openUserProfile(this.props.User.userId, this.props.Prew.userId);
                         this.setState({likeUnlike: this.Unlike()});
                     }
                     else {
@@ -49,85 +69,68 @@ export default class PrewProfile extends Component {
             <button
                 className='redButton'
                 onClick={() => {
-                    this.props.Profile.unLikeUser(this.props.userInfo[0]['userId'], this.props.User.userId);
+                    this.props.Prew.unLikeUser(this.props.Prew.userId, this.props.User.userId);
+                    this.props.Prew.openUserProfile(this.props.User.userId, this.props.Prew.userId);
                     this.setState({likeUnlike: this.Like()});
                 }}
             >Unlike</button>
         );
     }
 
-    tagList() {
-        let array = [];
-        let i = 0;
-        if (this.props.userInfo[0]['tags']) {
-            let tags = this.props.userInfo[0]['tags'].split(',');
-            for (let tag of tags) {
-                array.push(
-                    <div
-                        className={"new_tag"}
-                        key={i++}
-                    >
-                        {`#${tag}`}
-                    </div>
-                )
-            }
-        }
-        return array;
-    }
-
-
     PhotoRight() {
-        let newPhoto = this.state.currPhoto;
-        if (this.state.currPhoto === this.props.userInfo[1][1]) {
-            if (this.props.userInfo[1][2]) {
-                newPhoto = this.props.userInfo[1][2];
-            }
+        this.props.Prew.newPhoto = this.props.Prew.currPhoto;
+        if (this.props.Prew.currPhoto === this.props.Prew.photoOne && this.props.Prew.photoTwo) {
+            this.props.Prew.newPhoto = this.props.Prew.photoTwo;
         }
-        else if (this.state.currPhoto === this.props.userInfo[1][2]) {
-            if (this.props.userInfo[1][3]) {
-                newPhoto = this.props.userInfo[1][3];
-            }
+        else if (this.props.Prew.currPhoto === this.props.Prew.photoTwo && this.props.Prew.photoThree) {
+            this.props.Prew.newPhoto = this.props.Prew.photoThree;
         }
-        else if (this.state.currPhoto === this.props.userInfo[1][3]) {
-            if (this.props.userInfo[1][4]) {
-                newPhoto = this.props.userInfo[1][4];
-            }
+        else if (this.props.Prew.currPhoto === this.props.Prew.photoThree && this.props.Prew.photoFour) {
+            this.props.Prew.newPhoto = this.props.Prew.photoFour;
         }
-        else if (this.state.currPhoto === this.props.userInfo[1][4]) {
-            if (this.props.userInfo[1][5]) {
-                newPhoto = this.props.userInfo[1][5];
-            }
+        else if (this.props.Prew.currPhoto === this.props.Prew.photoFour && this.props.Prew.photoFive) {
+            this.props.Prew.newPhoto = this.props.Prew.photoFive;
         }
-        this.setState({
-            currPhoto: newPhoto,
-        });
+        this.props.Prew.currPhoto = this.props.Prew.newPhoto;
     }
 
     PhotoLeft() {
-        let newPhoto = this.state.currPhoto;
-        if (this.state.currPhoto === this.props.userInfo[1][5]) {
-            newPhoto = this.props.userInfo[1][4];
+        this.props.Prew.newPhoto = this.props.Prew.currPhoto;
+        if (this.props.Prew.currPhoto === this.props.Prew.photoFive) {
+            this.props.Prew.newPhoto = this.props.Prew.photoFour;
         }
-        else if (this.state.currPhoto === this.props.userInfo[1][4]) {
-            newPhoto = this.props.userInfo[1][3];
+        else if (this.props.Prew.currPhoto === this.props.Prew.photoFour) {
+            this.props.Prew.newPhoto = this.props.Prew.photoThree;
         }
-        else if (this.state.currPhoto === this.props.userInfo[1][3]) {
-            newPhoto = this.props.userInfo[1][2];
+        else if (this.props.Prew.currPhoto === this.props.Prew.photoThree) {
+            this.props.Prew.newPhoto = this.props.Prew.photoTwo;
         }
-        else if (this.state.currPhoto === this.props.userInfo[1][2]) {
-            newPhoto = this.props.userInfo[1][1];
+        else if (this.props.Prew.currPhoto === this.props.Prew.photoTwo) {
+            this.props.Prew.newPhoto = this.props.Prew.photoOne;
         }
-        this.setState({
-            currPhoto: newPhoto,
-        });
+        this.props.Prew.currPhoto = this.props.Prew.newPhoto;
     }
 
     age() {
-        let date = this.props.userInfo[0]['birth'];
+        let date = this.props.Prew.birth;
         return ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)) | 0;
     }
 
     render() {
+        const {
+            userId,
+            currPhoto,
+            login,
+            firstName,
+            lastName,
+            orientation,
+            gender,
+            occupation,
+            biography,
+            rating,
+            connection
+        } = this.props.Prew;
+
         return (
             <div
                 id="user_profile"
@@ -141,48 +144,53 @@ export default class PrewProfile extends Component {
                     color: '#aba6a1',
                 }}
             >
-                <div className='profileButtons'>
+                <div id="profileConnection">
+                    <p>
+                        {this.props.Prew.connection}
+                    </p>
                     <div>
-                        <button
-                            className='redButton'
-                            onClick={() => {
-                                fetchPost('fakeUser', `who=${this.props.User.userId}&whom=${this.props.userInfo[0]['userId']}`).then(response => {
-                                    let array = JSON.parse(response);
-                                    if (array['error']) {
-                                       this.props.Profile.popupText = 'Already clicked';
-                                       this.props.Profile.popup = true;
-                                    }
-                                });
-                                this.props.Profile.openUserProfile(this.props.userInfo[0]['userId']);
-                            }}
-                        >Fake</button>
-                        {this.state.blockBlocked}
-                        {this.state.likeUnlike}
+                        <i
+                            className="fas fa-times"
+                            onClick={() => this.props.Prew.profile = ''}
+                        ></i>
                     </div>
-                    <i
-                        className="fas fa-times"
-                        onClick={() => this.props.Profile.profile = ''}
-                    ></i>
                 </div>
-                {this.props.userInfo[1][1] &&
+                <div className='profileButtons'>
+                    <button
+                        className='redButton'
+                        onClick={() => {
+                            fetchPost('fakeUser', `who=${this.props.User.userId}&whom=${userId}`).then(response => {
+                                let array = JSON.parse(response);
+                                if (array['error']) {
+                                   this.props.Profile.popupText = 'Already clicked';
+                                   this.props.Profile.popup = true;
+                                }
+                            });
+                            this.props.Prew.openUserProfile(this.props.User.userId, userId);
+                        }}
+                    >Fake</button>
+                    {this.state.blockBlocked}
+                    {this.state.likeUnlike}
+                </div>
+                {currPhoto &&
                 <div className="user_profile_photo">
-                    <img src={require(`../../${this.state.currPhoto}`)} alt={this.props.userInfo[0]['login']}/>
+                    <img src={require(`../../${currPhoto}`)} alt={login}/>
                     <i className="fas fa-arrow-right" onClick={() => this.PhotoRight()}></i>
                     <i className="fas fa-arrow-left" onClick={() => this.PhotoLeft()}></i>
                 </div>
                 }
                 <div id="user_profile_info" style={{paddingLeft: 10}}>
-                    <p style={{fontWeight: 'bold', margin: '10px 0'}}>{this.props.userInfo[0]['firstName']} {this.props.userInfo[0]['lastName']}, {this.age()}</p>
-                    <p>{this.props.userInfo[0]['orientation']}, {this.props.userInfo[0]['gender']}</p>
-                    <p style={{margin: '10px 0'}}><span style={{fontWeight: 'bold'}}>Occupation:</span> {this.props.userInfo[0]['occupation']}</p>
-                    <p style={{margin: '10px 0'}}><span style={{fontWeight: 'bold'}}>Biography:</span> {this.props.userInfo[0]['biography']}</p>
+                    <p style={{fontWeight: 'bold', margin: '10px 0'}}>{firstName} {lastName}, {this.age()}</p>
+                    <p>{orientation}, {gender}</p>
+                    <p style={{margin: '10px 0'}}><span style={{fontWeight: 'bold'}}>Occupation:</span> {occupation}</p>
+                    <p style={{margin: '10px 0'}}><span style={{fontWeight: 'bold'}}>Biography:</span> {biography}</p>
                     <div className="tags" style={{width: 350, marginTop: 10}}>
                         <p className="name">Tags</p>
                         <div className="tag_list">
-                            {this.tagList()}
+                            <Tags />
                         </div>
                     </div>
-                    <p style={{fontWeight: 'bold', margin: '10px 0'}}>Rating <span style={{color: '#179b77'}}>{this.props.userInfo[0]['rating']}</span></p>
+                    <p style={{fontWeight: 'bold', margin: '10px 0'}}>Rating <span style={{color: '#179b77'}}>{rating}</span></p>
                 </div>
             </div>
         );

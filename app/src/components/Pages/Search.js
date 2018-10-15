@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
-import Popup from "./Profile/Setting";
+import {Popup} from "./Profile/Setting";
 
 function getAge(date) {
     return ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)) | 0;
 }
 
 @inject('Search')
-@inject('Profile')
+@inject('Prew')
+@inject('User')
 @observer
 export class People extends Component {
     render() {
@@ -18,15 +19,15 @@ export class People extends Component {
                         <div key={people.userId} className="user_profile_result">
                             <div
                                 className="user_profile_result_img"
-                                onClick={() => this.props.Profile.openUserProfile(people.userId)}
+                                onClick={() => this.props.Prew.openUserProfile(this.props.User.userId, people.userId)}
                             >
                                 {people.photo && <img src={require(`../../${people.photo}`)} alt={people.firstName}/>}
                             </div>
                             <div className="user_profile_result_info">
                                 <p>{`${people.lastName} ${people.firstName}`}</p>
-                                <p>{getAge(people.birth)}</p>
-                                <p>gender: {people.gender}</p>
-                                <p>orienation: {people.orientation}</p>
+                                <p><b>Age:</b> {getAge(people.birth)}</p>
+                                <p><b>Gender:</b> {people.gender}</p>
+                                <p><b>Orienation:</b> {people.orientation}</p>
                             </div>
                         </div>
                     )
@@ -45,7 +46,7 @@ export class Tags extends Component {
     };
 
     handleKeyPress(e) {
-        if (e.key === "Enter" && this.props.Search.newTag !== '') {
+        if (e.key === "Enter" && this.props.Search.newTag.match(/^([a-zа-яё]+|\d+)$/i)) {
             if (this.props.Search.ifTag()) {
                 let parent = document.getElementsByClassName('tag_list'),
                     newelement = document.createElement('div');
@@ -58,11 +59,15 @@ export class Tags extends Component {
                     this.props.Search.removeTag(text);
                 };
                 parent[0].appendChild(newelement);
-                this.props.Search.tags += this.props.Search.tags ? ',' + this.props.Search.newTag : this.props.Search.newTag;
+                this.props.Search.tags.push(this.props.Search.newTag);
                 this.props.Search.newTag = '';
             }
         }
+        else if (e.key === "Enter") {
+            this.props.Search.newTag = '';
+        }
     }
+
     render() {
         const {newTag} = this.props.Search;
 
@@ -72,7 +77,7 @@ export class Tags extends Component {
                 <div className="tag_list">
                 </div>
                 <input type="text"
-                       onChange={this.handleUserInput}
+                       onChange={(e) => this.handleUserInput(e)}
                        value={newTag}
                        onKeyPress={(e) => this.handleKeyPress(e)}
                 />
@@ -141,9 +146,10 @@ export class Slider extends Component {
     }
 }
 
-@inject('User')
 @inject('Search')
 @inject('Profile')
+@inject('Prew')
+@inject('User')
 @observer
 export default class Search extends Component {
     handleChange = (e) => {
@@ -152,6 +158,7 @@ export default class Search extends Component {
 
     componentWillMount() {
         this.props.User.push();
+        this.props.Search.clear();
     }
 
     render() {
@@ -161,8 +168,8 @@ export default class Search extends Component {
         } = this.props.Search;
 
         const {
-            gender,
-            orientation
+            latitude,
+            longitude
         } = this.props.User;
 
         return (
@@ -184,12 +191,12 @@ export default class Search extends Component {
                         <button
                             className='button'
                             style={{marginTop:10}}
-                            onClick={() => this.props.Search.search(gender, orientation)}
+                            onClick={() => this.props.Search.search(latitude, longitude)}
                         >Search</button>
                     </div>
                 </div>
                 {listOfPeople && <People />}
-                {this.props.Profile.profile}
+                {this.props.Prew.profile}
                 {this.props.Profile.popup && <Popup />}
             </main>
         );

@@ -2,50 +2,230 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ed86eb5-196f-4672-952b-14cc3b6ab21d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/PrewProfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/components/Pages/ListOfProfiles.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/components/store/ResearchStore.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538066566.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538066624.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538066641.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538066958.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538066977.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538066981.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538066984.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538067044.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538067086.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538067133.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538067242.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538577903.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538577912.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538759527.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538759617.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538759628.png" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/039c8f05d73d09f8fa438873a8bef23b2fd854f9.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/048dd1c0f5b1ce6f4df70930e166b52f68c66236.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/07044fa9a7f186d454e9d00bf1db0e083d28f00c.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/095f8a8fc8bcbc2cfe199c3dd70607df50f6710d.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/0a87ca2b2583ac857e15a43e4b1f16fa86e2a7b9.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/0d0cdd226c156ad52a2cc3b3def5495c09b6785a.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/0d22732b1ece23c2590e9db7277359c1bae4da56.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/0e5c46415366927bac5a68f51a8178e116984208.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/0e83d337becfef84fbde8ffe088603bc61f994b3.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/10329a1a01fe8a55e1e76f64b870aef06b5cc0dc.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/10f1934467990a1751de9e02e1432115a566d510.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/12adffe615fff1177af500db056ae56e5ec95900.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/12c4141086e2b7bdc629a060ee003ec5a2299d2e.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/1773daa68b242d4808acd9cd613f014678b0b04e.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/184693fb3e29287058db28c95c25a2988fc96635.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/1961165ae15c1431edc5a89693abf86476dbd22c.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/1a82db212f40c563c30b1c86b0f79223ad98a78e.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/1dd47798cac137e30a1f3529a88616f2e98b8902.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/200be16913efa8821e456f53cc17893002aa17a1.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/21c0215b3042be4c18b16d462ad6fc65db1591c4.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/23852d476c4a1b0b9f08405b9d40530f01eeb60a.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/23f11e9489dff353b7332b20da76f987b4318a47.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/25aa5796b324d140406fff94066fab8fc509c1dc.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/27e0d4c3fb35e99b6736b1fd6ba59debf0113eaa.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/28bf39ee391e6504c1ae4338cdd2ae254a2db77a.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/28f6632bcec09ddee62921bdcc19ddb5aeba4549.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/28f8a15606da9cd6ba9ff26ba16276595c6986b9.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/2974adb6d90a0716da25af61c454a3c5ffd5b540.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/2a334067aedff93e653fcae2bb1dd43c7649da0b.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/2bd8b809b89344cdced61b46585c71507091ba4a.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/2dc06f0a20dadd8e660d7cdab349d22876832fa5.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/2f258f9810d9c9a93d5ad418cb88c66dab1026f1.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/318685988c8a82f17122c5863d25f0f3a966408b.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/33b64d9872aa19177f5cbcd38489385a03a7b5d0.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/3481ab48dad423e54e3041601dfbc3ecd17220df.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/362a0208125306f47f929464b2528e7bf33b0776.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/39c8255c076a16777e86717e9658d033420911ee.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/3c09dfccd44883a5c3f1dd67697626524ef388c6.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/3da0a0a51bfbc87178940e17c93c03233d4c40c3.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/3f5701bd35dedef1ae521b209f8b7dac17e39feb.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/422dfc2b6d5ec976fab81da02bba1646199e9183.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/42a5fcfce93dc4e0db1da8a8c1f73f268249c405.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/43497cc1779c49eb1d49e19936198bb33ac14aed.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/43a3128b9602dde969a9969ac376d63d5f4999d4.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/44afdd068a5302451e6385b98703c25d795eba0b.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/450530b9b0aee757994b4cf383e0ebcd635dc6f8.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/462f38a3b4ddd7b620063bcf66aa6a49ee954956.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/46523833fe9be513438821be65946725270dba1d.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/46c2a386a9a4ece04f31602fee78908abf682528.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/4907ac83ddf9e139ed5199cf3a8edc353394831d.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/4915c88992d8cfd995c00ea2b545fe39a0981944.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/49ebd6541a572cb976d5e9e700c8c54225d7bef4.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/4af959ab431c7468a07fa0225cccf88c328935fa.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/4be16a9f6f24a36d23a023fabdc91483f70116d2.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/4c97797ea38033455502977f54113e5f055ebed2.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/4ca95294cb79f290a9487287ff464725115235f2.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/4f36bcdb6ff2756bfb631a86f6a5cb816e63ba20.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/52df54804ccd3aed80646ac2324da51b3f77aff2.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/545df2d0a85e258d998d4398d89008f329329f78.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/548e2b8f7da6e4eebbc6ce6234161a9ecb9a5383.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/549ab8078e3fbf4df935b9df5a9c1c4f5ef7708c.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/563260232d553d3e6835b3ed3c426987ddba3e37.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/57504983ed5fdb9b2a4496916afa205d07b060f8.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/58e6d4a2eaf68643da2ac105c31803d390412b0d.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/5942aff9b23ec7b1021686ed16e297936775837a.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/5950f0711427be3271825cc820a0f0af0eb8de37.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/59b08d8d88312be4979082a33e782c22c051f72c.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/59cd2b20c2fbed2b05df7e61af4da6df2cfca85d.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/5c56a33ae1b2c495307c202ca036bd587ae1992d.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/5d3df716415b99ab3aa2ea38d7c7dbabdbb03ab1.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/5fd3a5e737de262b71388ef49c3dec281a3d2f84.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/60653dd489619b9731bd34ea38ebeee51f395302.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/62f375a94ff5b058fad1fc310f24275f8260805c.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/652ec0c51d6f16b93aa3d6f8d48fb02ef1425f4b.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/665b4c39438e75d15d04bff3e287691f0a174d93.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/6a11900b0424cae0d9ff39cfbf285d4dfd62256c.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/6ac08efd3b3d7807f6bacf85952a92a1fc0c1e40.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/6e56246df2a11748b47e47e4a9bf3cf2ae6c01a6.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/6ffbbfc95cf1fe88048d1ee8f1e27af7dd021789.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/720e028b1fc0df2840aed7ff0d69e615a6f620d6.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/726652a392f77cc5754b6798f0c6084282f31854.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/72befaec0bc0139cc65a658b5d8a8281597f7e12.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/74a530b11e74e6df56508deff7f486af7c9ebe98.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/79c6788364279dc2283f49077fe8cc330e1a44ed.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/79cc2e8895ad63b3889b93908966fbb40cfbaf31.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/7ac7499a404a445d18ed6c12541cee1378454627.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/7b3a9ceee4b552594a0434fdbbf918a51cec5f29.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/7ee6c6cb7db6403f8f5c7a1ec6eabd8fd64b404e.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/800ca5168afe5c3a27153ee69d624b2968239620.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/80f5721949e80cbfdd31609d623c606da30c9565.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/810fb93191942949f4355f51745114b8dbea74bf.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/81270567b01ae0e21d7eeace4c1b94582ea0d21d.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/8267a004f54748249586a09aac0a00f4cfe24bf5.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/84694cfa89c998506a246fd159ffb8e1c0c09bde.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/88a7229d2e92873a221ec7f4af40694ad3f76f2f.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/8b334ed1c2d6e7bef3fa4f99d525592eb8c50893.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/8b3cb0e07ef8b9c661d68aaed6d7db8b483ec411.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/8d4f4489f23ccfb408c36362925bf9fff82f0331.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/8f8f11c5ed74a682bb695bcca78a41fefa69fbe7.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/90f81b28f70cf69fc0cdfd55f778ac7e1886f77b.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/92bbde5a3615aefba7f86d97016fb8e9107b9dc3.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/931da8361c064b77c81699446337eeafbb77ea5e.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/94d5f0b8d26e3431683f82bab0d6d3dfead9bbbd.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/94e382c26fb98e05fa534056793de8d7d1f1e598.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/96b0ccecbd421d9e05670d0b86e7a76001496149.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/9753b134dc9891ff85e22545eb2cc66cfefa849d.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/9daa02516f29a84956cdd007b34bb61bf302f962.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/9ec478eb6e4110dc314e3bf50ab27807e6df1fa1.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/9f28c39597fb3e5a70d22f117ddf9a1e4a2dfa12.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/9faf6197572586f74a06d7159adf99b1dc61d567.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/a123f6bcd870d47a7263891121d9b41cdb32b17e.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/a1de580bee833d1aead58c05191116d08d25f7f4.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/a1f1d7f56db293b2996ee8a2798d285b1c4f9be2.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/a764fa20ef00e567bf0890b80f42c43062a5389a.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/a771eb0ed7b169e34b9eae520981f292f462f62c.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/a840d20236f23806d595c7d4a006984548e91efa.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/ab642e2c5f2dd514547ab8693728bde78ee6fcd9.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/ae5aef7d304bffae2a298a3fe8f0f49ca3bbc7b9.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/b1b014f49b71b651802f9dae85b9ab4d2e88cf38.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/b239b361719795c624697775d5f539892689aa48.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/b31f43d61fd791d1a1244a103a45e4413254489e.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/b50c1a4776f79933996463a854bf55918f9ad3aa.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/b638baa0e7fdbe3497861a57671bf50e3959b35c.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/b798938a3e6d605926d070990e3b680bb998e6fb.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/b7b8f0749a50771969d7d6f874d6b99a3617c4a0.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/b86e82ed69a23cd37cb9bdfc4b7daaf8a202012d.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/b89ff60937d625187353103be63f7fff5cd50b72.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/b8c7d5a9ebf9e71a2f05fbe645ae10ae448daf6c.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/b9e6b2e358b0b0680f1b9f8fdf7012b5467c2557.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/ba5e7e6a56c9dd9b9729b0d363efa335e5111e99.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/bab354b8c63a3a96f87ebd99152430e804f3f2fc.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/bbfa01e954d9ca2b6f18dfc04e42ffcfd73dcdff.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/c4a890def97c1ccf15804c7d114b39f5ffd1994a.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/c4a90a6cef702759b5f597f188bd54c5c75bcb65.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/c4bc48b79609eb53a6f6a657b1b8ed304197b308.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/c5a92828b93e284e5c4233b7aa83b6ecaa07f727.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/c816ffec90028ed24751aa05d2585cbb78675223.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/c95e915fcdcceb862411df6a36b073c8a28c79f9.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/c97d8ea58665cc13705c185610669fd23051dd2d.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/cbc81de9c9736febf9d5c9f861bb44879db4e5ab.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/d03d3f9a6a7c9b3d856f3055b931a675e13eb8d3.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/d332a64fdd46112a8119e42ba61e5d7f5894e963.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/d38e223b4cd2d92fa8bb2bee7e38d4eab217ade7.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/d49ea533dfb8b88732649de08df08ee5ed7914cf.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/d5437234e88fc24440e94e6ea3635193e3b41b7f.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/d605c2a180d8b5fc42b6aa22255d736602286f13.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/d6ded4f32398ec8627655325fc7201f153fb7dc0.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/d6f8974390d223eb49269ea77023e4dea55faf82.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/d9640a65ec42a0a0a9e9a02834d066bd6c51284f.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/d9a199059c78dc1fdabb04cc61804621574cef8e.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/db33e013dc62362cad3ef4054f38152cd92f16e9.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/dba3be56d48343c16b7fd9c2fdb2211f83593e3f.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/dcfde553ed8aac8bd2e5f60074284fcaa32d232c.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/dfc8bf3d1b633f6c7f3f49f1e51d8e6ffd756ee2.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/e0a8ecaf0bfebedae002b7328efb97f1e706b2db.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/e0b4bec4117ae7788aa5a6526c2939c36f7f6ceb.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/e2278c87b2602ddcb8d3ebe626bc714781ef3886.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/e24e17d0d20be40cfc6eb373df6062ed6228a582.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/e43359f74da36f79f23b30583585eca3dee9567f.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/e437d598fc779153ffc80bdbba843a216e1544a3.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/e4853b127e5bcbcbcdf11c609b89dd93065358be.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/e6603f224fb91d40bb1b240d89db691e64fa2c2a.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/e7e131e0a716536f5a08953d7978e21cd9f4a39a.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/e9f8506fda54d7a87458373f7fb30d1fc0a94aa4.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/ec7aa824ba2fcd6c17dbd2e0d61266ba7b429b1c.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/f0eae6bbe3d147eba6009aa50e4bf50db9e3290c.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/f11a611194ea8f9c16843c96b8864ccef7f700c8.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/f2183498cca13c9628e8c2793e7a57a33f207946.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/f21e22b1e3679a6c97d1432d85537c800fae2a19.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/f3eff9a6bddbfbb474df24725553a3dbde8161c0.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/f54378681795d238518118454974bcc2835eefc5.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/f5439dd0cb68865a369f73d193f17b12cad701e8.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/f8f70cb2636bd007a9d3b5f033e851f3815d2d9f.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/f8fee0bb28de4367009529d672a95da503ba3082.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/f95c6c2d7083a5a4e592278ac99a05a9d1e710c2.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/f9711bd72949c3c6d78cca2e3c940861fb070bc2.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/f993d70a1a02f457b4f47f7b06f66ae7bbdc29bb.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/fa37c04724fbb40ca34940aeeb37420eace659a2.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/fa90acd97dbfc2b4d5e4cb14fe4b28a8266aa3a6.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/node_modules/.cache/babel-loader/fc6c386f82b372214b8bf678d477a7851c7364d6.json.gz" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/images/photo1539252614.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/images/photo1539254623.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/images/photo1539254640.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/images/photo1539254683.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/images/photo1539254800.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/images/photo1539254817.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/images/photo1539255851.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/images/photo1539263096.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Friends.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/App.js" afterPath="$PROJECT_DIR$/app/src/App.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Header.js" afterPath="$PROJECT_DIR$/app/src/components/Header.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/LoginSignup/Form.js" afterPath="$PROJECT_DIR$/app/src/components/LoginSignup/Form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/FindMatches.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/FindMatches.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Notifications.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Notifications.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/Profile.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Profile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/Setting.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Setting.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Search.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Search.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Routes.js" afterPath="$PROJECT_DIR$/app/src/components/Routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/store/LoginSignup.js" afterPath="$PROJECT_DIR$/app/src/components/store/LoginSignup.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/store/ProfileStore.js" afterPath="$PROJECT_DIR$/app/src/components/store/ProfileStore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/store/SearchStore.js" afterPath="$PROJECT_DIR$/app/src/components/store/SearchStore.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/store/UserInfo.js" afterPath="$PROJECT_DIR$/app/src/components/store/UserInfo.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/store/UserPhotos.js" afterPath="$PROJECT_DIR$/app/src/components/store/UserPhotos.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/css/ListofProfiles.css" afterPath="$PROJECT_DIR$/app/src/css/ListofProfiles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/css/profile.css" afterPath="$PROJECT_DIR$/app/src/css/profile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/css/chat.css" afterPath="$PROJECT_DIR$/app/src/css/chat.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/css/notifications.css" afterPath="$PROJECT_DIR$/app/src/css/notifications.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/css/setting.css" afterPath="$PROJECT_DIR$/app/src/css/setting.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/css/user_profile.css" afterPath="$PROJECT_DIR$/app/src/css/user_profile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/fetch.js" afterPath="$PROJECT_DIR$/app/src/fetch.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/index.js" afterPath="$PROJECT_DIR$/app/src/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/config/routes.php" afterPath="$PROJECT_DIR$/php/application/config/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/controllers/AccountController.php" afterPath="$PROJECT_DIR$/php/application/controllers/AccountController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/controllers/ChatController.php" afterPath="$PROJECT_DIR$/php/application/controllers/ChatController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/controllers/ProfileController.php" afterPath="$PROJECT_DIR$/php/application/controllers/ProfileController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/controllers/SearchController.php" afterPath="$PROJECT_DIR$/php/application/controllers/SearchController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/core/Model.php" afterPath="$PROJECT_DIR$/php/application/core/Model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/core/Router.php" afterPath="$PROJECT_DIR$/php/application/core/Router.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/models/Account.php" afterPath="$PROJECT_DIR$/php/application/models/Account.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/models/Chat.php" afterPath="$PROJECT_DIR$/php/application/models/Chat.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/models/Profile.php" afterPath="$PROJECT_DIR$/php/application/models/Profile.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/models/Search.php" afterPath="$PROJECT_DIR$/php/application/models/Search.php" />
     </list>
@@ -60,104 +240,94 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.72746783">
+    <splitter split-orientation="vertical" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Footer.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/components/Footer.js">
+          <file leaf-file-name="Views.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
+                <state relative-caret-position="228">
+                  <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/components/Header.js">
+          <file leaf-file-name="Likes.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-                  <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Routes.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/components/Routes.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="165">
-                  <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-                  <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/App.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+                <state relative-caret-position="309">
+                  <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/index.js">
+          <file leaf-file-name="Chat.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="PrewProfile.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="26">
-                  <caret line="146" column="49" lean-forward="false" selection-start-line="146" selection-start-column="49" selection-end-line="146" selection-end-column="49" />
-                  <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Search.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Search.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="165" column="28" lean-forward="true" selection-start-line="165" selection-start-column="28" selection-end-line="165" selection-end-column="28" />
-                  <folding>
-                    <element signature="e#0#41#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SearchStore.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/components/store/SearchStore.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="595">
-                  <caret line="83" column="9" lean-forward="true" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+                <state relative-caret-position="215">
+                  <caret line="117" column="5" lean-forward="true" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="FindMatches.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/components/Pages/FindMatches.js">
+          <file leaf-file-name="Friends.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Friends.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="35" column="58" lean-forward="false" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+                <state relative-caret-position="386">
+                  <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="fetch.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/src/fetch.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="120">
+                  <caret line="8" column="53" lean-forward="false" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Photos.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="234">
+                  <caret line="74" column="9" lean-forward="true" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="UserProfile.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="273">
+                  <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Form.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/components/LoginSignup/Form.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="197">
+                  <caret line="360" column="13" lean-forward="false" selection-start-line="360" selection-start-column="8" selection-end-line="360" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Setting.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Setting.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="320">
+                  <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
                   </folding>
@@ -165,12 +335,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Notifications.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Notifications.js">
+          <file leaf-file-name="Profile.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Profile.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="363">
+                  <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+                  <folding>
+                    <element signature="e#0#41#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -179,120 +351,88 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Profile.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/php/application/models/Profile.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1875">
-                  <caret line="125" column="62" lean-forward="true" selection-start-line="125" selection-start-column="62" selection-end-line="125" selection-end-column="62" />
-                  <folding>
-                    <marker date="1539096465000" expanded="true" signature="298:817" ph="UPDATE `user... " />
-                    <marker date="1539096465000" expanded="true" signature="929:1094" ph="UPDATE `phot... " />
-                    <marker date="1539096465000" expanded="true" signature="1192:1241" ph="SELECT * FRO... photos" />
-                    <marker date="1539096465000" expanded="true" signature="1296:1422" ph="INSERT INTO `photos`... " />
-                    <marker date="1539096465000" expanded="true" signature="1481:1548" ph="UPDATE `phot... " />
-                    <marker date="1539096465000" expanded="true" signature="1644:1784" ph="SELECT * FRO... " />
-                    <marker date="1539096465000" expanded="true" signature="1874:1984" ph="INSERT INTO `fake`... " />
-                    <marker date="1539096465000" expanded="true" signature="2079:2178" ph="SELECT COUNT... " />
-                    <marker date="1539096465000" expanded="true" signature="2266:2374" ph="UPDATE `user... " />
-                    <marker date="1539096465000" expanded="true" signature="2426:2619" ph="SELECT * FRO... friend" />
-                    <marker date="1539096465000" expanded="true" signature="2681:2872" ph="DELETE FROM " />
-                    <marker date="1539096465000" expanded="true" signature="2953:3061" ph="UPDATE `user... " />
-                    <marker date="1539096465000" expanded="true" signature="3269:3373" ph="INSERT INTO `block`... " />
-                    <marker date="1539096465000" expanded="true" signature="3269:3602" ph="INSERT INTO `block`... " />
-                    <marker date="1539096465000" expanded="true" signature="3454:3602" ph="UPDATE `user... " />
-                    <marker date="1539096465000" expanded="true" signature="3683:3876" ph="SELECT * FRO... friend" />
-                    <marker date="1539096465000" expanded="true" signature="3930:4113" ph="DELETE FROM " />
-                    <marker date="1539096465000" expanded="true" signature="4186:4290" ph="UPDATE `user... " />
-                    <marker date="1539096465000" expanded="true" signature="4382:4483" ph="INSERT INTO `likes`... " />
-                    <marker date="1539096465000" expanded="true" signature="4550:4705" ph="UPDATE `user... " />
-                    <marker date="1539096465000" expanded="true" signature="4746:4972" ph="SELECT COUNT... likes" />
-                    <marker date="1539096465000" expanded="true" signature="5049:5148" ph="INSERT INTO `friend`... " />
-                    <marker date="1539096465000" expanded="true" signature="5221:5325" ph="UPDATE `user... " />
-                    <marker date="1539096465000" expanded="true" signature="5221:5382" ph="UPDATE `user... " />
-                    <marker date="1539096465000" expanded="true" signature="5483:5594" ph="DELETE FROM " />
-                    <marker date="1539096465000" expanded="true" signature="5675:5783" ph="UPDATE `user... " />
-                    <marker date="1539096465000" expanded="true" signature="5864:6057" ph="SELECT * FRO... friend" />
-                    <marker date="1539096465000" expanded="true" signature="6111:6294" ph="DELETE FROM " />
-                    <marker date="1539096465000" expanded="true" signature="6367:6471" ph="UPDATE `user... " />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Search.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Search.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/php/application/models/Search.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="127">
-                  <caret line="27" column="62" lean-forward="false" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+                <state relative-caret-position="214">
+                  <caret line="114" column="50" lean-forward="true" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/php/application/config/routes.php">
+          <file leaf-file-name="AccountController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/php/application/controllers/AccountController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="130">
-                  <caret line="61" column="27" lean-forward="false" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="27" />
+                <state relative-caret-position="1604">
+                  <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="111" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Account.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/php/application/models/Account.php">
+          <file leaf-file-name="PrewProfileStore.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/components/store/PrewProfileStore.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="855">
-                  <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+                <state relative-caret-position="186">
+                  <caret line="71" column="9" lean-forward="true" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
                   <folding>
-                    <marker date="1539096465000" expanded="true" signature="236:276" ph="SELECT * FRO... users" />
-                    <marker date="1539096465000" expanded="true" signature="459:501" ph="SELECT * FRO... users" />
-                    <marker date="1539096465000" expanded="true" signature="626:765" ph="SELECT block... block" />
-                    <marker date="1539096465000" expanded="true" signature="878:1015" ph="SELECT userW... likes" />
-                    <marker date="1539096465000" expanded="true" signature="1191:1234" ph="SELECT * FRO... photos" />
-                    <marker date="1539096465000" expanded="true" signature="1454:1875" ph="INSERT INTO `users`... " />
-                    <marker date="1539096465000" expanded="true" signature="1955:2081" ph="INSERT INTO `photos`... " />
-                    <marker date="1539096465000" expanded="true" signature="2284:2566" ph="SELECT users... users" />
-                    <marker date="1539096465000" expanded="true" signature="2608:2890" ph="SELECT users... users" />
-                    <marker date="1539096465000" expanded="true" signature="3019:3098" ph="SELECT token... users" />
-                    <marker date="1539096465000" expanded="true" signature="3198:3332" ph="UPDATE `user... " />
-                    <marker date="1539096465000" expanded="true" signature="3692:3876" ph="UPDATE users... " />
-                    <marker date="1539096465000" expanded="true" signature="3875:3876" ph="UPDATE `user... " />
+                    <element signature="e#0#40#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Chat.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/php/application/models/Chat.php">
+          <file leaf-file-name="SearchStore.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/components/store/SearchStore.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+                <state relative-caret-position="61">
+                  <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user_profile.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/css/user_profile.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="80">
+                  <caret line="78" column="18" lean-forward="false" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/php/index.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="315">
+                  <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="15" />
                   <folding>
-                    <marker date="1538482678000" expanded="true" signature="234:682" ph="SELECT users... users" />
-                    <marker date="1538482678000" expanded="true" signature="915:1251" ph="SELECT id, s... chat" />
-                    <marker date="1538482678000" expanded="true" signature="1519:1602" ph="INSERT INTO `chat`... " />
+                    <element signature="e#7#35#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SearchController.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/php/application/controllers/SearchController.php">
+          <file leaf-file-name="Router.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/php/application/core/Router.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="313">
-                  <caret line="21" column="49" lean-forward="false" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+                <state relative-caret-position="630">
+                  <caret line="42" column="43" lean-forward="false" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Db.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/php/application/lib/Db.php">
+          <file leaf-file-name="Model.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/php/application/core/Model.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="26" />
-                  <folding />
+                <state relative-caret-position="225">
+                  <caret line="15" column="87" lean-forward="false" selection-start-line="15" selection-start-column="87" selection-end-line="15" selection-end-column="87" />
+                  <folding>
+                    <marker date="1539602042000" expanded="true" signature="305:379" ph="UPDATE `user... " />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -307,22 +447,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Model.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/php/application/core/Model.php">
+          <file leaf-file-name="LoginSignup.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/src/components/store/LoginSignup.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Router.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/php/application/core/Router.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="195">
+                  <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#40#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -341,36 +473,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>requ</find>
-      <find>select</find>
-      <find>left</find>
-      <find>conso</find>
-      <find>birt</find>
+      <find>press</find>
+      <find>set</find>
       <find>consol</find>
-      <find>tagForDel</find>
-      <find>console</find>
-      <find>uws</find>
-      <find>posi</find>
-      <find>style = {backgroundColor: '#aba6a1'};</find>
-      <find>map</find>
-      <find>back</find>
-      <find>state</find>
-      <find>logIn</find>
+      <find>localS</find>
+      <find>нет</find>
+      <find>ema</find>
+      <find>open</find>
+      <find>enter</find>
+      <find>reload</find>
+      <find>one</find>
+      <find>i3</find>
+      <find>header</find>
+      <find>localhost</find>
+      <find>two</find>
+      <find>photo.pu</find>
+      <find>console.log</find>
+      <find>add</find>
+      <find>addp</find>
+      <find>Tags</find>
+      <find>prewUser</find>
       <find>user</find>
-      <find>sig</find>
-      <find>regi</find>
-      <find>age</find>
-      <find>stack</find>
-      <find>elect</find>
-      <find>shell</find>
-      <find>sh</find>
+      <find>findMatches</find>
+      <find>locati</find>
+      <find>logIn</find>
+      <find>edi</find>
+      <find>prew</find>
+      <find>cre</find>
       <find>push</find>
-      <find>fe</find>
-      <find>.popup</find>
-      <find>foreach</find>
-      <find>alert</find>
-      <find>bast</find>
-      <find>resea</find>
+      <find>fetc</find>
+      <find>fetch</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -382,57 +514,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/fetch.js" />
-        <option value="$PROJECT_DIR$/app/public/google_map.js" />
-        <option value="$PROJECT_DIR$/app/src/css/setting.css" />
-        <option value="$PROJECT_DIR$/app/src/css/chat.css" />
-        <option value="$PROJECT_DIR$/app/src/css/views_likes.css" />
-        <option value="$PROJECT_DIR$/app/src/components/store/LoginStore.js" />
-        <option value="$PROJECT_DIR$/app/src/components/LoginSignup/FormErrors.js" />
-        <option value="$PROJECT_DIR$/app/src/components/store/RegisterStore.js" />
-        <option value="$PROJECT_DIR$/app/src/components/store/LoginSignup.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js" />
-        <option value="$PROJECT_DIR$/app/src/components/store/PrewProfileStore.js" />
-        <option value="$PROJECT_DIR$/app/src/components/PrewProfile.js" />
-        <option value="$PROJECT_DIR$/app/public/index.html" />
-        <option value="$PROJECT_DIR$/app/config/paths.js" />
-        <option value="$PROJECT_DIR$/app/config/polyfills.js" />
-        <option value="$PROJECT_DIR$/app/config/webpack.config.dev.js" />
         <option value="$PROJECT_DIR$/app/config/webpack.config.prod.js" />
         <option value="$PROJECT_DIR$/app/config/webpackDevServer.config.js" />
         <option value="$PROJECT_DIR$/app/package.json" />
         <option value="$PROJECT_DIR$/app/src/components/store/Store.js" />
         <option value="$PROJECT_DIR$/app/config/env.js" />
-        <option value="$PROJECT_DIR$/app/src/css/user_profile.css" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js" />
-        <option value="$PROJECT_DIR$/php/application/config/routes.php" />
-        <option value="$PROJECT_DIR$/app/src/components/store/UserPhotos.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js" />
-        <option value="$PROJECT_DIR$/app/src/components/store/UserInfo.js" />
         <option value="$PROJECT_DIR$/php/application/controllers/ChatController.php" />
         <option value="$PROJECT_DIR$/app/src/css/ListofProfiles.css" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Profile.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Setting.js" />
-        <option value="$PROJECT_DIR$/php/application/controllers/ProfileController.php" />
-        <option value="$PROJECT_DIR$/app/src/components/store/ProfileStore.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js" />
         <option value="$PROJECT_DIR$/app/src/css/profile.css" />
-        <option value="$PROJECT_DIR$/php/application/controllers/SearchController.php" />
-        <option value="$PROJECT_DIR$/app/src/components/LoginSignup/Form.js" />
         <option value="$PROJECT_DIR$/app/src/components/store/ResearchStore.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Routes.js" />
+        <option value="$PROJECT_DIR$/app/src/css/notifications.css" />
+        <option value="$PROJECT_DIR$/php/application/models/Chat.php" />
+        <option value="$PROJECT_DIR$/app/src/css/chat.css" />
+        <option value="$PROJECT_DIR$/app/src/App.js" />
+        <option value="$PROJECT_DIR$/app/src/css/setting.css" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Profile.js" />
+        <option value="$PROJECT_DIR$/app/src/components/store/PrewProfile.js" />
+        <option value="$PROJECT_DIR$/app/src/index.js" />
+        <option value="$PROJECT_DIR$/app/src/components/store/UserPhotos.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Header.js" />
+        <option value="$PROJECT_DIR$/app/src/components/store/ProfileStore.js" />
+        <option value="$PROJECT_DIR$/php/application/models/Profile.php" />
+        <option value="$PROJECT_DIR$/php/application/controllers/ProfileController.php" />
+        <option value="$PROJECT_DIR$/app/src/components/store/UserInfo.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Search.js" />
         <option value="$PROJECT_DIR$/php/application/models/Search.php" />
+        <option value="$PROJECT_DIR$/php/application/controllers/SearchController.php" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/FindMatches.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Notifications.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Setting.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js" />
+        <option value="$PROJECT_DIR$/php/application/config/routes.php" />
+        <option value="$PROJECT_DIR$/php/index.php" />
+        <option value="$PROJECT_DIR$/php/application/models/Date.php" />
         <option value="$PROJECT_DIR$/php/application/controllers/AccountController.php" />
         <option value="$PROJECT_DIR$/php/application/models/Account.php" />
-        <option value="$PROJECT_DIR$/php/application/models/Profile.php" />
-        <option value="$PROJECT_DIR$/app/src/components/Routes.js" />
-        <option value="$PROJECT_DIR$/app/src/App.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Header.js" />
-        <option value="$PROJECT_DIR$/app/src/index.js" />
+        <option value="$PROJECT_DIR$/app/src/components/store/PrewProfileStore.js" />
+        <option value="$PROJECT_DIR$/app/src/css/user_profile.css" />
         <option value="$PROJECT_DIR$/app/src/components/store/SearchStore.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/FindMatches.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Search.js" />
+        <option value="$PROJECT_DIR$/app/src/components/store/ChatStore.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js" />
+        <option value="$PROJECT_DIR$/app/src/components/LoginSignup/Form.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Friends.js" />
+        <option value="$PROJECT_DIR$/app/src/components/store/LoginSignup.js" />
+        <option value="$PROJECT_DIR$/php/application/core/Router.php" />
+        <option value="$PROJECT_DIR$/php/application/core/Model.php" />
+        <option value="$PROJECT_DIR$/app/src/fetch.js" />
       </list>
     </option>
   </component>
@@ -447,8 +579,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1589" />
-    <option name="width" value="971" />
+    <option name="x" value="2179" />
+    <option name="width" value="381" />
     <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -478,6 +610,12 @@
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
@@ -516,6 +654,14 @@
               <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Pages" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Profile" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="store" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
@@ -574,8 +720,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -726,22 +872,29 @@
       <workItem from="1539061880442" duration="2006000" />
       <workItem from="1539065486295" duration="8401000" />
       <workItem from="1539081025682" duration="12011000" />
-      <workItem from="1539159336940" duration="1444000" />
+      <workItem from="1539159336940" duration="16105000" />
+      <workItem from="1539245977411" duration="7125000" />
+      <workItem from="1539262757685" duration="6024000" />
+      <workItem from="1539275001130" duration="41000" />
+      <workItem from="1539328430045" duration="26659000" />
+      <workItem from="1539428102393" duration="23897000" />
+      <workItem from="1539511480053" duration="26029000" />
+      <workItem from="1539597862551" duration="4294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="573088000" />
+    <option name="totallyTimeSpent" value="681818000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1106" y="0" width="1454" height="1440" extended-state="0" />
+    <frame x="1193" y="0" width="1367" height="1440" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21458046" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20043892" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3294964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -769,12 +922,120 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/php/application/config/db.php">
+    <entry file="file://$PROJECT_DIR$/php/application/controllers/ChatController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="40" lean-forward="false" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/scripts/start.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="46" column="2" lean-forward="false" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/css/log_sig.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="88" column="16" lean-forward="true" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/PrewProfile.js" />
+    <entry file="file://$PROJECT_DIR$/app/src/css/setting.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="44" column="1" lean-forward="false" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/css/photos.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/registerServiceWorker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="90" column="17" lean-forward="false" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/node_modules/whatwg-fetch/fetch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6270">
+          <caret line="418" column="2" lean-forward="false" selection-start-line="418" selection-start-column="2" selection-end-line="418" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="17" column="8" lean-forward="false" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/UserPhotos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/ProfileStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/RegisterStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -782,41 +1043,170 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/ViewsStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/models/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2430">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding>
+            <marker date="1539518406000" expanded="true" signature="332:983" ph="UPDATE `user... " />
+            <marker date="1539518406000" expanded="true" signature="1095:1260" ph="UPDATE `phot... " />
+            <marker date="1539518406000" expanded="true" signature="1358:1407" ph="SELECT * FRO... photos" />
+            <marker date="1539518406000" expanded="true" signature="1462:1588" ph="INSERT INTO `photos`... " />
+            <marker date="1539518406000" expanded="true" signature="1647:1714" ph="UPDATE `phot... " />
+            <marker date="1539518406000" expanded="true" signature="1810:1950" ph="SELECT * FRO... " />
+            <marker date="1539518406000" expanded="true" signature="2029:2139" ph="INSERT INTO `fake`... " />
+            <marker date="1539518406000" expanded="true" signature="2173:2272" ph="SELECT COUNT... fake" />
+            <marker date="1539518406000" expanded="true" signature="2360:2468" ph="UPDATE `user... " />
+            <marker date="1539518406000" expanded="true" signature="2520:2713" ph="SELECT * FRO... friend" />
+            <marker date="1539518406000" expanded="true" signature="2775:2966" ph="DELETE FROM " />
+            <marker date="1539518406000" expanded="true" signature="2775:3202" ph="DELETE FROM " />
+            <marker date="1539518406000" expanded="true" signature="3047:3202" ph="INSERT INTO `notifications`... " />
+            <marker date="1539518406000" expanded="true" signature="3283:3391" ph="UPDATE `user... " />
+            <marker date="1539518406000" expanded="true" signature="3592:3696" ph="INSERT INTO `block`... " />
+            <marker date="1539518406000" expanded="true" signature="3592:3925" ph="INSERT INTO `block`... " />
+            <marker date="1539518406000" expanded="true" signature="3777:3925" ph="UPDATE `user... " />
+            <marker date="1539518406000" expanded="true" signature="3961:4154" ph="SELECT * FRO... friend" />
+            <marker date="1539518406000" expanded="true" signature="4208:4391" ph="DELETE FROM " />
+            <marker date="1539518406000" expanded="true" signature="4464:4615" ph="INSERT INTO `notifications`... " />
+            <marker date="1539518406000" expanded="true" signature="4688:4792" ph="UPDATE `user... " />
+            <marker date="1539518406000" expanded="true" signature="4884:4985" ph="INSERT INTO `likes`... " />
+            <marker date="1539518406000" expanded="true" signature="4917:4985" ph="INSERT INTO `likes`... " />
+            <marker date="1539518406000" expanded="true" signature="5052:5153" ph="UPDATE `user... " />
+            <marker date="1539518406000" expanded="true" signature="5192:5345" ph="SELECT * FRO... block" />
+            <marker date="1539518406000" expanded="true" signature="5404:5547" ph="INSERT INTO `notifications`... " />
+            <marker date="1539518406000" expanded="true" signature="5598:5824" ph="SELECT COUNT... likes" />
+            <marker date="1539518406000" expanded="true" signature="5901:6000" ph="INSERT INTO `friend`... " />
+            <marker date="1539518406000" expanded="true" signature="6073:6216" ph="INSERT INTO `notifications`... " />
+            <marker date="1539518406000" expanded="true" signature="6289:6450" ph="UPDATE `user... " />
+            <marker date="1539518406000" expanded="true" signature="6544:6655" ph="DELETE FROM " />
+            <marker date="1539518406000" expanded="true" signature="6736:6844" ph="UPDATE `user... " />
+            <marker date="1539518406000" expanded="true" signature="6879:7072" ph="SELECT * FRO... friend" />
+            <marker date="1539518406000" expanded="true" signature="7126:7307" ph="DELETE FROM " />
+            <marker date="1539518406000" expanded="true" signature="7345:7495" ph="INSERT INTO `notifications`... " />
+            <marker date="1539518406000" expanded="true" signature="7533:7636" ph="UPDATE `user... " />
+            <marker date="1539518406000" expanded="true" signature="7737:8280" ph="SELECT notif... notifications" />
+            <marker date="1539518406000" expanded="true" signature="8389:8476" ph="DELETE FROM " />
+            <marker date="1539518406000" expanded="true" signature="8568:8613" ph="SELECT * FRO... tags" />
+            <marker date="1539518406000" expanded="true" signature="8568:8636" ph="SELECT * FRO... tags" />
+            <marker date="1539518406000" expanded="true" signature="8692:8794" ph="INSERT INTO `tags`... " />
+            <marker date="1539518406000" expanded="true" signature="8892:8970" ph="DELETE FROM " />
+            <marker date="1539518406000" expanded="true" signature="8892:8996" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/controllers/SearchController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="27" column="37" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/UserInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="100" column="8" lean-forward="false" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/controllers/ProfileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="74" column="9" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/models/Date.php" />
+    <entry file="file://$PROJECT_DIR$/php/application/models/Account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="130" column="38" lean-forward="false" selection-start-line="130" selection-start-column="38" selection-end-line="130" selection-end-column="38" />
+          <folding>
+            <marker date="1539546777000" expanded="true" signature="236:276" ph="SELECT * FRO... users" />
+            <marker date="1539546777000" expanded="true" signature="459:494" ph="SELECT * FRO... users" />
+            <marker date="1539546777000" expanded="true" signature="459:501" ph="SELECT * FRO... users" />
+            <marker date="1539546777000" expanded="true" signature="626:765" ph="SELECT block... block" />
+            <marker date="1539546777000" expanded="true" signature="878:1015" ph="SELECT userW... likes" />
+            <marker date="1539546777000" expanded="true" signature="1191:1227" ph="SELECT * FRO... photos" />
+            <marker date="1539546777000" expanded="true" signature="1191:1234" ph="SELECT * FRO... photos" />
+            <marker date="1539546777000" expanded="true" signature="1477:1947" ph="INSERT INTO `users`... " />
+            <marker date="1539546777000" expanded="true" signature="2027:2153" ph="INSERT INTO `photos`... " />
+            <marker date="1539546777000" expanded="true" signature="2356:2638" ph="SELECT users... users" />
+            <marker date="1539546777000" expanded="true" signature="2680:2962" ph="SELECT users... users" />
+            <marker date="1539546777000" expanded="true" signature="3078:3196" ph="UPDATE `user... " />
+            <marker date="1539546777000" expanded="true" signature="3293:3477" ph="UPDATE users... " />
+            <marker date="1539546777000" expanded="true" signature="3476:3477" ph="UPDATE `user... " />
+            <marker date="1539546777000" expanded="true" signature="3571:3646" ph="SELECT * FRO... views" />
+            <marker date="1539546777000" expanded="true" signature="3604:3612" ph="SELECT * FRO... views" />
+            <marker date="1539546777000" expanded="true" signature="3604:3613" ph="SELECT * FRO... views" />
+            <marker date="1539546777000" expanded="true" signature="3604:3646" ph="SELECT * FRO... views" />
+            <marker date="1539546777000" expanded="true" signature="3704:3811" ph="INSERT INTO `views`... " />
+            <marker date="1539546777000" expanded="true" signature="3854:3929" ph="SELECT * FRO... block" />
+            <marker date="1539546777000" expanded="true" signature="3996:4146" ph="INSERT INTO `notifications`... " />
+            <marker date="1539546777000" expanded="true" signature="4256:4303" ph="SELECT * FRO... tags" />
+            <marker date="1539546777000" expanded="true" signature="4423:4559" ph="SELECT * FRO... tags" />
+            <marker date="1539546777000" expanded="true" signature="5401:5402" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/css/user_profile.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="105" column="24" lean-forward="false" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
+        <state relative-caret-position="80">
+          <caret line="78" column="18" lean-forward="false" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/css/views_likes.css">
+    <entry file="file://$PROJECT_DIR$/php/application/models/Search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state relative-caret-position="214">
+          <caret line="114" column="50" lean-forward="true" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/css/photos.css">
+    <entry file="file://$PROJECT_DIR$/app/src/components/LoginSignup/FormErrors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/fetch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/store/ChatStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/SearchStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="39" column="37" lean-forward="true" selection-start-line="39" selection-start-column="37" selection-end-line="39" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -830,110 +1220,153 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/LoginSignup.js">
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/css/setting.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="16" column="8" lean-forward="true" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        <state relative-caret-position="387">
+          <caret line="192" column="38" lean-forward="true" selection-start-line="192" selection-start-column="38" selection-end-line="192" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/ViewsStore.js">
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="148">
+          <caret line="160" column="40" lean-forward="true" selection-start-line="160" selection-start-column="40" selection-end-line="160" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Notifications.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="46" column="46" lean-forward="false" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/css/ListofProfiles.css">
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/FindMatches.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="104" column="20" lean-forward="false" selection-start-line="104" selection-start-column="20" selection-end-line="104" selection-end-column="20" />
+        <state relative-caret-position="243">
+          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/ListOfProfiles.js">
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="19" column="43" lean-forward="true" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+        <state relative-caret-position="228">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/css/profile.css">
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" column="14" lean-forward="false" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+        <state relative-caret-position="273">
+          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/ProfileStore.js">
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Setting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="43" lean-forward="true" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        <state relative-caret-position="320">
+          <caret line="61" column="24" lean-forward="true" selection-start-line="61" selection-start-column="24" selection-end-line="61" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="36" column="30" lean-forward="true" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="74" column="9" lean-forward="true" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/LoginSignup/Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="360" column="13" lean-forward="false" selection-start-line="360" selection-start-column="8" selection-end-line="360" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="117" column="5" lean-forward="true" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Friends.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="39" column="26" lean-forward="true" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/PrewProfileStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="71" column="9" lean-forward="true" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/UserPhotos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/UserInfo.js">
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/LoginSignup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/ResearchStore.js">
+    <entry file="file://$PROJECT_DIR$/php/application/controllers/AccountController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="55" column="33" lean-forward="false" selection-start-line="55" selection-start-column="33" selection-end-line="55" selection-end-column="33" />
+        <state relative-caret-position="1604">
+          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="111" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/RegisterStore.js">
+    <entry file="file://$PROJECT_DIR$/php/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/controllers/ChatController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="40" lean-forward="false" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/controllers/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="44" lean-forward="false" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="315">
+          <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="15" />
+          <folding>
+            <element signature="e#7#35#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -945,298 +1378,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/core/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/application/core/Router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="630">
+          <caret line="42" column="43" lean-forward="false" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/lib/Db.php">
+    <entry file="file://$PROJECT_DIR$/app/src/fetch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="26" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="26" />
+        <state relative-caret-position="120">
+          <caret line="8" column="53" lean-forward="false" selection-start-line="8" selection-start-column="53" selection-end-line="8" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/models/Account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="31" lean-forward="false" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
-          <folding>
-            <marker date="1539096465000" expanded="true" signature="236:276" ph="SELECT * FRO... users" />
-            <marker date="1539096465000" expanded="true" signature="459:501" ph="SELECT * FRO... users" />
-            <marker date="1539096465000" expanded="true" signature="626:765" ph="SELECT block... block" />
-            <marker date="1539096465000" expanded="true" signature="878:1015" ph="SELECT userW... likes" />
-            <marker date="1539096465000" expanded="true" signature="1191:1234" ph="SELECT * FRO... photos" />
-            <marker date="1539096465000" expanded="true" signature="1454:1875" ph="INSERT INTO `users`... " />
-            <marker date="1539096465000" expanded="true" signature="1955:2081" ph="INSERT INTO `photos`... " />
-            <marker date="1539096465000" expanded="true" signature="2284:2566" ph="SELECT users... users" />
-            <marker date="1539096465000" expanded="true" signature="2608:2890" ph="SELECT users... users" />
-            <marker date="1539096465000" expanded="true" signature="3019:3098" ph="SELECT token... users" />
-            <marker date="1539096465000" expanded="true" signature="3198:3332" ph="UPDATE `user... " />
-            <marker date="1539096465000" expanded="true" signature="3692:3876" ph="UPDATE users... " />
-            <marker date="1539096465000" expanded="true" signature="3875:3876" ph="UPDATE `user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/models/Chat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding>
-            <marker date="1538482678000" expanded="true" signature="234:682" ph="SELECT users... users" />
-            <marker date="1538482678000" expanded="true" signature="915:1251" ph="SELECT id, s... chat" />
-            <marker date="1538482678000" expanded="true" signature="1519:1602" ph="INSERT INTO `chat`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/models/Profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1875">
-          <caret line="125" column="62" lean-forward="true" selection-start-line="125" selection-start-column="62" selection-end-line="125" selection-end-column="62" />
-          <folding>
-            <marker date="1539096465000" expanded="true" signature="298:817" ph="UPDATE `user... " />
-            <marker date="1539096465000" expanded="true" signature="929:1094" ph="UPDATE `phot... " />
-            <marker date="1539096465000" expanded="true" signature="1192:1241" ph="SELECT * FRO... photos" />
-            <marker date="1539096465000" expanded="true" signature="1296:1422" ph="INSERT INTO `photos`... " />
-            <marker date="1539096465000" expanded="true" signature="1481:1548" ph="UPDATE `phot... " />
-            <marker date="1539096465000" expanded="true" signature="1644:1784" ph="SELECT * FRO... " />
-            <marker date="1539096465000" expanded="true" signature="1874:1984" ph="INSERT INTO `fake`... " />
-            <marker date="1539096465000" expanded="true" signature="2079:2178" ph="SELECT COUNT... " />
-            <marker date="1539096465000" expanded="true" signature="2266:2374" ph="UPDATE `user... " />
-            <marker date="1539096465000" expanded="true" signature="2426:2619" ph="SELECT * FRO... friend" />
-            <marker date="1539096465000" expanded="true" signature="2681:2872" ph="DELETE FROM " />
-            <marker date="1539096465000" expanded="true" signature="2953:3061" ph="UPDATE `user... " />
-            <marker date="1539096465000" expanded="true" signature="3269:3373" ph="INSERT INTO `block`... " />
-            <marker date="1539096465000" expanded="true" signature="3269:3602" ph="INSERT INTO `block`... " />
-            <marker date="1539096465000" expanded="true" signature="3454:3602" ph="UPDATE `user... " />
-            <marker date="1539096465000" expanded="true" signature="3683:3876" ph="SELECT * FRO... friend" />
-            <marker date="1539096465000" expanded="true" signature="3930:4113" ph="DELETE FROM " />
-            <marker date="1539096465000" expanded="true" signature="4186:4290" ph="UPDATE `user... " />
-            <marker date="1539096465000" expanded="true" signature="4382:4483" ph="INSERT INTO `likes`... " />
-            <marker date="1539096465000" expanded="true" signature="4550:4705" ph="UPDATE `user... " />
-            <marker date="1539096465000" expanded="true" signature="4746:4972" ph="SELECT COUNT... likes" />
-            <marker date="1539096465000" expanded="true" signature="5049:5148" ph="INSERT INTO `friend`... " />
-            <marker date="1539096465000" expanded="true" signature="5221:5325" ph="UPDATE `user... " />
-            <marker date="1539096465000" expanded="true" signature="5221:5382" ph="UPDATE `user... " />
-            <marker date="1539096465000" expanded="true" signature="5483:5594" ph="DELETE FROM " />
-            <marker date="1539096465000" expanded="true" signature="5675:5783" ph="UPDATE `user... " />
-            <marker date="1539096465000" expanded="true" signature="5864:6057" ph="SELECT * FRO... friend" />
-            <marker date="1539096465000" expanded="true" signature="6111:6294" ph="DELETE FROM " />
-            <marker date="1539096465000" expanded="true" signature="6367:6471" ph="UPDATE `user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/controllers/AccountController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="61" column="27" lean-forward="false" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/controllers/SearchController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="21" column="49" lean-forward="false" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/models/Search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="27" column="62" lean-forward="false" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/LoginSignup/Form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2893">
-          <caret line="177" column="27" lean-forward="false" selection-start-line="177" selection-start-column="19" selection-end-line="177" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/LoginSignup/FormErrors.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-935">
-          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="85" column="16" lean-forward="false" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-140">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Setting.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2900">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="76" column="21" lean-forward="true" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Notifications.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="146" column="49" lean-forward="false" selection-start-line="146" selection-start-column="49" selection-end-line="146" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Footer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="41" lean-forward="false" selection-start-line="0" selection-start-column="41" selection-end-line="0" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/App.js">
+    <entry file="file://$PROJECT_DIR$/php/application/core/Model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="15" lean-forward="true" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+          <caret line="15" column="87" lean-forward="false" selection-start-line="15" selection-start-column="87" selection-end-line="15" selection-end-column="87" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/SearchStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="83" column="9" lean-forward="true" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/FindMatches.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="35" column="58" lean-forward="false" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="165" column="28" lean-forward="true" selection-start-line="165" selection-start-column="28" selection-end-line="165" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1539602042000" expanded="true" signature="305:379" ph="UPDATE `user... " />
           </folding>
         </state>
       </provider>

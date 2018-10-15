@@ -26,6 +26,7 @@
     overflow: hidden;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(19, 35, 47, 0.9);
+    background-color: #aba6a1;
 }
 
 .news_img img {
@@ -33,3 +34,12 @@
     width: 100%;
 }
 
+#noNotif {
+    color: #179b77;
+    padding: 15px 0;
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-align: center;
+}

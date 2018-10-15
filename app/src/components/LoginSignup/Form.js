@@ -34,7 +34,7 @@ class ForgotPass extends Component {
                 fieldValidationErrors.login = 'wrong';
                 break;
             case 'email':
-                fieldValidationErrors.email = 'нет такого';
+                fieldValidationErrors.email = 'not registered';
                 break;
             default:
                 break;
@@ -46,7 +46,6 @@ class ForgotPass extends Component {
     }
 
     validateForm() {
-        console.log(this.state.formErrors);
         this.setState({formValid: this.state.loginValid && this.state.emailValid});
     }
 
@@ -57,7 +56,6 @@ class ForgotPass extends Component {
             let array = JSON.parse(response);
 
             if (array['error'] === true) {
-                console.log(array);
                 this.validateField(array['fieldName']);
             }
             else {
@@ -116,20 +114,39 @@ class SignUpForm extends Component {
         lastName: '',
         email: '',
         gender: 'man',
-        formErrors: {password: '', email: '', login: ''},
+        formErrors: {password: '', email: '', login: '', firstName: '', lastName: ''},
+        latitude: '',
+        longitude: '',
         passwordValid: false,
         emailValid: false,
         loginValid: false,
         formValid: false,
+        firstNameValid: false,
+        lastNameValid: false,
     };
 
     validateField(fieldName, value) {
-        let fieldValidationErrors = this.state.formErrors,
-            emailValid = this.state.emailValid,
-            passwordValid = this.state.passwordValid,
-            loginValid = this.state.loginValid;
-
+        let {
+            emailValid,
+            passwordValid,
+            loginValid,
+            firstNameValid,
+            lastNameValid,
+        } = this.state,
+            fieldValidationErrors = this.state.formErrors;
         switch(fieldName) {
+            case 'login':
+                loginValid = value.match(/^([a-zа-яё]+|\d+)$/i);
+                fieldValidationErrors.login = loginValid ? '' : ' contain wrong symbols';
+                break;
+            case 'firstName':
+                firstNameValid = value.match(/^([a-zа-яё]+|\d+)$/i);
+                fieldValidationErrors.firstName = firstNameValid ? '' : ' contain wrong symbols';
+                break;
+            case 'lastName':
+                lastNameValid = value.match(/^([a-zа-яё]+|\d+)$/i);
+                fieldValidationErrors.lastName = lastNameValid ? '' : ' contain wrong symbols';
+                break;
             case 'email':
                 emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
                 fieldValidationErrors.email = emailValid ? '' : ' is invalid';
@@ -172,9 +189,19 @@ class SignUpForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        navigator.geolocation.getCurrentPosition(position => {
+            this.setState({
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+            }, this.Register);
+        });
+
+    };
+
+    Register() {
         let params = `firstName=${this.state.firstName}&lastName=${this.state.lastName}&email=${
             this.state.email}&login=${this.state.login}&password=${this.state.password
-        }&gender=${this.state.gender}`;
+            }&gender=${this.state.gender}&latitude=${this.state.latitude}&longitude=${this.state.longitude}`;
         fetchPost('register', params).then(response => {
             let array = JSON.parse(response);
             if (array['error'] === 'true') {
@@ -184,7 +211,7 @@ class SignUpForm extends Component {
                 this.props.LoginFormOpen();
             }
         });
-    };
+    }
 
     render() {
         const {
@@ -332,12 +359,16 @@ class LogInForm extends Component {
         this.noErrors();
         let params = `login=${this.state.login}&password=${this.state.password}`;
         fetchPost('login', params).then(response => {
-            let array = JSON.parse(response);
-            if (array['error']) {
-                this.validateField(array['fieldName']);
-            }
-            else {
-                this.props.Login.LogIn(array[0]['userId']);
+            if (response !== 'TypeError: Failed to fetch') {
+                let array = JSON.parse(response);
+                if (array['error']) {
+                    this.validateField(array['fieldName']);
+                }
+                else {
+                    this.props.User.userId = array[0]['userId'];
+                    this.props.Login.LogIn(array[0]['userId']);
+
+                }
             }
         });
     }

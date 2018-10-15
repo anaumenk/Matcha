@@ -44,7 +44,7 @@ class FriendsList extends Component {
                             <div className="chat_user_image">
                                 {friend.photo && <img src={require(`../../../${friend.photo}`)} alt={friend.login} />}
                             </div>
-                            <p>{friend.login}</p>
+                            <p>{friend.firstName} {friend.lastName}</p>
                         </div>
                     )
                 })}
@@ -62,9 +62,15 @@ class SendMessage extends Component {
 
     handleKeyPress = (e) => {
         if (e.key === "Enter") {
-            this.props.Chat.sendMessage(this.props.Chat.newMessage, this.props.Chat.friendId);
-            this.props.Chat.newMessage = '';
-            this.props.Chat.selectUser();
+            if (this.props.Chat.newMessage.match(/[0-9A-Za-z]/)) {
+                this.props.Chat.sendMessage(this.props.Chat.newMessage, this.props.Chat.friendId);
+                this.props.Chat.newMessage = '';
+                this.props.Chat.selectUser();
+            }
+            else {
+                this.props.Chat.newMessage = '';
+                this.props.Chat.selectUser();
+            }
         }
     };
 
@@ -78,6 +84,7 @@ class SendMessage extends Component {
                 <input
                     type="text"
                     id="m"
+                    placeholder="Type your message"
                     value={newMessage}
                     onChange={this.handleChange}
                     onKeyPress={(e) => this.handleKeyPress(e)}
@@ -99,25 +106,30 @@ class Messages extends Component {
         const {messages} = this.props.Chat;
         return (
             <div id="message_form">
-                {messages.map(message => {
-                    return (
-                        <div key={message.id}
-                             className={message.senderId === localStorage.getItem('userId') ? 'message_user' : 'message_other'}>
-                            <p>{message.text}</p>
-                        </div>
-                    )
-                })}
+                    {messages.map(message => {
+                        return (
+                            <div key={message.id}
+                                 className={message.senderId === localStorage.getItem('userId') ? 'message_user' : 'message_other'}>
+                                <p>{message.text}</p>
+                            </div>
+                        )
+                    })}
             </div>);
     }
 }
-
-
+@inject('User')
+@observer
 export default class Chat extends Component {
+
+    componentWillMount() {
+        this.props.User.push();
+    }
+
     render() {
         return (
             <div id="chat">
                 <FriendsList />
-                <form id="messages">
+                <form id="messages" onSubmit={(e) => {e.preventDefault()}} >
                     <SendMessage />
                     <Messages />
                 </form>

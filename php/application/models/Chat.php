@@ -10,7 +10,7 @@ class Chat extends Model{
         $params = [
             'userId' => $userId,
         ];
-        $result = $this->db->row("SELECT users.userId, users.login, photos.1 AS photo 
+        $result = $this->db->row("SELECT users.userId, users.firstName, users.lastName, photos.1 AS photo 
                                   FROM users
                                   INNER JOIN photos ON users.userId = photos.userId
                                   INNER JOIN friend ON users.userId = friend.user1 OR users.userId = friend.user2
@@ -33,11 +33,10 @@ class Chat extends Model{
     }
 
     public function sendMessage($userId, $friendId, $message) {
-        $params = [
-            'userId' => $userId,
-            'friendId' => $friendId,
-            'message' => $message,
-        ];
-        $this->db->row("INSERT INTO `chat` (sender, `user`, messages) VALUES (:userId, :friendId, :message)", $params);
+        $this->db->row("INSERT INTO `chat` (sender, `user`, messages) 
+                             VALUES ('$userId', '$friendId', '$message');
+                             
+                             INSERT INTO `notifications` (`idWho`, `idWhom`, `notification`) 
+                             VALUES ('$userId', '$friendId', 'send you a message')");
     }
 }

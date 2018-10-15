@@ -6,8 +6,8 @@ import Profile from './Pages/Profile/Profile';
 import FindMatches from './Pages/FindMatches';
 import Search from './Pages/Search';
 
-
 export default class RoutesList extends Component {
+
     render() {
         return (
             <div>

@@ -2,10 +2,10 @@ import {observable, action} from 'mobx';
 import {fetchPost} from "../../fetch";
 
 class UserInfo {
-    userId = localStorage.getItem('userId');
+    @observable userId = localStorage.getItem('userId');
     @observable firstName = '';
     @observable lastName = '';
-    login = '';
+    @observable login = '';
     @observable email = '';
     @observable password = '';
     @observable orientation = '';
@@ -21,41 +21,50 @@ class UserInfo {
     @observable latitude = '';
     @observable longitude = '';
 
-    @observable tags = '';
     @observable rating = '';
     @observable siteColor = '';
     @observable siteLanguage = '';
 
     @observable newTag = '';
+    @observable tags = [];
     @observable blocked = '';
     @observable liked = '';
 
-    // @observable google = {};
+    @observable locationChecked = '';
+    @observable newLocation = '';
 
     @action push() {
         fetchPost('user', `userId=${this.userId}`).then(response => {
-            let array = JSON.parse(response);
-            this.firstName = array[0]['firstName'];
-            this.lastName = array[0]['lastName'];
-            this.login = array[0]['login'];
-            this.email = array[0]['email'];
-            this.password = array[0]['password'];
+            if (response !== 'TypeError: Failed to fetch') {
+                let array = JSON.parse(response);
+                this.firstName = array[0]['firstName'];
+                this.lastName = array[0]['lastName'];
+                this.login = array[0]['login'];
+                this.email = array[0]['email'];
+                this.password = array[0]['password'];
 
-            this.orientation = array[0]['orientation'];
-            this.gender = array[0]['gender'];
+                this.orientation = array[0]['orientation'];
+                this.gender = array[0]['gender'];
 
-            this.occupation = array[0]['occupation'];
-            this.biography = array[0]['biography'];
-            this.birth = array[0]['birth'];
-            this.birthData(this.birth);
-            this.latitude = array[0]['latitude'];
-            this.longitude = array[0]['longitude'];
-            this.tags = array[0]['tags'];
-            this.rating = array[0]['rating'];
-            this.siteColor = array[0]['siteColor'];
-            this.siteLanguage = array[0]['siteLanguage'];
-            this.blocked = array[1];
-            this.liked = array[2];
+
+                this.locationChecked = array[0]['locationChecked'] === '1' ? true : false;
+                this.occupation = array[0]['occupation'];
+                this.biography = array[0]['biography'];
+                this.birth = array[0]['birth'];
+                this.birthData(this.birth);
+                this.latitude = array[0]['latitude'];
+                this.longitude = array[0]['longitude'];
+                this.rating = array[0]['rating'];
+                this.siteColor = array[0]['siteColor'];
+                this.siteLanguage = array[0]['siteLanguage'];
+                this.blocked = array[1];
+                this.liked = array[2];
+                this.tags = array[3];
+            }
+            else {
+                localStorage.setItem('userId', '');
+            }
+
         });
     }
 
@@ -88,26 +97,11 @@ class UserInfo {
     }
 
     @action removeTag = (tagForDel) => {
-        let array = '';
-        let tags = this.tags.split(',');
-        for (let tag of tags) {
-            if (tag !== tagForDel) {
-                array += ',' + tag;
-            }
-        }
-        this.tags = array;
+        tagForDel = tagForDel.substring(1, tagForDel.length);
+        fetchPost('delTag', `userId=${this.userId}&tagForDel=${tagForDel}`);
     };
-
     @action addNewTag() {
-        let tags = this.tags.split(',');
-        for (let tag of tags) {
-            if (tag === this.newTag) {
-                this.newTag = '';
-                return false;
-            }
-        }
-        this.tags += (this.tags) ? (',' + this.newTag) : this.newTag;
-
+        fetchPost('newTag', `userId=${this.userId}&newTag=${this.newTag}`);
         this.newTag = '';
     }
 
@@ -124,19 +118,33 @@ class UserInfo {
             birthMonth,
             birthYear,
             siteColor,
-            tags,
-            // latitude,
-            // longitude,
-            // tags,
-            // map,
+            latitude,
+            longitude,
+            locationChecked,
         } = this;
-
-        let params = `userId=${this.userId}&firstName=${firstName}&lastName=${lastName
+        let checker = locationChecked === true ? '1' : '0',
+            params = `userId=${this.userId}&firstName=${firstName}&lastName=${lastName
         }&email=${email}&orientation=${orientation}&gender=${gender
         }&occupation=${occupation}&biography=${biography
         }&birth=${birthYear}-${birthMonth}-${birthDay
-        }&tags=${tags}&siteColor=${siteColor}`;
+        }&siteColor=${siteColor
+        }&latitude=${latitude}&longitude=${longitude
+        }&locationChecked=${checker}`;
         fetchPost('editInfo', params);
+    }
+
+    @action getNewLocation() {
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${
+            this.newLocation}&sensor=false&language=en&key=AIzaSyAqLNucodvPuxX_30MWoh6g1YT6hWnvzS4`)
+            .then(response => {
+                return response.text();
+        }).then(response => {
+            let array = JSON.parse(response);
+            if (array.results[0]) {
+                this.latitude = array.results[0].geometry.location.lat;
+                this.longitude = array.results[0].geometry.location.lng;
+            }
+        });
     }
 }
 

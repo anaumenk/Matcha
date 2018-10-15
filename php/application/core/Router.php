@@ -42,17 +42,7 @@ class Router {
                     $controller = new $path($this->params);
                     $controller->$action();
                 }
-                else {
-                    echo "Метод не найден: $action";
-                }
             }
-            else {
-
-                echo "Не найден контроллер: $path";
-            }
-        }
-        else {
-            echo 'Маршрут не найден';
         }
     }
 }

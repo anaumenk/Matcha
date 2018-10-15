@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
 import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
-// const google = window.google;
 
 @inject('Profile')
 @observer
@@ -25,9 +24,40 @@ export class Popup extends Component {
 }
 
 @inject('User')
+@observer
+class Tags extends Component {
+    render() {
+        const {tags} = this.props.User;
+        return (
+            tags.map(tag => {
+                return (
+                    <div
+                        className={"new_tag"}
+                        key={tag.tagId}
+                        style={{cursor: 'pointer'}}
+                        onClick={(e) => {
+                            let text = e.target.innerHTML;
+                            this.props.User.removeTag(text);
+                            e.target.remove();
+                        }}
+                    >
+                        {`#${tag.text}`}
+                    </div>
+                );
+            })
+        );
+    }
+}
+
+@inject('User')
 @inject('Profile')
 @observer
 class Setting extends Component {
+
+    componentWillMount() {
+        this.props.User.push();
+    }
+
     birthYear = () => {
         let select = [];
         let year = 1918;
@@ -54,57 +84,64 @@ class Setting extends Component {
     };
 
     handleChange = (e) => {
-        // let emailValid = this.state.emailValid;
-
         switch(e.target.name) {
-            case 'email':
-                console.log(e.target.value);
-                if (!e.target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
-                    this.props.Profile.style = '1px solid red';
-                }
-                else {
-                    this.props.Profile.style = 'none';
-                }
+            case 'firstName':
+                this.props.Profile.firstNameStyle = !e.target.value.match(/^([a-zа-яё]+|\d+)$/i)
+                    ? '1px solid red'
+                    : 'none';
                 break;
+            case 'lastName':
+                this.props.Profile.lastNameStyle = !e.target.value.match(/^([a-zа-яё]+|\d+)$/i)
+                    ? '1px solid red'
+                    : 'none';
+                break;
+            case 'occupation':
+                this.props.Profile.occupationStyle = !e.target.value.match(/^([a-zа-яё]+|\d+)$/i)
+                    ? '1px solid red'
+                    : 'none';
+                break;
+            case 'biography':
+                this.props.Profile.biographyStyle = !e.target.value.match(/^([a-zа-яё]+|\d+)$/i)
+                    ? '1px solid red'
+                    : 'none';
+                break;
+            case 'email':
+                this.props.Profile.emailStyle = !e.target.value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+                    ? '1px solid red'
+                    : 'none';
+                break;
+            case 'newLocation':
+                this.props.Profile.newLocationStyle = !e.target.value.match(/^([a-zа-яё]+|\d+)$/i)
+                    ? '1px solid red'
+                    : 'none';
+                break;
+
             default:
                 break;
         }
-        this.props.User[e.target.name] = e.target.value;
+        this.props.User[e.target.name] = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
     };
 
-    tagList() {
-        let array = [],
-            i = 1;
-        if (this.props.User.tags) {
-            let tags = this.props.User.tags.split(',');
-            for (let tag of tags) {
-                array.push(
-                    <div
-                        className={"new_tag"}
-                        key={i++}
-                        style={{cursor: 'pointer'}}
-                        onClick={(e) => {
-                            let text = e.target.innerHTML;
-                            // e.target.remove();
-                            this.props.User.removeTag(text);
-                        }}
-                    >
-                        {`${tag}`}
-                    </div>
-                )
+    handleKeyPress(e) {
+        if (e.key === "Enter") {
+            switch(e.target.name) {
+                case 'newTag':
+                    if (this.props.User.newTag.match(/^([a-zа-яё]+|\d+)$/i)) {
+                        this.props.User.addNewTag();
+                        this.props.User.push();
+                    }
+                    else {
+                        this.props.User.newTag = '';
+                    }
+                    break;
+                case 'newLocation':
+                    this.props.User.getNewLocation();
+                    this.props.User.newLocation = '';
+                    break;
+                default:
+                    break;
             }
         }
-        return array;
-    }
-
-    handleKeyPress(e) {
-        if (e.key === "Enter" && this.props.User.newTag !== '') {
-            this.props.User.addNewTag();
-        }
-    }
-
-    Position(marker, map) {
-        console.log(marker);
     }
 
     render() {
@@ -123,17 +160,30 @@ class Setting extends Component {
             latitude,
             longitude,
             newTag,
+            locationChecked,
         } = this.props.User;
 
         return (
             <div style={{maxWidth: 300}}>
                 <div className="edit_field">
                     <p>First name</p>
-                    <input type="text" value={firstName} name="firstName" onChange={(e) => this.handleChange(e)} />
+                    <input
+                        type="text"
+                        value={firstName}
+                        name="firstName"
+                        style={{border: this.props.Profile.firstNameStyle}}
+                        onChange={(e) => this.handleChange(e)}
+                    />
                 </div>
                 <div className="edit_field">
                     <p>Last name</p>
-                    <input type="text" value={lastName}  name="lastName" onChange={(e) => this.handleChange(e)} />
+                    <input
+                        type="text"
+                        value={lastName}
+                        name="lastName"
+                        style={{border: this.props.Profile.lastNameStyle}}
+                        onChange={(e) => this.handleChange(e)}
+                    />
                 </div>
                 <div className="edit_field">
                     <p>Email adress</p>
@@ -142,7 +192,7 @@ class Setting extends Component {
                         value={email}
                         name="email"
                         onChange={(e) => this.handleChange(e)}
-                        style={{border: this.props.Profile.style}}
+                        style={{border: this.props.Profile.emailStyle}}
                     />
                 </div>
                 <div className="edit_field">
@@ -162,11 +212,24 @@ class Setting extends Component {
                 </div>
                 <div className="edit_field">
                     <p>Occupation</p>
-                    <input type="text" value={occupation} name='occupation' onChange={(e) => this.handleChange(e)}/>
+                    <input
+                        type="text"
+                        value={occupation}
+                        name='occupation'
+                        style={{border: this.props.Profile.occupationStyle}}
+                        onChange={(e) => this.handleChange(e)}
+                    />
                 </div>
                 <div className="edit_field">
                     <p>Biography</p>
-                    <input id="bio" type="text" value={biography} name='biography' onChange={(e) => this.handleChange(e)}/>
+                    <input
+                        id="bio"
+                        type="text"
+                        value={biography}
+                        name='biography'
+                        style={{border: this.props.Profile.biographyStyle}}
+                        onChange={(e) => this.handleChange(e)}
+                    />
                 </div>
                 <div className="edit_field">
                     <div id="birth_data">
@@ -200,7 +263,7 @@ class Setting extends Component {
                 <div className="tags" style={{fontSize: 'large', marginTop: 5,}}>
                     <p className="name">Tags</p>
                     <div className="tag_list">
-                        {this.tagList()}
+                        <Tags />
                     </div>
                     <input type="text"
                            onChange={this.handleChange}
@@ -211,35 +274,62 @@ class Setting extends Component {
                 </div>
                 <div id="location">
                     <p>Location</p>
+                    <div id="location_select">
+                        <input
+                            type="checkbox"
+                            name="locationChecked"
+                            checked={locationChecked}
+                            onChange={this.handleChange}
+                        />
+                        <p>I don't want to be positionned</p>
+                    </div>
+                    {!locationChecked &&
                     <div id="map">
+                        <div id="location_input">
+                            <input
+                                type="text"
+                                placeholder="Enter your location"
+                                name="newLocation"
+                                style={{border: this.props.Profile.newLocationStyle}}
+                                onChange={(e) => this.handleChange(e)}
+                                onKeyPress={(e) => this.handleKeyPress(e)}
+                            />
+                        </div>
                         <Map
                             google={this.props.google}
                             zoom={14}
                             initialCenter= {{
-                                 lat: latitude,
-                                 lng: longitude
+                                lat: latitude,
+                                lng: longitude
+                            }}
+                            center= {{
+                                lat: latitude,
+                                lng: longitude
                             }}
                         >
                             <Marker
-                                draggable={true}
-                                onDragend={this.Position}
-                                // position={{
-                                //      lat: latitude,
-                                //      lng: longitude
-                                // }}
+                                position= {{
+                                    lat: latitude,
+                                    lng: longitude
+                                }}
                             />
                         </Map>
                     </div>
+                    }
                 </div>
                 <button
                     className="button"
                     style={{width: 300, marginTop: 10}}
                     onClick={() => {
-                        if (this.props.Profile.style === 'none') {
-
-                            this.props.User.saveChanges();
-                            this.props.Profile.popupText = 'Saved succesfully';
-                            this.props.Profile.popup = true;
+                        if (this.props.Profile.firstNameStyle === 'none' &&
+                            this.props.Profile.lastNameStyle === 'none' &&
+                            this.props.Profile.emailStyle === 'none' &&
+                            this.props.Profile.occupationStyle === 'none' &&
+                            this.props.Profile.biographyStyle === 'none' &&
+                            this.props.Profile.newLocationStyle === 'none') {
+                                this.props.User.saveChanges();
+                                this.props.Profile.popupText = 'Saved succesfully';
+                                this.props.Profile.popup = true;
                         }
                     }}
                 >Save</button>

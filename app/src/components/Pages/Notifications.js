@@ -1,40 +1,55 @@
 import React, { Component } from 'react';
+import {inject, observer} from 'mobx-react';
 
-const News = [
-    {
-        id:0,
-        src: require('../../images/test.jpg'),
-        alt: 'name',
-        notification: 'User send you a message',
-    },
-    {
-        id:1,
-        src: require('../../images/test.jpg'),
-        alt: 'name2',
-        notification: 'User liked your photo',
-    },
-];
+@inject('Profile')
+@observer
+class Notific extends Component {
+    render() {
+        const {notifications} = this.props.Profile;
 
-const Notific = props => (
-    <div className="news">
-        <div className="news_img"><img src={props.src} alt={props.alt} /></div>
-        <p>{props.notification}</p>
-    </div>
-);
+        return (
+            notifications.map(note => {
+                return (
+                    <div
+                        className="news"
+                        key={note.id}
+                    >
+                        <div className="news_img">
+                            {note.photo && <img src={require(`../../${note.photo}`)} alt={note.lastName}/>}
+                        </div>
+                        <p>{`${note.firstName} ${note.lastName} ${note.text}`}</p>
+                    </div>
+                );
 
+            })
+        );
+    }
+}
+
+@inject('Profile')
+@inject('User')
+@observer
 export default class Notifications extends Component {
+
+    componentWillMount() {
+        this.props.User.push();
+    }
+
     render() {
         return (
             <div id="notifications">
-                {
-                    News.map(notific =>
-                        <Notific
-                            key={notific.id}
-                            src={notific.src}
-                            alt={notific.alt}
-                            notification={notific.notification}
-                        />
-                    )
+                <Notific />
+                {this.props.Profile.notifications.length > 0 ?
+                    <button
+                        className="button"
+                        style = {{marginTop: 10}}
+                        onClick={() => {
+                                this.props.Profile.clearNotifications(this.props.User.userId);
+                                this.props.Profile.notification(this.props.User.userId);
+                            }
+                        }
+                    >Clear</button> :
+                    <p id="noNotif">No notifications</p>
                 }
             </div>
         );

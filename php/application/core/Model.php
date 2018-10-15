@@ -10,5 +10,10 @@ abstract class Model {
 
     public function __construct() {
         $this->db = new Db;
+        $connection = $_REQUEST['connection'];
+        $userId = $_REQUEST['userId'];
+        if ($userId) {
+            $this->db->query("UPDATE `users` SET `connection` = '$connection' WHERE `userId` = '$userId'");
+        }
     }
 }

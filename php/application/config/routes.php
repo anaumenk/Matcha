@@ -62,6 +62,11 @@ return [
         'action' => 'search',
     ],
 
+    'findMatches' => [
+        'controller' => 'search',
+        'action' => 'findMatches',
+    ],
+
     'activateAccount' => [
         'controller' => 'account',
         'action' => 'activateAccount',
@@ -97,4 +102,28 @@ return [
         'action' => 'forgotPass',
     ],
 
+    'notification' => [
+        'controller' => 'profile',
+        'action' => 'notification',
+    ],
+
+    'clearNotification' => [
+        'controller' => 'profile',
+        'action' => 'clearNotification',
+    ],
+
+    'newTag' => [
+        'controller' => 'profile',
+        'action' => 'newTag',
+    ],
+
+    'delTag' => [
+        'controller' => 'profile',
+        'action' => 'delTag',
+    ],
+
+    'changeConnection' => [
+        'controller' => 'account',
+        'action' => 'changeConnection',
+    ],
 ];
