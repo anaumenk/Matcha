@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
 import {fetchPost} from "../../fetch";
+import openSocket from 'socket.io-client';
+
+const socket = openSocket('http://'+ window.location.hostname +':3001');
 
 @inject('Prew')
 @observer
@@ -23,8 +26,11 @@ class Tags extends Component {
 }
 
 @inject('Profile')
+@inject('Photo')
 @inject('User')
 @inject('Prew')
+@inject('Chat')
+@inject('Likes')
 @observer
 export default class PrewProfile extends Component {
     state = {
@@ -32,13 +38,23 @@ export default class PrewProfile extends Component {
         blockBlocked: !this.props.User.ifInBlock(this.props.Prew.userId) ? this.Block() : <button className='redButton'>Blocked</button>,
     };
 
+    componentWillMount() {
+        this.props.Chat.pushFriends();
+    }
+
     Block() {
         return (
             <button
                 className='redButton'
                 onClick={() => {
-                    this.props.Prew.blockUser(this.props.Prew.userId, this.props.User.userId);
-                    this.props.Prew.openUserProfile(this.props.User.userId, this.props.Prew.userId);
+                     this.props.Prew.blockUser(this.props.Prew.userId, this.props.User.userId);
+                     this.props.Prew.openUserProfile(this.props.User.userId, this.props.Prew.userId);
+                     for (let friend of this.props.Chat.friends) {
+                         if (friend['userId'] === this.props.Prew.userId) {
+                             socket.emit('notification', this.props.Prew.userId);
+                             this.props.Prew.openUserProfile(this.props.User.userId, this.props.Prew.userId);
+                         }
+                     }
                     this.setState({blockBlocked: <button className='redButton'>Blocked</button>});
                 }}
             >Block</button>
@@ -50,15 +66,41 @@ export default class PrewProfile extends Component {
             <button
                 className='greenButton'
                 onClick={() => {
-                    if (this.props.Photo.one) {
-                        this.props.Prew.likeUser(this.props.Prew.userId, this.props.User.userId);
-                        this.props.Prew.openUserProfile(this.props.User.userId, this.props.Prew.userId);
-                        this.setState({likeUnlike: this.Unlike()});
-                    }
-                    else {
-                        this.props.Profile.popupText = 'You must have at least one picture to like other users';
-                        this.props.Profile.popup = true;
-                    }
+                     if (this.props.Photo.one) {
+                         let i = 0;
+                         for (let friend of this.props.Chat.friends) {
+                             if (friend['userId'] === this.props.Prew.userId) {
+                                 i++;
+                                 return ;
+                             }
+                         }
+                         for (let block of this.props.User.blocked) {
+                             if (block['userId'] === this.props.Prew.userId) {
+                                 i++;
+                                 return ;
+                             }
+                         }
+                         if (i === 0) {
+                             socket.emit('notification', this.props.Prew.userId);
+                         }
+                         this.props.Prew.likeUser(this.props.Prew.userId, this.props.User.userId);
+                         this.props.Prew.openUserProfile(this.props.User.userId, this.props.Prew.userId);
+                         i = 0;
+                         for (let block of this.props.User.blocked) {
+                             if (block['userId'] === this.props.Prew.userId) {
+                                 i++;
+                                 return ;
+                             }
+                         }
+                         if (i === 0) {
+                             socket.emit('notification', this.props.Prew.userId);
+                         }
+                         this.setState({likeUnlike: this.Unlike()});
+                     }
+                     else {
+                         this.props.Profile.popupText = 'You must have at least one picture to like other users';
+                         this.props.Profile.popup = true;
+                     }
                 }}
             >Like</button>
         );
@@ -70,6 +112,13 @@ export default class PrewProfile extends Component {
                 className='redButton'
                 onClick={() => {
                     this.props.Prew.unLikeUser(this.props.Prew.userId, this.props.User.userId);
+                    this.props.User.push();
+                    for (let friend of this.props.Chat.friends) {
+                         if (friend['userId'] === this.props.Prew.userId) {
+                            socket.emit('notification', this.props.Prew.userId);
+                            this.props.Chat.pushFriends();
+                        }
+                    }
                     this.props.Prew.openUserProfile(this.props.User.userId, this.props.Prew.userId);
                     this.setState({likeUnlike: this.Like()});
                 }}
@@ -146,7 +195,7 @@ export default class PrewProfile extends Component {
             >
                 <div id="profileConnection">
                     <p>
-                        {this.props.Prew.connection}
+                        {connection}
                     </p>
                     <div>
                         <i

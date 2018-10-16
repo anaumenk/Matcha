@@ -33,6 +33,7 @@ export default class Notifications extends Component {
 
     componentWillMount() {
         this.props.User.push();
+        this.props.Profile.notification(this.props.User.userId);
     }
 
     render() {

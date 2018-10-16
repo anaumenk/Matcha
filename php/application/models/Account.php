@@ -92,11 +92,11 @@ class Account extends Model{
         if (!$viewed) {
             $this->db->query("INSERT INTO `views` (`userWho`, `userWhom`)
                                    VALUES ('$idWho', '$idWhom')");
-            $blocked = $this->db->row("SELECT * FROM `block` WHERE `userWhom` = '$idWho' AND `userWho` = '$idWhom'");
-            if (!$blocked) {
-                $this->db->query("INSERT INTO `notifications` (`idWho`, `idWhom`, `notification`)
+        }
+        $blocked = $this->db->row("SELECT * FROM `block` WHERE `userWhom` = '$idWho' AND `userWho` = '$idWhom'");
+        if (!$blocked) {
+            $this->db->query("INSERT INTO `notifications` (`idWho`, `idWhom`, `notification`)
                                    VALUES ('$idWho', '$idWhom', 'viewed your profile')");
-            }
         }
     }
 
@@ -130,7 +130,7 @@ class Account extends Model{
         else {
             return ['', '', '', '', ''];
         }
-
     }
+
 }
 

@@ -194,14 +194,18 @@ class SignUpForm extends Component {
                 latitude: position.coords.latitude,
                 longitude: position.coords.longitude,
             }, this.Register);
-        });
-
+        },() => {
+            this.setState({
+                latitude: 50.45466,
+                longitude: 30.5238,
+            }, this.Register);
+        },{timeout:3000});
     };
 
     Register() {
         let params = `firstName=${this.state.firstName}&lastName=${this.state.lastName}&email=${
             this.state.email}&login=${this.state.login}&password=${this.state.password
-            }&gender=${this.state.gender}&latitude=${this.state.latitude}&longitude=${this.state.longitude}`;
+            }&gender=${this.state.gender}&latitude=${this.state.latitude}&longitude=${this.state.longitude}&hostname=${window.location.hostname}`;
         fetchPost('register', params).then(response => {
             let array = JSON.parse(response);
             if (array['error'] === 'true') {

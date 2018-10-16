@@ -55,8 +55,8 @@ class UserInfo {
                 this.latitude = array[0]['latitude'];
                 this.longitude = array[0]['longitude'];
                 this.rating = array[0]['rating'];
-                this.siteColor = array[0]['siteColor'];
-                this.siteLanguage = array[0]['siteLanguage'];
+                // this.siteColor = array[0]['siteColor'];
+                // this.siteLanguage = array[0]['siteLanguage'];
                 this.blocked = array[1];
                 this.liked = array[2];
                 this.tags = array[3];
@@ -117,7 +117,7 @@ class UserInfo {
             birthDay,
             birthMonth,
             birthYear,
-            siteColor,
+            // siteColor,
             latitude,
             longitude,
             locationChecked,
@@ -127,7 +127,6 @@ class UserInfo {
         }&email=${email}&orientation=${orientation}&gender=${gender
         }&occupation=${occupation}&biography=${biography
         }&birth=${birthYear}-${birthMonth}-${birthDay
-        }&siteColor=${siteColor
         }&latitude=${latitude}&longitude=${longitude
         }&locationChecked=${checker}`;
         fetchPost('editInfo', params);

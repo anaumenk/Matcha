@@ -55,7 +55,6 @@ class SearchStore {
         }&RatingStart=${this.RatingStart
         }&RatingEnd=${this.RatingEnd
         }&tags=${this.tags}&latitude=${latitude}&longitude=${longitude}`;
-        console.log(params);
         fetchPost('search', params).then(response => {
             this.listOfPeople = JSON.parse(response);
         });
@@ -96,7 +95,7 @@ class SearchStore {
         this.minRating = 0;
         this.maxRating = 200;
 
-        // this.tags = '';
+        this.tags = [];
         this.newTag = '';
 
         this.listOfPeople = [];

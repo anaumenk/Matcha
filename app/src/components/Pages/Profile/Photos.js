@@ -33,7 +33,9 @@ export default class Photos extends Component {
                              accept="image/jpg, image/png"
                              name="newPhoto"
                              style={{outline: 'none', width: '100%', height: '100%', zIndex: 2, cursor: 'pointer', opacity: 0}}
-                             onChange={(e) => this.addPhoto(e)}
+                             onChange={(e) => {
+                                 this.addPhoto(e)
+                             }}
                         />
                     </div>
                 }
@@ -44,12 +46,17 @@ export default class Photos extends Component {
 
     addPhoto(e) {
         let file = e.target.files[0];
-        let reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = (e) => {
-            this.props.Photo.newPhoto = e.target.result;
-            this.props.Photo.addPhoto();
-
+        if (e.target.files[0] && e.target.files[0].size < 1000000) {
+            let reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (e) => {
+                this.props.Photo.newPhoto = e.target.result;
+                this.props.Photo.addPhoto();
+            }
+        }
+        else if (e.target.files[0]) {
+            this.props.Profile.popupText = 'Too large photo';
+            this.props.Profile.popup = true;
         }
     }
 
@@ -80,7 +87,7 @@ export default class Photos extends Component {
 
     render() {
         return (
-            <div id="profile_photos" onChange={(e) => {e.preventDefault()}}>
+            <div id="profile_photos">
                 <div style={{marginBottom: 10, alignItems: 'flex-end'}}>
                     {this.isPhoto(this.props.Photo.one, 'one')}
                     {this.isPhoto(this.props.Photo.two, 'two')}

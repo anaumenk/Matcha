@@ -59,6 +59,7 @@ class AccountController extends Controller {
         $gender = $_REQUEST['gender'];
         $latitude = $_REQUEST['latitude'];
         $longitude = $_REQUEST['longitude'];
+        $hostname = $_REQUEST['hostname'];
 
         $sql = $this->model->getUserLogin($login);
         if ($sql) {
@@ -70,7 +71,7 @@ class AccountController extends Controller {
             $this->model->createUser($firstName, $lastName, $email, $login, $password, $gender, $token, $latitude, $longitude);
             $response = ['error' => 'false'];
 
-            $message = "<p>Hello, $lastName $firstName!</p><p>You need to confirm your email address to complete your Matcha account.</p><p>It's easy — just click <a href='http://localhost:8080/php/activateAccount?token=$token'>HERE</a>.</p>";
+            $message = "<p>Hello, $lastName $firstName!</p><p>You need to confirm your email address to complete your Matcha account.</p><p>It's easy — just click <a href='http://$hostname:8080/php/activateAccount?token=$token&hostname=$hostname'>HERE</a>.</p>";
             $subject = "Matcha";
             $subject_preferences = array(
                 "input-charset" => "utf-8",
@@ -99,8 +100,9 @@ class AccountController extends Controller {
 
     public function activateAccountAction() {
         $token = $_REQUEST['token'];
+        $hostname = $_REQUEST['hostname'];
         $this->model->activateAccount($token);
-        header("Location: http://localhost:3000/");
+        header("Location: http://$hostname:3000/");
     }
 
     public function prewUserAction() {

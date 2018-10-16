@@ -122,8 +122,4 @@ return [
         'action' => 'delTag',
     ],
 
-    'changeConnection' => [
-        'controller' => 'account',
-        'action' => 'changeConnection',
-    ],
 ];

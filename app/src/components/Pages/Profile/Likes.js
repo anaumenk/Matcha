@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
+import openSocket from 'socket.io-client';
+
+const socket = openSocket('http://' + window.location.hostname + ':3001');
 
 @inject('Likes')
 @inject('Prew')
@@ -20,7 +23,10 @@ class Like extends Component {
                     <div
                         key={like.userId}
                         className="user_like"
-                        onClick={() => this.props.Prew.openUserProfile(this.props.User.userId, like.userId)}
+                        onClick={() => {
+                            this.props.Prew.openUserProfile(this.props.User.userId, like.userId);
+                            socket.emit('notification', like.userId);
+                        }}
                     >
                         <a>
                             {like.photo && <img src={require(`../../../${like.photo}`)} alt={like.login} />}

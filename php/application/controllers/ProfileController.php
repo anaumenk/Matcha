@@ -16,13 +16,13 @@ class ProfileController extends Controller {
         $occupation = $_REQUEST['occupation'];
         $biography = $_REQUEST['biography'];
         $birth = $_REQUEST['birth'];
-        $siteColor = $_REQUEST['siteColor'];
+//        $siteColor = $_REQUEST['siteColor'];
         $latitude = $_REQUEST['latitude'];
         $longitude = $_REQUEST['longitude'];
         $locationChecked = $_REQUEST['locationChecked'];
 
         $this->model->editUser($userId, $firstName, $lastName, $email, $gender, $orientation, $occupation,
-            $biography, $birth, $siteColor, $latitude, $longitude, $locationChecked);
+            $biography, $birth, $latitude, $longitude, $locationChecked);
     }
 
     public function editPhotosAction() {
@@ -39,18 +39,15 @@ class ProfileController extends Controller {
     public function addPhotoAction() {
         $userId = $_REQUEST['userId'];
         $newPhoto = $_REQUEST['newPhoto'];
-        $photoId = $_REQUEST['photoId'];
 
+        $photoId = $_REQUEST['photoId'];
         $newPhoto = preg_replace("/^.+base64,/", "", $newPhoto);
         $newPhoto = str_replace(' ','+', $newPhoto);
         $image_data = base64_decode($newPhoto);
-
         $name = "images/photo".$_SERVER['REQUEST_TIME'].".png";
         $fullName = "../app/src/".$name;
-
         file_put_contents($fullName, $image_data);
-
-        $this->model->addPhoto($userId, $name, $photoId);
+        $this->model->addPhoto($userId, $name, $photoId);;
     }
 
     public function fakeUserAction() {
@@ -61,7 +58,7 @@ class ProfileController extends Controller {
         echo json_encode($response);
     }
 
-    public function bloUserAction() {
+    public function blockUserAction() {
         $who = $_REQUEST['who'];
         $whom = $_REQUEST['whom'];
 

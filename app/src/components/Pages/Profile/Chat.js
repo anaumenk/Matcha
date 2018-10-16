@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
+import openSocket from 'socket.io-client';
+
+const socket = openSocket('http://'+window.location.hostname+':3001');
 
 @inject('Chat')
 @observer
@@ -54,6 +57,7 @@ class FriendsList extends Component {
 }
 
 @inject('Chat')
+@inject('User')
 @observer
 class SendMessage extends Component {
     handleChange = (e) =>{
@@ -62,15 +66,12 @@ class SendMessage extends Component {
 
     handleKeyPress = (e) => {
         if (e.key === "Enter") {
-            if (this.props.Chat.newMessage.match(/[0-9A-Za-z]/)) {
+            if (this.props.Chat.newMessage.match(/^([a-zа-яё]+|\d+)$/i)) {
+                socket.emit('message', [this.props.User.userId, this.props.Chat.friendId, this.props.Chat.newMessage]);
+                socket.emit('notification', this.props.Chat.friendId);
                 this.props.Chat.sendMessage(this.props.Chat.newMessage, this.props.Chat.friendId);
-                this.props.Chat.newMessage = '';
-                this.props.Chat.selectUser();
             }
-            else {
-                this.props.Chat.newMessage = '';
-                this.props.Chat.selectUser();
-            }
+            this.props.Chat.newMessage = '';
         }
     };
 
@@ -97,6 +98,20 @@ class SendMessage extends Component {
 @inject('Chat')
 @observer
 class Messages extends Component {
+
+    componentDidMount() {
+        socket.on('new message', function (msg) {
+            if (msg[1] === localStorage.getItem('userId') || msg[0] === localStorage.getItem('userId')) {
+                let parent = document.getElementById('message_form'),
+                    newelement = document.createElement('div');
+                if (parent) {
+                    newelement.innerHTML = `<p>${msg[2]}</p>`;
+                    newelement.className = msg[1] === localStorage.getItem('userId') ? 'message_other' : 'message_user';
+                    parent.insertBefore(newelement, parent.firstChild);
+                }
+            }
+        });
+    }
 
     componentWillMount() {
         this.props.Chat.pushFriends();

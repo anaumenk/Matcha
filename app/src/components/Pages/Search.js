@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
 import {Popup} from "./Profile/Setting";
+import openSocket from 'socket.io-client';
+
+const socket = openSocket('http://'+window.location.hostname+':3001');
 
 function getAge(date) {
     return ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)) | 0;
@@ -19,7 +22,10 @@ export class People extends Component {
                         <div key={people.userId} className="user_profile_result">
                             <div
                                 className="user_profile_result_img"
-                                onClick={() => this.props.Prew.openUserProfile(this.props.User.userId, people.userId)}
+                                onClick={() => {
+                                    this.props.Prew.openUserProfile(this.props.User.userId, people.userId);
+                                    socket.emit('notification', people.userId);
+                                }}
                             >
                                 {people.photo && <img src={require(`../../${people.photo}`)} alt={people.firstName}/>}
                             </div>
@@ -149,6 +155,7 @@ export class Slider extends Component {
 @inject('Search')
 @inject('Profile')
 @inject('Prew')
+@inject('Photo')
 @inject('User')
 @observer
 export default class Search extends Component {
@@ -159,6 +166,7 @@ export default class Search extends Component {
     componentWillMount() {
         this.props.User.push();
         this.props.Search.clear();
+        this.props.Photo.push();
     }
 
     render() {

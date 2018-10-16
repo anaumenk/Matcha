@@ -6,6 +6,7 @@ import {Popup} from "./Profile/Setting";
 @inject('Search')
 @inject('Prew')
 @inject('User')
+@inject('Photo')
 @observer
 export default class FindMatches extends Component {
     handleChange = (e) => {
@@ -15,6 +16,7 @@ export default class FindMatches extends Component {
     componentWillMount() {
         this.props.Search.clear();
         this.props.User.push();
+        this.props.Photo.push();
     }
 
     render() {

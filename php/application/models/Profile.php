@@ -7,13 +7,12 @@ use application\core\Model;
 class Profile extends Model{
 
     public function editUser($userId, $firstName, $lastName, $email, $gender, $orientation, $occupation,
-                             $biography, $birth, $siteColor, $latitude, $longitude, $locationChecked) {
+                             $biography, $birth, $latitude, $longitude, $locationChecked) {
         $this->db->query("UPDATE `users`
                                SET `firstName` = '$firstName', `lastName` = '$lastName',
                                     `email` = '$email', `gender` = '$gender',
                                     `orientation` = '$orientation', `occupation` = '$occupation',
                                     `biography` = '$biography', `birth` = '$birth',
-                                    `siteColor` = '$siteColor',
                                     `latitude` = '$latitude', `longitude` = '$longitude', 
                                     `locationChecked` = '$locationChecked'
                                WHERE `userId` = '$userId'");
@@ -43,24 +42,10 @@ class Profile extends Model{
         if (!$sql) {
             $this->db->query("INSERT INTO `fake` (`idWho`, `idWhom`) 
                                               VALUES ('$who', '$whom')");
-            $count_sql = row("SELECT COUNT(*) FROM `fake` 
+            $count_sql = $this->db->row("SELECT COUNT(*) FROM `fake` 
                                               WHERE `idWhom` = '$whom'");
             if ($count_sql[0]['COUNT(*)'] >= 5) {
                 $this->db->query("UPDATE `users` SET `rating` = `rating` - 50 
-                                       WHERE `userId` = '$whom'");
-            }
-            $sql= $this->db->row("SELECT * FROM `friend` 
-                                       WHERE (`user1` = '$who' AND `user2` = '$whom') 
-                                       OR (`user2` = '$who' AND `user1` = '$whom')");
-            if ($sql) {
-                $this->db->query("DELETE FROM `friend` 
-                                       WHERE (`user1` = '$who' AND `user2` = '$whom') 
-                                       OR (`user2` = '$who' AND `user1` = '$whom');
-                                       
-                                       INSERT INTO `notifications` (`idWho`, `idWhom`, `notification`) 
-                                       VALUES ('$who', '$whom', 'not your friend anymore');
-                                       
-                                       UPDATE `users` SET `rating` = `rating` - 10 
                                        WHERE `userId` = '$whom'");
             }
         }

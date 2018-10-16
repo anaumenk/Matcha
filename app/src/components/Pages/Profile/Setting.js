@@ -156,7 +156,7 @@ class Setting extends Component {
             birthDay,
             birthMonth,
             birthYear,
-            siteColor,
+            // siteColor,
             latitude,
             longitude,
             newTag,
@@ -253,13 +253,13 @@ class Setting extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="edit_field">
-                    <p>Site color</p>
-                    <select value={siteColor} name='siteColor' onChange={(e) => this.handleChange(e)}>
-                        <option>default</option>
-                        <option>dark</option>
-                    </select>
-                </div>
+                {/*<div className="edit_field">*/}
+                    {/*<p>Site color</p>*/}
+                    {/*<select value={siteColor} name='siteColor' onChange={(e) => this.handleChange(e)}>*/}
+                        {/*<option>default</option>*/}
+                        {/*<option>dark</option>*/}
+                    {/*</select>*/}
+                {/*</div>*/}
                 <div className="tags" style={{fontSize: 'large', marginTop: 5,}}>
                     <p className="name">Tags</p>
                     <div className="tag_list">

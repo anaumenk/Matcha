@@ -27,6 +27,7 @@ class UserPhotos {
         let photoId = this.one === '' ? 1 : (this.two === '' ? 2 :
             (this.three === '' ? 3 : (this.four === '' ? 4 : 5))),
             params = `userId=${localStorage.getItem('userId')}&newPhoto=${this.newPhoto}&photoId=${photoId}`;
+        // console.log(this.newPhoto);
         fetchPost('addPhoto', params);
     }
 }
