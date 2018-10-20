@@ -7,7 +7,7 @@ use application\core\Model;
 class Search extends Model{
 
     public function doSeach($userId, $sortBy, $AgeStart, $AgeEnd, $DistanceStart, $DistanceEnd, $RatingStart,
-                            $RatingEnd, $tags, $latitude, $longitude) {
+                            $tags, $latitude, $longitude) {
         $sort = ($sortBy == 'Age') ? 'users.birth DESC' : (($sortBy == 'Rating') ? 'users.rating DESC' : 'km ASC');
         $age = "((YEAR(CURRENT_DATE) - YEAR(birth)) -
             (DATE_FORMAT(CURRENT_DATE, '%m%d') < DATE_FORMAT(birth, '%m%d')))";
@@ -21,7 +21,7 @@ class Search extends Model{
                                AND (".$km." BETWEEN '$DistanceStart' AND '$DistanceEnd')
                                AND tags.text IN ('$tags')
                                AND (".$age." BETWEEN '$AgeStart' AND '$AgeEnd')
-                               AND (users.rating BETWEEN '$RatingStart' AND '$RatingEnd')
+                               AND users.rating > '$RatingStart'
                                ORDER BY ".$sort)
             : $this->db->row("SELECT users.userId, users.firstName, users.gender, 
             users.orientation, users.birth, users.lastName, photos.1 AS photo,". $age ." AS age, ".$km." AS km 
@@ -30,13 +30,13 @@ class Search extends Model{
                                WHERE users.userId != '$userId'
                                AND (".$km." BETWEEN '$DistanceStart' AND '$DistanceEnd')
                                AND (".$age." BETWEEN '$AgeStart' AND '$AgeEnd')
-                               AND (users.rating BETWEEN '$RatingStart' AND '$RatingEnd')
+                               AND users.rating > '$RatingStart'
                                ORDER BY ".$sort);
         return $sql;
     }
 
     public function dofindMatches($userId, $sortBy, $AgeStart, $AgeEnd, $DistanceStart, $DistanceEnd, $RatingStart,
-                            $RatingEnd, $userGender, $userOrientation, $tags, $latitude, $longitude) {
+                            $userGender, $userOrientation, $tags, $latitude, $longitude) {
         if (($userGender == 'woman' || $userGender == 'man') && $userOrientation == 'straight') {
             $gender = $userGender == 'woman' ? 'man' : 'woman' ;
             $orientation = 'straight\' OR users.orientation = \'bisexual';
@@ -68,7 +68,7 @@ class Search extends Model{
                                AND (".$km." BETWEEN '$DistanceStart' AND '$DistanceEnd')
                                AND tags.text IN ('$tags')
                                AND (".$age." BETWEEN '$AgeStart' AND '$AgeEnd')
-                               AND (users.rating BETWEEN '$RatingStart' AND '$RatingEnd')
+                               AND users.rating > '$RatingStart'
                                AND (users.orientation = 'bisexual' OR (users.gender = '$userGender' AND users.orientation = 'gay'))
                                ORDER BY ".$sort)
                 : $this->db->row("SELECT users.userId, users.firstName, users.gender, users.orientation, users.birth, users.lastName, photos.1 AS photo,". $age ." AS age,
@@ -86,7 +86,7 @@ class Search extends Model{
                                AND users.userId != '$userId'
                                AND (".$km." BETWEEN '$DistanceStart' AND '$DistanceEnd')
                                AND (".$age." BETWEEN '$AgeStart' AND '$AgeEnd')
-                               AND (users.rating BETWEEN '$RatingStart' AND '$RatingEnd')
+                               AND users.rating > '$RatingStart'
                                AND (users.orientation = 'bisexual' OR (users.gender = '$userGender' AND users.orientation = 'gay'))
                                ORDER BY ".$sort);
         }
@@ -108,7 +108,7 @@ class Search extends Model{
                                AND (".$km." BETWEEN '$DistanceStart' AND '$DistanceEnd')
                                AND tags.text IN ('$tags')
                                AND (".$age." BETWEEN '$AgeStart' AND '$AgeEnd')
-                               AND (users.rating BETWEEN '$RatingStart' AND '$RatingEnd')
+                               AND users.rating > '$RatingStart'
                                AND (users.gender = '$gender')
                                AND (users.orientation = '$orientation')
                                ORDER BY ".$sort)
@@ -127,7 +127,7 @@ class Search extends Model{
                                AND users.userId != '$userId'
                                AND (".$km." BETWEEN '$DistanceStart' AND '$DistanceEnd')
                                AND (".$age." BETWEEN '$AgeStart' AND '$AgeEnd')
-                               AND (users.rating BETWEEN '$RatingStart' AND '$RatingEnd')
+                               AND users.rating BETWEEN > '$RatingStart'
                                AND (users.gender = '$gender')
                                AND (users.orientation = '$orientation')
                                ORDER BY ".$sort);

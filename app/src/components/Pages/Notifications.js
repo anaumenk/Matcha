@@ -5,10 +5,8 @@ import {inject, observer} from 'mobx-react';
 @observer
 class Notific extends Component {
     render() {
-        const {notifications} = this.props.Profile;
-
         return (
-            notifications.map(note => {
+            this.props.Profile.notifications.map(note => {
                 return (
                     <div
                         className="news"
@@ -17,7 +15,11 @@ class Notific extends Component {
                         <div className="news_img">
                             {note.photo && <img src={require(`../../${note.photo}`)} alt={note.lastName}/>}
                         </div>
-                        <p>{`${note.firstName} ${note.lastName} ${note.text}`}</p>
+                        <div style={{width: '60%'}}>
+                            <p>{`${note.firstName} ${note.lastName}`}</p>
+                            <p>{`${note.text}`}</p>
+                        </div>
+
                     </div>
                 );
 
@@ -45,8 +47,8 @@ export default class Notifications extends Component {
                         className="button"
                         style = {{marginTop: 10}}
                         onClick={() => {
-                                this.props.Profile.clearNotifications(this.props.User.userId);
-                                this.props.Profile.notification(this.props.User.userId);
+                                this.props.Profile.clearNotifications();
+                                this.props.Profile.notification();
                             }
                         }
                     >Clear</button> :

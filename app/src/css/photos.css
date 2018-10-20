@@ -2,27 +2,30 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    max-width: 600px;
 }
+
 #profile_photos div {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .photo {
     width: 250px;
     height: 250px;
     overflow: hidden;
-    background-color: #aba6a1;
-    margin-right: 10px;
+    background-color: #c4bfba;
+    margin: 0 10px 10px 0;
     position: relative;
-    color: #c1bdba;
+    color: #e1ddda;
     font-size: 30px;
-    Justify-content: flex-end;
+    justify-content: center;
 }
 
-.first {
-    width: 350px;
-    height: 350px;
+@media only screen and (min-width: 600px) {
+    .first {
+        width: 350px;
+        height: 350px;
+    }
 }
 
 .photo img {
@@ -35,6 +38,14 @@
     top: 5px;
     right: 5px;
     cursor: pointer;
+}
+
+.photo input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 40px;
+    max-height: 40px;
 }
 
 .photo i:hover {

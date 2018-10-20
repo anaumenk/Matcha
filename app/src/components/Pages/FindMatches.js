@@ -19,13 +19,21 @@ export default class FindMatches extends Component {
         this.props.Photo.push();
     }
 
+    handleSliderChange = () => {
+        let parent = document.querySelector(`.Rating`),
+            rangeS = parent.querySelectorAll("input[type=range]"),
+            number = document.querySelector(`.left_Rating`);
+        number.innerHTML = parseFloat(rangeS[0].value);
+        this.props.Search[`RatingStart`] = number.innerHTML;
+    };
+
     render() {
-        const {
+        let {
             sortBy,
             listOfPeople
         } = this.props.Search;
 
-        const {
+        let {
             gender,
             orientation,
             latitude,
@@ -34,26 +42,42 @@ export default class FindMatches extends Component {
 
         return (
             <main>
-                <div className="nav_panel">
-                    <div className="filters">
-                        <div id="sort_by">
-                            <p className="name">Sort by</p>
-                            <select name="sortBy" value={sortBy} onChange={(e) => this.handleChange(e)}>
-                                <option>Age</option>
-                                <option>Distance</option>
-                                <option>Rating</option>
-                            </select>
-                        </div>
-                        <Slider name='Age' />
-                        <Slider name='Distance' />
-                        <Slider name='Rating' />
-                        <Tags />
-                        <button
-                            className='button'
-                            style={{marginTop:10}}
-                            onClick={() => this.props.Search.findMatches(gender, orientation, latitude, longitude)}
-                        >Search</button>
+                <div className="filters">
+                    <div id="sort_by">
+                        <p className="name">Sort by</p>
+                        <select name="sortBy" value={sortBy} onChange={(e) => this.handleChange(e)}>
+                            <option>Age</option>
+                            <option>Distance</option>
+                            <option>Rating</option>
+                        </select>
                     </div>
+                    <Slider name='Age' />
+                    <Slider name='Distance' />
+                    <div className="sort_line">
+                        <div className="text">
+                            <p className="name">Rating</p>
+                            <div className="interval">
+                                <p className={`left_Rating`}>{this.props.Search.RatingStart}</p>
+                                <p>-</p>
+                                <p>...</p>
+                            </div>
+                        </div>
+                        <div className={`line Rating`}>
+                            <input
+                                value={this.props.Search.RatingStart}
+                                step="1"
+                                min="-200"
+                                max="500"
+                                type="range"
+                                onChange={this.handleSliderChange} />
+                        </div>
+                    </div>
+                    <Tags />
+                    <button
+                        className='button'
+                        style={{marginTop:10}}
+                        onClick={() => this.props.Search.findMatches(gender, orientation, latitude, longitude)}
+                    >Search</button>
                 </div>
                 {listOfPeople && <People />}
                 {this.props.Prew.profile}

@@ -1,10 +1,10 @@
 
 .filters {
-    margin: 40px 0 0 40px;
-    padding: 20px 0 0;
+    margin: 40px 0 0 10px;
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 300px;
 }
 
 .name {
@@ -53,14 +53,9 @@
 
 /* сама линия */
 .line input[type=range]::-webkit-slider-runnable-track {
-    /*width: 100%;*/
     height: 5px;
     cursor: pointer;
-    /*animate: 0.2s;*/
     background: rgba(19, 35, 47, 0.9);
-    /*border-radius: 1px;*/
-    /*box-shadow: none;*/
-    /*border: 0;*/
 }
 
 /* ползунки */
@@ -76,33 +71,21 @@
     margin-top: -7px;
 }
 
-.user_profile_result {
-    display: flex;
-    /*flex-wrap: wrap;*/
-    border-bottom: 1px solid rgba(19, 35, 47, 0.9);
-    /*margin-bottom: 10px;*/
-    padding: 10px 0;
-    /*height: 180px;*/
-    /*align-items: center;*/
-}
-
-.user_profile_result_info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /*align-items: center;*/
-}
-
 .user_profile_result_img {
-    margin: 0 20px;
-    height: 80px;
-    width: 80px;
+    margin: 10px;
+    height: 150px;
+    width: 150px;
     overflow: hidden;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(19, 35, 47, 0.9);
-    align-self: center;
-    background-color: #aba6a1;
+    background-color: #c4bfba;
     cursor: pointer;
+}
+
+.user_profile_result_img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 1s;
 }
 
 .user_profile_result_img img {

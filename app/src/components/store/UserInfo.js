@@ -2,7 +2,7 @@ import {observable, action} from 'mobx';
 import {fetchPost} from "../../fetch";
 
 class UserInfo {
-    @observable userId = localStorage.getItem('userId');
+    @observable userId = localStorage.getItem('userId') ? localStorage.getItem('userId').split('.')[2] : '';
     @observable firstName = '';
     @observable lastName = '';
     @observable login = '';
@@ -13,9 +13,6 @@ class UserInfo {
     @observable occupation = '';
     @observable biography = '';
     @observable birth = '';
-    @observable birthDay = '';
-    @observable birthMonth = '';
-    @observable birthYear = '';
     @observable age = '';
 
     @observable latitude = '';
@@ -33,36 +30,42 @@ class UserInfo {
     @observable locationChecked = '';
     @observable newLocation = '';
 
+    @observable isAuthenticated = localStorage.getItem('userId') !== '';
+
+
     @action push() {
-        fetchPost('user', `userId=${this.userId}`).then(response => {
+        fetchPost('user', '').then(response => {
             if (response !== 'TypeError: Failed to fetch') {
                 let array = JSON.parse(response);
-                this.firstName = array[0]['firstName'];
-                this.lastName = array[0]['lastName'];
-                this.login = array[0]['login'];
-                this.email = array[0]['email'];
-                this.password = array[0]['password'];
+                if (array[0].length !== 0) {
+                    this.firstName = array[0]['firstName'];
+                    this.lastName = array[0]['lastName'];
+                    this.login = array[0]['login'];
+                    this.email = array[0]['email'];
+                    this.password = array[0]['password'];
 
-                this.orientation = array[0]['orientation'];
-                this.gender = array[0]['gender'];
+                    this.orientation = array[0]['orientation'];
+                    this.gender = array[0]['gender'];
 
 
-                this.locationChecked = array[0]['locationChecked'] === '1' ? true : false;
-                this.occupation = array[0]['occupation'];
-                this.biography = array[0]['biography'];
-                this.birth = array[0]['birth'];
-                this.birthData(this.birth);
-                this.latitude = array[0]['latitude'];
-                this.longitude = array[0]['longitude'];
-                this.rating = array[0]['rating'];
-                // this.siteColor = array[0]['siteColor'];
-                // this.siteLanguage = array[0]['siteLanguage'];
-                this.blocked = array[1];
-                this.liked = array[2];
-                this.tags = array[3];
+                    this.locationChecked = array[0]['locationChecked'] === '1';
+                    this.occupation = array[0]['occupation'];
+                    this.biography = array[0]['biography'];
+                    this.birth = array[0]['birth'];
+                    this.age = ((new Date().getTime() - new Date(this.birth)) / (24 * 3600 * 365.25 * 1000)) | 0;
+                    this.latitude = array[0]['latitude'];
+                    this.longitude = array[0]['longitude'];
+                    this.rating = array[0]['rating'];
+                    this.blocked = array[1];
+                    this.liked = array[2];
+                    this.tags = array[3];
+                }
+                else {
+                    this.forceLogOut();
+                }
             }
             else {
-                localStorage.setItem('userId', '');
+                this.forceLogOut();
             }
 
         });
@@ -88,25 +91,28 @@ class UserInfo {
 
     @action birthData(date) {
         if (date) {
-            let array = date.split('-');
-            this.birthYear = array[0];
-            this.birthMonth = array[1] | 0;
-            this.birthDay = array[2] | 0;
-            this.age = ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)) | 0;
+            // let array = date.split('-');
+            // this.birthYear = array[0];
+            // this.birthMonth = array[1] | 0;
+            // this.birthDay = array[2] | 0;
+
         }
     }
 
     @action removeTag = (tagForDel) => {
         tagForDel = tagForDel.substring(1, tagForDel.length);
-        fetchPost('delTag', `userId=${this.userId}&tagForDel=${tagForDel}`);
+        fetchPost('delTag', `tagForDel=${tagForDel}`);
     };
+
     @action addNewTag() {
-        fetchPost('newTag', `userId=${this.userId}&newTag=${this.newTag}`);
+        fetchPost('newTag', `newTag=${this.newTag}`).then(response => {
+            this.tags = JSON.parse(response);
+        });
         this.newTag = '';
     }
 
     @action saveChanges() {
-        const {
+        let {
             firstName,
             lastName,
             email,
@@ -114,21 +120,19 @@ class UserInfo {
             gender,
             occupation,
             biography,
-            birthDay,
-            birthMonth,
-            birthYear,
-            // siteColor,
+            birth,
             latitude,
             longitude,
             locationChecked,
-        } = this;
-        let checker = locationChecked === true ? '1' : '0',
-            params = `userId=${this.userId}&firstName=${firstName}&lastName=${lastName
+        } = this,
+            checker = locationChecked === true ? '1' : '0',
+            params = `firstName=${firstName}&lastName=${lastName
         }&email=${email}&orientation=${orientation}&gender=${gender
         }&occupation=${occupation}&biography=${biography
-        }&birth=${birthYear}-${birthMonth}-${birthDay
+        }&birth=${birth
         }&latitude=${latitude}&longitude=${longitude
         }&locationChecked=${checker}`;
+        console.log(params);
         fetchPost('editInfo', params);
     }
 
@@ -144,6 +148,23 @@ class UserInfo {
                 this.longitude = array.results[0].geometry.location.lng;
             }
         });
+    }
+
+    @action LogIn = (userId) => {
+        userId = `${Math.floor(Math.random() * 101)}.${Date.now()}.${userId}`;
+        localStorage.setItem('userId', userId);
+        this.isAuthenticated = true;
+    };
+
+    @action LogOut() {
+        fetchPost('changeConnection', `userId=${localStorage.getItem('userId')}`);
+        localStorage.setItem('userId', '');
+        this.isAuthenticated = false;
+    };
+
+    @action forceLogOut() {
+        localStorage.setItem('userId', '');
+        this.isAuthenticated = false;
     }
 }
 

@@ -22,8 +22,6 @@ export default class Profile extends Component {
     }
 
     render() {
-        const {content} = this.props.Profile;
-
         return (
             <main>
                 <div className="nav_panel">
@@ -61,7 +59,7 @@ export default class Profile extends Component {
 
                 </div>
                 <div className="content">
-                    {content}
+                    {this.props.Profile.content}
                     {this.props.Profile.popup && <Popup />}
                 </div>
             </main>

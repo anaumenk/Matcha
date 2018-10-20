@@ -33,10 +33,13 @@ class Chat extends Model{
     }
 
     public function sendMessage($userId, $friendId, $message) {
-        $this->db->row("INSERT INTO `chat` (sender, `user`, messages) 
-                             VALUES ('$userId', '$friendId', '$message');
-                             
-                             INSERT INTO `notifications` (`idWho`, `idWhom`, `notification`) 
+        $this->db->query("INSERT INTO `chat` (sender, `user`, messages) 
+                             VALUES ('$userId', '$friendId', '$message')");
+        $block = $this->db->row("SELECT * FROM `block`
+                                      WHERE `idWho` = '$friendId' AND `idWhom` = '$userId'");
+        if (!$block) {
+            $this->db->query("INSERT INTO `notifications` (`idWho`, `idWhom`, `notification`) 
                              VALUES ('$userId', '$friendId', 'send you a message')");
+        }
     }
 }

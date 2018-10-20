@@ -23,7 +23,7 @@ class ChatController extends Controller {
     public function sendMessageAction() {
         $userId = $_REQUEST['userId'];
         $friendId = $_REQUEST['friendId'];
-        $message = $_REQUEST['message'];
+        $message = addslashes($_REQUEST['message']);
         $this->model->sendMessage($userId, $friendId, $message);
     }
 

@@ -1,53 +1,73 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
-import openSocket from 'socket.io-client';
+import {socket} from "../../../App";
 
-const socket = openSocket('http://'+window.location.hostname+':3001');
+@inject('Chat')
+@observer
+class SelectedUser extends Component {
+
+    returnToList() {
+        document.getElementById('messages').style.display = 'none';
+        document.getElementById('list_of_people').style.display = 'flex';
+        this.props.Chat.friendId = '';
+    }
+
+    render() {
+        let {
+            friendLogin,
+            friendPhoto,
+            friendFirstName,
+            friendLastName,
+        } = this.props.Chat;
+
+        return (
+            <div
+                className="chat_user"
+                style={{backgroundColor: '#c4bfba'}}
+                onClick={() => this.returnToList()}
+            >
+                <div className="chat_user_image">
+                    {friendPhoto && <img src={require(`../../../${friendPhoto}`)} alt={friendLogin} />}
+                </div>
+                <div style={{marginLeft: 10, width: '60%'}}>
+                    <p>{friendFirstName} {friendLastName}</p>
+                </div>
+            </div>
+        );
+    }
+}
 
 @inject('Chat')
 @observer
 class FriendsList extends Component {
     selectUser = (e, userId) => {
-        if (this.props.Chat.friendId !== userId) {
-            let elements = document.getElementsByClassName('chat_user');
-            for(let i = 0, length = elements.length; i < length; i++) {
-                elements[i].style.backgroundColor = '#c1bdba';
-            }
-            if (e.target.className === 'chat_user') {
-                e.target.style.backgroundColor = '#aba6a1';
-            }
-            else if (e.target.parentNode.className === 'chat_user_image') {
-                e.target.parentNode.parentNode.style.backgroundColor = '#aba6a1';
-            }
-            else {
-                e.target.parentNode.style.backgroundColor = '#aba6a1';
-            }
-            document.getElementById('messages').style.display = 'unset';
-            this.props.Chat.friendId = userId;
-            this.props.Chat.selectUser();
-        }
-        else {
-            let elements = document.getElementsByClassName('chat_user');
-            for(let i = 0, length = elements.length; i < length; i++) {
-                elements[i].style.backgroundColor = '#c1bdba';
-            }
-            document.getElementById('messages').style.display = 'none';
-            this.props.Chat.friendId = '';
-        }
-
+        document.getElementById('messages').style.display = 'unset';
+        document.getElementById('list_of_people').style.display = 'none';
+        this.props.Chat.friendId = userId;
+        this.props.Chat.selectUser();
     };
 
     render() {
-        const {friends} = this.props.Chat;
+
         return (
             <div id="list_of_people">
-                {friends.map(friend => {
+                {this.props.Chat.friends.map(friend => {
                     return (
-                        <div key={friend.userId} className="chat_user" onClick={(e) => this.selectUser(e, friend.userId)}>
+                        <div key={friend.userId}
+                             className="chat_user"
+                             onClick={(e) => {
+                                 this.selectUser(e, friend.userId);
+                                 this.props.Chat.friendPhoto = friend.photo;
+                                 this.props.Chat.friendLogin = friend.login;
+                                 this.props.Chat.friendFirstName = friend.firstName;
+                                 this.props.Chat.friendLastName = friend.lastName;
+                             }}>
                             <div className="chat_user_image">
                                 {friend.photo && <img src={require(`../../../${friend.photo}`)} alt={friend.login} />}
                             </div>
-                            <p>{friend.firstName} {friend.lastName}</p>
+                            <div style={{marginLeft: 10, width: '60%'}}>
+                                <p>{friend.firstName} {friend.lastName}</p>
+                            </div>
                         </div>
                     )
                 })}
@@ -66,7 +86,9 @@ class SendMessage extends Component {
 
     handleKeyPress = (e) => {
         if (e.key === "Enter") {
-            if (this.props.Chat.newMessage.match(/^([a-zа-яё]+|\d+)$/i)) {
+            if (this.props.Chat.newMessage.match(/^([a-zа-яё.,() _0-9:;=*!?@#%$^'"]*)$/i)
+                && !this.props.Chat.newMessage.match(/^\s+$/)
+                && this.props.Chat.newMessage) {
                 socket.emit('message', [this.props.User.userId, this.props.Chat.friendId, this.props.Chat.newMessage]);
                 socket.emit('notification', this.props.Chat.friendId);
                 this.props.Chat.sendMessage(this.props.Chat.newMessage, this.props.Chat.friendId);
@@ -76,17 +98,13 @@ class SendMessage extends Component {
     };
 
     render() {
-        const {
-            newMessage,
-        } = this.props.Chat;
-
         return (
             <div id="send_message">
                 <input
                     type="text"
                     id="m"
                     placeholder="Type your message"
-                    value={newMessage}
+                    value={this.props.Chat.newMessage}
                     onChange={this.handleChange}
                     onKeyPress={(e) => this.handleKeyPress(e)}
                 />
@@ -96,35 +114,34 @@ class SendMessage extends Component {
 }
 
 @inject('Chat')
+@inject('User')
 @observer
 class Messages extends Component {
-
-    componentDidMount() {
-        socket.on('new message', function (msg) {
-            if (msg[1] === localStorage.getItem('userId') || msg[0] === localStorage.getItem('userId')) {
-                let parent = document.getElementById('message_form'),
-                    newelement = document.createElement('div');
-                if (parent) {
-                    newelement.innerHTML = `<p>${msg[2]}</p>`;
-                    newelement.className = msg[1] === localStorage.getItem('userId') ? 'message_other' : 'message_user';
-                    parent.insertBefore(newelement, parent.firstChild);
-                }
-            }
-        });
+    constructor(props) {
+        super(props);
+        socket.on('new message', this._qwe);
     }
+
+    _qwe = async (msg) => {
+        let drug = await this.props.Chat.friendId;
+        if ((msg[1] === this.props.User.userId && msg[0] === drug) || (msg[0] === this.props.User.userId && msg[1] === drug)) {
+            this.props.Chat.selectUser();
+            // this.setState({updated: true});
+            // this.forceUpdate();
+        }
+    };
 
     componentWillMount() {
         this.props.Chat.pushFriends();
     }
 
     render() {
-        const {messages} = this.props.Chat;
         return (
             <div id="message_form">
-                    {messages.map(message => {
+                    {this.props.Chat.messages.map(message => {
                         return (
                             <div key={message.id}
-                                 className={message.senderId === localStorage.getItem('userId') ? 'message_user' : 'message_other'}>
+                                 className={message.senderId === this.props.User.userId ? 'message_user' : 'message_other'}>
                                 <p>{message.text}</p>
                             </div>
                         )
@@ -145,6 +162,7 @@ export default class Chat extends Component {
             <div id="chat">
                 <FriendsList />
                 <form id="messages" onSubmit={(e) => {e.preventDefault()}} >
+                    <SelectedUser />
                     <SendMessage />
                     <Messages />
                 </form>

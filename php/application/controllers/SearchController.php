@@ -14,13 +14,12 @@ class SearchController extends Controller {
         $DistanceStart = $_REQUEST['DistanceStart'];
         $DistanceEnd = $_REQUEST['DistanceEnd'];
         $RatingStart = $_REQUEST['RatingStart'];
-        $RatingEnd = $_REQUEST['RatingEnd'];
         $tags = $_REQUEST['tags'];
         $latitude = $_REQUEST['latitude'];
         $longitude = $_REQUEST['longitude'];
 
         $response = $this->model->doSeach($userId, $sortBy, $AgeStart, $AgeEnd, $DistanceStart, $DistanceEnd, $RatingStart,
-            $RatingEnd, $tags, $latitude, $longitude);
+            $tags, $latitude, $longitude);
 
         echo json_encode($response);
     }
@@ -33,7 +32,6 @@ class SearchController extends Controller {
         $DistanceStart = $_REQUEST['DistanceStart'];
         $DistanceEnd = $_REQUEST['DistanceEnd'];
         $RatingStart = $_REQUEST['RatingStart'];
-        $RatingEnd = $_REQUEST['RatingEnd'];
         $tags = $_REQUEST['tags'];
         $gender = $_REQUEST['gender'];
         $orientation = $_REQUEST['orientation'];
@@ -41,7 +39,7 @@ class SearchController extends Controller {
         $longitude = $_REQUEST['longitude'];
 
         $response = $this->model->dofindMatches($userId, $sortBy, $AgeStart, $AgeEnd, $DistanceStart, $DistanceEnd, $RatingStart,
-            $RatingEnd, $gender, $orientation, $tags, $latitude, $longitude);
+            $gender, $orientation, $tags, $latitude, $longitude);
 
         echo json_encode($response);
     }

@@ -106,7 +106,6 @@ class AccountController extends Controller {
     }
 
     public function prewUserAction() {
-        $idWho = $_REQUEST['idWho'];
         $idWhom = $_REQUEST['idWhom'];
         $user = $this->model->getUserId($idWhom);
         if ($user[0]['connection'] != 'online') {
@@ -114,7 +113,6 @@ class AccountController extends Controller {
         }
         $photo = $this->model->getUserPhoto($idWhom);
         $tags = $this->model->getUserTags($idWhom);
-        $this->model->getViewed($idWho, $idWhom);
         array_push($user, $photo, $tags);
         echo json_encode($user);
     }

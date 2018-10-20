@@ -14,12 +14,13 @@ class ProfileController extends Controller {
         $gender = $_REQUEST['gender'];
         $orientation = $_REQUEST['orientation'];
         $occupation = $_REQUEST['occupation'];
-        $biography = $_REQUEST['biography'];
+        $biography = addslashes($_REQUEST['biography']);
         $birth = $_REQUEST['birth'];
-//        $siteColor = $_REQUEST['siteColor'];
         $latitude = $_REQUEST['latitude'];
         $longitude = $_REQUEST['longitude'];
         $locationChecked = $_REQUEST['locationChecked'];
+
+        echo $biography;
 
         $this->model->editUser($userId, $firstName, $lastName, $email, $gender, $orientation, $occupation,
             $biography, $birth, $latitude, $longitude, $locationChecked);
@@ -95,7 +96,8 @@ class ProfileController extends Controller {
         $userId = $_REQUEST['userId'];
         $newTag = $_REQUEST['newTag'];
 
-        $this->model->addNewTag($userId, $newTag);
+        $response = $this->model->addNewTag($userId, $newTag);
+        echo json_encode($response);
     }
 
     public function delTagAction() {
@@ -103,5 +105,12 @@ class ProfileController extends Controller {
         $tagForDel = $_REQUEST['tagForDel'];
 
         $this->model->delTag($userId, $tagForDel);
+    }
+
+    public function getViewedAction() {
+        $idWho = $_REQUEST['userId'];
+        $idWhom = $_REQUEST['idWhom'];
+
+        $this->model->getViewed($idWho, $idWhom);
     }
 }

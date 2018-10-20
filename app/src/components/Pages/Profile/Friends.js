@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
+import {socket} from "../../../App";
+
 
 @inject('Chat')
 @inject('User')
@@ -13,14 +15,18 @@ class Friend extends Component {
     }
 
     render () {
-        const {friends} = this.props.Chat;
         return (
-            friends.map(friend => {
+            this.props.Chat.friends.map(friend => {
                 return (
                     <div
                         key={friend.userId}
                         className="user_like"
-                        onClick={() => this.props.Prew.openUserProfile(this.props.User.userId, friend.userId)}
+                        onClick={() => {
+                            this.props.Prew.profile = '';
+                            this.props.Prew.openUserProfile(this.props.User.userId, friend.userId);
+                            this.props.Prew.getViewed(friend.userId);
+                            socket.emit('notification', friend.userId);
+                        }}
                     >
                         <a>
                             {friend.photo && <img src={require(`../../../${friend.photo}`)} alt={friend.login} />}

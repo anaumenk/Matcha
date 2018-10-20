@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
-import openSocket from 'socket.io-client';
-
-const socket = openSocket('http://'+window.location.hostname+':3001');
+import {socket} from "../../../App";
 
 @inject('Views')
 @inject('Prew')
@@ -16,15 +14,16 @@ class View extends Component {
     }
 
     render () {
-        const {ViewDB} = this.props.Views;
         return (
-            ViewDB.map(view => {
+            this.props.Views.ViewDB.map(view => {
                 return (
                     <div
                         key={view.userId}
                         className="user_like"
                         onClick={() => {
+                            this.props.Prew.profile = '';
                             this.props.Prew.openUserProfile(this.props.User.userId, view.userId);
+                            this.props.Prew.getViewed(view.userId);
                             socket.emit('notification', view.userId);
                         }}
                     >

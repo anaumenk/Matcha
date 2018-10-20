@@ -76,48 +76,68 @@ class Profile extends Model{
                                    UPDATE `users` SET `rating` = `rating` - 10 
                                    WHERE `userId` = '$whom'");
         }
+        $sql = $this->db->row( "SELECT * FROM `views` 
+                                       WHERE (`userWho` = '$who' AND `userWhom` = '$whom') 
+                                       OR (`userWhom` = '$who' AND `userWho` = '$whom')");
+        if ($sql) {
+            $this->db->query("DELETE FROM `views` 
+                                   WHERE (`userWho` = '$who' AND `userWhom` = '$whom') 
+                                   OR (`userWhom` = '$who' AND `userWho` = '$whom')");
+        }
+        $sql = $this->db->row( "SELECT * FROM `likes` 
+                                       WHERE (`userWho` = '$who' AND `userWhom` = '$whom') 
+                                       OR (`userWhom` = '$who' AND `userWho` = '$whom')");
+        if ($sql) {
+            $this->db->query("DELETE FROM `likes` 
+                                   WHERE (`userWho` = '$who' AND `userWhom` = '$whom') 
+                                   OR (`userWhom` = '$who' AND `userWho` = '$whom')");
+        }
     }
 
     public function likeUser($who, $whom) {
-        $this->db->query( "INSERT INTO `likes` (`userWho`, `userWhom`) 
-                                VALUES ('$who', '$whom');
-                                
-                                UPDATE `users` SET `rating` = `rating` + 10 
-                                WHERE `userId` = '$whom'");
-        $blocked = $this->db->row("SELECT * FROM `block` 
-                                        WHERE `userWhom` = '$who' 
-                                        AND `userWho` = '$whom'");
-        if (!$blocked) {
+        $sql = $this->db->row("SELECT * FROM `likes` WHERE `userWho` = '$who' AND `userWhom` = '$whom'");
+        if (!$sql) {
+            $this->db->query( "INSERT INTO `likes` (`userWho`, `userWhom`) 
+                                    VALUES ('$who', '$whom');
+                                    
+                                    UPDATE `users` SET `rating` = `rating` + 10 
+                                    WHERE `userId` = '$whom'");
+            $blocked = $this->db->row("SELECT * FROM `block` WHERE `idWhom` = '$who' AND `idWho` = '$whom'");
+            if (!$blocked) {
             $this->db->query("INSERT INTO `notifications` (`idWho`, `idWhom`, `notification`) 
-                                VALUES ('$who', '$whom', 'liked your profile')");
-        }
-        $count_sql = $this->db->row("SELECT COUNT(*) AS `count` FROM `likes` 
+                            VALUES ('$who', '$whom', 'liked your profile')");
+            }
+            $count_sql = $this->db->row("SELECT COUNT(*) AS `count` FROM `likes` 
                                           WHERE (`userWho` = '$who' AND `userWhom` = '$whom') 
                                           OR (`userWhom` = '$who' AND `userWho` = '$whom')");
-        if ($count_sql[0]['count'] == 2) {
-            $this->db->query("INSERT INTO `friend` (`user1`, `user2`)
+            if ($count_sql[0]['count'] == 2) {
+                $this->db->query("INSERT INTO `friend` (`user1`, `user2`)
                                    VALUES ('$who', '$whom');
                                    
                                    INSERT INTO `notifications` (`idWho`, `idWhom`, `notification`) 
                                    VALUES ('$who', '$whom', 'your new friend');
                                    
-                                   UPDATE `users` SET `rating` = `rating` + 10 
+                                   UPDATE `users` SET `rating` = `rating` + 10
                                    WHERE `userId` = '$whom'
-                                   AND `userId` = '$who'");
+                                   OR `userId` = '$who'");
+            }
         }
     }
 
     public function unLikeUser($who, $whom) {
-        $this->db->query( "DELETE FROM `likes` 
+        $sql = $this->db->row( "SELECT * FROM `likes` 
+                                       WHERE (`userWho` = '$who' AND `userWhom` = '$whom')");
+        if ($sql) {
+            $this->db->query( "DELETE FROM `likes` 
                                        WHERE (`userWho` = '$who' AND `userWhom` = '$whom');
                                        
                                        UPDATE `users` SET `rating` = `rating` - 10 
                                        WHERE `userId` = '$whom'");
-        $sql = $this->db->row("SELECT * FROM `friend` 
+            $sql = $this->db->row("SELECT * FROM `friend` 
                                        WHERE (`user1` = '$who' AND `user2` = '$whom') 
                                        OR (`user2` = '$who' AND `user1` = '$whom')");
-        if ($sql) {
-            $this->db->query("DELETE FROM `friend`
+            if ($sql) {
+                $this->db->query("DELETE FROM `friend`
                                    WHERE (`user1` = '$who' AND `user2` = '$whom')
                                    OR (`user2` = '$who' AND `user1` = '$whom');
 
@@ -126,6 +146,7 @@ class Profile extends Model{
 
                                    UPDATE `users` SET `rating` = `rating` - 10
                                    WHERE `userId` = '$whom'");
+            }
         }
     }
 
@@ -151,10 +172,25 @@ class Profile extends Model{
             $this->db->query( "INSERT INTO `tags` (`userId`, `text`)
                                    VALUES ('$userId', '$newTag')");
         }
+        $tags = $this->db->row("SELECT * FROM `tags` WHERE userId = '$userId'");
+        return $tags;
     }
 
     public function delTag($userId, $tagForDel) {
         $this->db->query( "DELETE FROM `tags` 
                                 WHERE `userId` = '$userId' AND `text` = '$tagForDel'");
+    }
+
+    public function getViewed($idWho, $idWhom) {
+        $viewed = $this->db->row("SELECT * FROM `views` WHERE `userWho` = '$idWho' AND `userWhom` = '$idWhom'");
+        if (!$viewed) {
+            $this->db->query("INSERT INTO `views` (`userWho`, `userWhom`)
+                                   VALUES ('$idWho', '$idWhom')");
+        }
+        $blocked = $this->db->row("SELECT * FROM `block` WHERE `idWhom` = '$idWho' AND `idWho` = '$idWhom'");
+        if (!$blocked) {
+            $this->db->query("INSERT INTO `notifications` (`idWho`, `idWhom`, `notification`)
+                                   VALUES ('$idWho', '$idWhom', 'viewed your profile')");
+        }
     }
 }

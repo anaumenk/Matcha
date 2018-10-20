@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import {inject, observer} from 'mobx-react';
 import {Popup} from "./Profile/Setting";
-import openSocket from 'socket.io-client';
-
-const socket = openSocket('http://'+window.location.hostname+':3001');
-
-function getAge(date) {
-    return ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)) | 0;
-}
+import {socket} from "../../App";
 
 @inject('Search')
 @inject('Prew')
@@ -16,26 +10,22 @@ function getAge(date) {
 export class People extends Component {
     render() {
         return (
-            <div className="content">
+            <div className="content" style={{flexDirection: 'row', flexWrap: 'wrap'}}>
                 {this.props.Search.listOfPeople.map(people => {
                     return (
-                        <div key={people.userId} className="user_profile_result">
+                       <div key={people.userId} className="user_profile_result">
                             <div
                                 className="user_profile_result_img"
                                 onClick={() => {
+                                    this.props.Prew.profile = '';
                                     this.props.Prew.openUserProfile(this.props.User.userId, people.userId);
+                                    this.props.Prew.getViewed(people.userId);
                                     socket.emit('notification', people.userId);
                                 }}
                             >
                                 {people.photo && <img src={require(`../../${people.photo}`)} alt={people.firstName}/>}
                             </div>
-                            <div className="user_profile_result_info">
-                                <p>{`${people.lastName} ${people.firstName}`}</p>
-                                <p><b>Age:</b> {getAge(people.birth)}</p>
-                                <p><b>Gender:</b> {people.gender}</p>
-                                <p><b>Orienation:</b> {people.orientation}</p>
-                            </div>
-                        </div>
+                       </div>
                     )
                 })}
             </div>
@@ -75,8 +65,6 @@ export class Tags extends Component {
     }
 
     render() {
-        const {newTag} = this.props.Search;
-
         return (
             <div className="tags">
                 <p className="name">Tags</p>
@@ -84,7 +72,7 @@ export class Tags extends Component {
                 </div>
                 <input type="text"
                        onChange={(e) => this.handleUserInput(e)}
-                       value={newTag}
+                       value={this.props.Search.newTag}
                        onKeyPress={(e) => this.handleKeyPress(e)}
                 />
             </div>
@@ -119,7 +107,7 @@ export class Slider extends Component {
     };
 
     render() {
-        const {name} = this.props;
+        let {name} = this.props;
         return (
             <div className="sort_line">
                 <div className="text">
@@ -169,39 +157,66 @@ export default class Search extends Component {
         this.props.Photo.push();
     }
 
+    handleSliderChange = () => {
+        let parent = document.querySelector(`.Rating`),
+            rangeS = parent.querySelectorAll("input[type=range]"),
+            number = document.querySelector(`.left_Rating`);
+        number.innerHTML = parseFloat(rangeS[0].value);
+        this.props.Search[`RatingStart`] = number.innerHTML;
+    };
+
     render() {
-        const {
+        let {
             sortBy,
             listOfPeople
         } = this.props.Search;
 
-        const {
+        let {
             latitude,
             longitude
         } = this.props.User;
 
         return (
             <main>
-                <div className="nav_panel">
-                    <div className="filters">
-                        <div id="sort_by">
-                            <p className="name">Sort by</p>
-                            <select name="sortBy" value={sortBy} onChange={(e) => this.handleChange(e)}>
-                                <option>Age</option>
-                                <option>Distance</option>
-                                <option>Rating</option>
-                            </select>
-                        </div>
-                        <Slider name='Age' />
-                        <Slider name='Distance' />
-                        <Slider name='Rating' />
-                        <Tags />
-                        <button
-                            className='button'
-                            style={{marginTop:10}}
-                            onClick={() => this.props.Search.search(latitude, longitude)}
-                        >Search</button>
+                <div className="filters">
+                    <div id="sort_by">
+                        <p className="name">Sort by</p>
+                        <select name="sortBy" value={sortBy} onChange={(e) => this.handleChange(e)}>
+                            <option>Age</option>
+                            <option>Distance</option>
+                            <option>Rating</option>
+                        </select>
                     </div>
+                    <Slider name='Age' />
+                    <Slider name='Distance' />
+
+                    <div className="sort_line">
+                        <div className="text">
+                            <p className="name">Rating</p>
+                            <div className="interval">
+                                <p className={`left_Rating`}>{this.props.Search.RatingStart}</p>
+                                <p>-</p>
+                                <p>...</p>
+                            </div>
+                        </div>
+                        <div className={`line Rating`}>
+                            <input
+                                value={this.props.Search.RatingStart}
+                                step="1"
+                                min="-200"
+                                max="500"
+                                type="range"
+                                onChange={this.handleSliderChange} />
+                        </div>
+                    </div>
+
+
+                    <Tags />
+                    <button
+                        className='button'
+                        style={{marginTop:10}}
+                        onClick={() => this.props.Search.search(latitude, longitude)}
+                    >Search</button>
                 </div>
                 {listOfPeople && <People />}
                 {this.props.Prew.profile}

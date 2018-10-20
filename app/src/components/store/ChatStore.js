@@ -6,23 +6,37 @@ class ChatStore {
     @observable messages = [];
     @observable newMessage = '';
     @observable friendId = '';
+    @observable friendPhoto = '';
+    @observable friendLogin = '';
+    @observable friendFirstName = '';
+    @observable friendLastName = '';
+
 
     @action pushFriends() {
-        fetchPost('friendsList', `userId=${localStorage.getItem('userId')}`).then(response => {
+        fetchPost('friendsList', '').then(response => {
             this.friends = JSON.parse(response);
         });
     }
 
     @action selectUser() {
         if (this.friendId) {
-            fetchPost('selectChat', `userId=${localStorage.getItem('userId')}&friendId=${this.friendId}`).then(response => {
+            fetchPost('selectChat', `friendId=${this.friendId}`).then(response => {
                 this.messages = JSON.parse(response);
             });
         }
     }
 
     @action sendMessage() {
-        fetchPost('sendMessage',`userId=${localStorage.getItem('userId')}&friendId=${this.friendId}&message=${this.newMessage}`);
+        fetchPost('sendMessage',`friendId=${this.friendId}&message=${this.newMessage}`);
+    }
+
+    @action ifInFriends(userId) {
+        for (let i = 0; i < this.friends.length; i++) {
+            if (this.friends[i]['userId'] === userId) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 

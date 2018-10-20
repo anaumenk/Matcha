@@ -5,7 +5,7 @@ class ViewsStore {
     @observable ViewDB = [];
 
     @action push() {
-        fetchPost('likesViews', `userId=${localStorage.getItem('userId')}&action=views`).then(response => {
+        fetchPost('likesViews', 'action=views').then(response => {
             this.ViewDB = JSON.parse(response);
         });
     }

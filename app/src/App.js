@@ -20,23 +20,23 @@ import RoutesList from './components/Routes';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {inject, observer} from 'mobx-react';
 
-@inject('Login')
+import openSocket from 'socket.io-client';
+export const socket = openSocket('http://'+window.location.hostname+':3001');
+
 @inject('User')
 @observer
 export default class App extends Component {
     render() {
-        const {isAuthenticated} = this.props.Login;
         return (
             <Router>
                 <div>
                 <Header />
                 {
-                isAuthenticated
-                ? <RoutesList />
-                : <Form />
+                    this.props.User.isAuthenticated
+                    ? <RoutesList />
+                    : <Form />
                 }
                 <Footer />
-
             </div>
             </Router>
         );

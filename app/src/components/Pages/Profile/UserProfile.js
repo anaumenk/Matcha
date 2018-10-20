@@ -5,9 +5,8 @@ import {inject, observer} from 'mobx-react';
 @observer
 class Tags extends Component {
     render() {
-        const {tags} = this.props.User;
         return (
-            tags.map(tag => {
+            this.props.User.tags.map(tag => {
                 return (
                     <div
                         className={"new_tag"}
@@ -73,7 +72,7 @@ export default class UserProfile extends Component {
     }
 
     render() {
-        const {
+        let {
             firstName,
             lastName,
             login,
@@ -85,13 +84,32 @@ export default class UserProfile extends Component {
             age
         } = this.props.User;
 
+        let {
+            currPhoto,
+            one,
+            two,
+            three,
+            four,
+            five
+        } = this.props.Photo;
+
         return (
             <div id="user_profile">
-                {this.props.Photo.one &&
+                {one &&
                     <div className="user_profile_photo">
-                        <img src={require(`../../../${this.props.Photo.currPhoto}`)} alt={login}/>
-                        <i className="fas fa-arrow-right" onClick={() => this.PhotoRight()}></i>
-                        <i className="fas fa-arrow-left" onClick={() => this.PhotoLeft()}></i>
+                        <img src={require(`../../../${currPhoto}`)} alt={login}/>
+                        {
+                            one !== currPhoto
+                            && <i className="fas fa-arrow-left" onClick={() => this.PhotoLeft()}></i>
+
+                        }
+                        {
+                            ((one === currPhoto && two)
+                            || (two === currPhoto && three)
+                            || (three === currPhoto && four)
+                            || (four === currPhoto && five))
+                            && <i className="fas fa-arrow-right" onClick={() => this.PhotoRight()}></i>
+                        }
                     </div>
                 }
                 <div id="user_profile_info">
@@ -99,7 +117,7 @@ export default class UserProfile extends Component {
                     <p>{orientation}, {gender}</p>
                     <p style={{margin: '10px 0'}}><span style={{fontWeight: 'bold'}}>Occupation:</span> {occupation}</p>
                     <p style={{margin: '10px 0'}}><span style={{fontWeight: 'bold'}}>Biography:</span> {biography}</p>
-                    <div className="tags" style={{width: 350, marginTop: 10}}>
+                    <div className="tags">
                         <p className="name">Tags</p>
                         <div className="tag_list">
                             <Tags />

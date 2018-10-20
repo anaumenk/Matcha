@@ -7,7 +7,7 @@ import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
 export class Popup extends Component {
 
     componentWillMount() {
-        setTimeout(() => this.close(), 1000);
+        setTimeout(() => this.close(), 2000);
     }
 
     close() {
@@ -27,18 +27,17 @@ export class Popup extends Component {
 @observer
 class Tags extends Component {
     render() {
-        const {tags} = this.props.User;
         return (
-            tags.map(tag => {
+            this.props.User.tags.map(tag => {
                 return (
                     <div
                         className={"new_tag"}
                         key={tag.tagId}
                         style={{cursor: 'pointer'}}
                         onClick={(e) => {
-                            let text = e.target.innerHTML;
-                            this.props.User.removeTag(text);
-                            e.target.remove();
+                            let delTagText = e.target.innerHTML;
+                            this.props.User.removeTag(delTagText);
+                            this.props.User.push();
                         }}
                     >
                         {`#${tag.text}`}
@@ -56,52 +55,28 @@ class Setting extends Component {
 
     componentWillMount() {
         this.props.User.push();
+        this.props.Profile.clearStyles();
     }
-
-    birthYear = () => {
-        let select = [];
-        let year = 1918;
-        for (let i = 0; i < 84; i++) {
-            select.push(<option value={year} key={i}>{year++}</option>);
-        }
-        return (select);
-    };
-
-    birthDay = () => {
-        let select = [];
-        for (let i = 1; i < 32; i++) {
-            select.push(<option value={i} key={i}>{i}</option>);
-        }
-        return (select);
-    };
-
-    birthMonth = () => {
-        let select = [];
-        for (let i = 1; i < 13; i++) {
-            select.push(<option value={i} key={i}>{i}</option>);
-        }
-        return (select);
-    };
 
     handleChange = (e) => {
         switch(e.target.name) {
             case 'firstName':
-                this.props.Profile.firstNameStyle = !e.target.value.match(/^([a-zа-яё]+|\d+)$/i)
+                this.props.Profile.firstNameStyle = !(e.target.value.match(/^([a-zа-яё]+|\d+)$/i) && e.target.value.length < 21)
                     ? '1px solid red'
                     : 'none';
                 break;
             case 'lastName':
-                this.props.Profile.lastNameStyle = !e.target.value.match(/^([a-zа-яё]+|\d+)$/i)
+                this.props.Profile.lastNameStyle = !(e.target.value.match(/^([a-zа-яё]+|\d+)$/i) && e.target.value.length < 21)
                     ? '1px solid red'
                     : 'none';
                 break;
             case 'occupation':
-                this.props.Profile.occupationStyle = !e.target.value.match(/^([a-zа-яё]+|\d+)$/i)
+                this.props.Profile.occupationStyle = !(e.target.value.match(/^([a-zа-яё.,() _0-9]*)$/i) && !e.target.value.length < 50)
                     ? '1px solid red'
                     : 'none';
                 break;
             case 'biography':
-                this.props.Profile.biographyStyle = !e.target.value.match(/^([a-zа-яё]+|\d+)$/i)
+                this.props.Profile.biographyStyle = !(e.target.value.match(/^([a-zа-яё.,()_0-9!;:@$="'\s\n]*)$/i) && e.target.value.length < 500)
                     ? '1px solid red'
                     : 'none';
                 break;
@@ -115,7 +90,9 @@ class Setting extends Component {
                     ? '1px solid red'
                     : 'none';
                 break;
-
+            case 'locationChecked':
+                this.props.Profile.newLocationStyle = 'none';
+                break;
             default:
                 break;
         }
@@ -126,9 +103,8 @@ class Setting extends Component {
         if (e.key === "Enter") {
             switch(e.target.name) {
                 case 'newTag':
-                    if (this.props.User.newTag.match(/^([a-zа-яё]+|\d+)$/i)) {
+                    if (this.props.User.newTag.match(/^([a-zа-яё_]+|\d+)$/i) && this.props.User.newTag.length < 21) {
                         this.props.User.addNewTag();
-                        this.props.User.push();
                     }
                     else {
                         this.props.User.newTag = '';
@@ -145,7 +121,7 @@ class Setting extends Component {
     }
 
     render() {
-        const {
+        let {
             firstName,
             lastName,
             email,
@@ -153,10 +129,7 @@ class Setting extends Component {
             gender,
             occupation,
             biography,
-            birthDay,
-            birthMonth,
-            birthYear,
-            // siteColor,
+            birth,
             latitude,
             longitude,
             newTag,
@@ -164,7 +137,7 @@ class Setting extends Component {
         } = this.props.User;
 
         return (
-            <div style={{maxWidth: 300}}>
+            <div style={{maxWidth: 300, color: 'rgba(19, 35, 47, 0.9)'}}>
                 <div className="edit_field">
                     <p>First name</p>
                     <input
@@ -222,9 +195,8 @@ class Setting extends Component {
                 </div>
                 <div className="edit_field">
                     <p>Biography</p>
-                    <input
+                    <textarea
                         id="bio"
-                        type="text"
                         value={biography}
                         name='biography'
                         style={{border: this.props.Profile.biographyStyle}}
@@ -233,33 +205,17 @@ class Setting extends Component {
                 </div>
                 <div className="edit_field">
                     <div id="birth_data">
-                        <div id="birth_day">
-                            <p>Day</p>
-                            <select value={birthDay} name='birthDay' onChange={(e) => this.handleChange(e)}>
-                                {this.birthDay()}
-                            </select>
-                        </div>
-                        <div id="birth_month">
-                            <p>Month</p>
-                            <select id="birth_month" value={birthMonth} name='birthMonth' onChange={(e) => this.handleChange(e)}>
-                                {this.birthMonth()}
-                            </select>
-                        </div>
-                        <div id="birth_year">
-                            <p>Year</p>
-                            <select value={birthYear} name='birthYear' onChange={(e) => this.handleChange(e)}>
-                                {this.birthYear()}
-                            </select>
-                        </div>
+                        <input
+                            type="date"
+                            id="birth"
+                            name="birth"
+                            value={birth}
+                            min="1918-01-01"
+                            max="2000-01-01"
+                            onChange={(e) => this.handleChange(e)}
+                        />
                     </div>
                 </div>
-                {/*<div className="edit_field">*/}
-                    {/*<p>Site color</p>*/}
-                    {/*<select value={siteColor} name='siteColor' onChange={(e) => this.handleChange(e)}>*/}
-                        {/*<option>default</option>*/}
-                        {/*<option>dark</option>*/}
-                    {/*</select>*/}
-                {/*</div>*/}
                 <div className="tags" style={{fontSize: 'large', marginTop: 5,}}>
                     <p className="name">Tags</p>
                     <div className="tag_list">
@@ -268,6 +224,7 @@ class Setting extends Component {
                     <input type="text"
                            onChange={this.handleChange}
                            value={newTag}
+                           placeholder="Press Enter to add new tag"
                            name='newTag'
                            onKeyPress={(e) => this.handleKeyPress(e)}
                     />

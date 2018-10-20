@@ -5,7 +5,7 @@ class LikesStore {
     @observable LikeDB = [];
 
     @action push() {
-        fetchPost('likesViews', `userId=${localStorage.getItem('userId')}&action=likes`).then(response => {
+        fetchPost('likesViews', 'action=likes').then(response => {
             this.LikeDB = JSON.parse(response);
         });
     }

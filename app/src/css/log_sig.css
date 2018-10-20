@@ -12,7 +12,7 @@
     background: rgba(19, 35, 47, 0.9);
     padding: 40px;
     max-width: 600px;
-    margin: 150px auto;
+    margin: 50px auto;
     border-radius: 4px;
     box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
@@ -48,15 +48,6 @@
     color: #ffffff;
 }
 
-/*.tab-group .active a {*/
-    /*background: #1ab188;*/
-    /*color: #ffffff;*/
-/*}*/
-
-/*#signup, #forgot {*/
-    /*display: none;*/
-/*}*/
-
 .input {
     font-size: 22px;
     display: block;
@@ -64,7 +55,6 @@
     height: 100%;
     padding: 10px 10px;
     background: none;
-    /*background-image: none;*/
     border: 1px solid #a0b3b0;
     color: #ffffff;
     border-radius: 0;
@@ -130,7 +120,6 @@
 
 #formErrors {
     text-align: center;
-    /*margin-top: 50px;*/
     color: #ad5e4a;
 }
 
@@ -148,8 +137,6 @@
     color: #ffffff;
     transition: border-color .25s ease, box-shadow .25s ease;
 }
-
-/*#gender::-webkit-appearance: none;*/
 
 #gender:focus {
     outline: 0;

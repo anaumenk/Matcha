@@ -1,24 +1,32 @@
 
 main {
-    height: 100%;
-    width: 100%;
     display: flex;
 }
 
 .nav_panel {
-    width: calc(250px + 65px);
+    width: 25%;
+    max-width: 200px;
     display: flex;
     height: 100%;
+    margin-top: 20px;
 }
 
 #profile_nav {
     list-style: none;
-    padding: 50px 0 0 40px;
-    margin: 0;
+    margin: auto;
+    text-align: center;
+    width: 100%;
 }
 
 #profile_nav li {
-    padding: 20px;
+    text-align: left;
+    padding: 20px 0 10px 1%;
+}
+
+@media only screen and (min-width: 600px) {
+    #profile_nav li{
+        margin-left: 50px;
+    }
 }
 
 .nav{
@@ -26,6 +34,7 @@ main {
     color: rgba(19, 35, 47, 0.9);
     font-size: large;
     font-weight: bold;
+    /*min-width: 70px;*/
 }
 
 .nav:hover {
@@ -35,14 +44,10 @@ main {
 }
 
 .content {
-    width: calc(100% - (250px + 65px));
-    height: 100%;
-    padding: 50px 50px 0 50px;
+    width: 75%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
-    /*margin-right: 20px*/
-    /*background-color: #ad5e4a;*/
+    margin: 40px 0 50px 5px;
 }
 
 .popup {

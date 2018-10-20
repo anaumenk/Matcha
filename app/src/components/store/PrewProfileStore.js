@@ -67,26 +67,19 @@ class PrewProfileStore {
     @action lastConnect(time) {
         let last = '';
 
-        if (time[0] > 0) {
-            last += `${time[0]} years `;
-        }
-        if (time[1] > 0) {
-            last +=`${time[1]} month `;
-        }
-        if (time[2] > 0) {
-            last += `${time[2]} days `;
-        }
-        if (time[3] > 0) {
-            last += `${time[3]} hours `;
-        }
-        if (time[4] > 0) {
-            last += `${time[4]} minutes `;
-        }
-        last += 'ago';
-        if (time[0] === 0 && time[1] === 0 && time[2] === 0 && time[3] === 0 && time[4] < 3) {
-            last = 'online';
-        }
+        last += time[0] > 0 ? `${time[0]} years ` : '';
+        last += time[1] > 0 ? `${time[1]} month `: '';
+        last += time[2] > 0 ? `${time[2]} days ` : '';
+        last += time[3] > 0 ? `${time[3]} hours ` : '';
+        last += time[4] > 0 ?  `${time[4]} minutes ` : '';
+        last += (time[0] > 0 || time[1] > 0 || time[2] > 0 || time[3] > 0 || time[4] > 0) ? 'ago' : '';
+        last = (time[0] === 0 && time[1] === 0 && time[2] === 0 && time[3] === 0 && time[4] < 3) ? 'online' : last;
+
         return last;
+    }
+
+    @action getViewed(idWhom) {
+        fetchPost('getViewed', `idWhom=${idWhom}`);
     }
 
 }

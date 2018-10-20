@@ -3,17 +3,17 @@
     font-weight: bold;
 }
 
-.edit_field input {
+.edit_field input, .edit_field textarea {
     padding-left: 10px;
 }
 
-.edit_field input, .edit_field select, #inputLocation input {
+.edit_field input, .edit_field select, #inputLocation input, .edit_field textarea {
     height: 30px;
     font-size: medium;
     outline: none;
     box-shadow: 0 0 10px rgba(19, 35, 47, 0.9);
     margin: 10px 0;
-    background-color: #aba6a1;
+    background-color: #c4bfba;
     border: none;
     width: 100%;
     border-radius: 5px;
@@ -55,7 +55,7 @@
     font-size: medium;
     outline: none;
     box-shadow: 0 0 10px rgba(19, 35, 47, 0.9);
-    background-color: #aba6a1;
+    background-color: #c4bfba;
     border: none;
     width: 100%;
     border-radius: 5px;

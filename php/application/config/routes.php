@@ -122,4 +122,8 @@ return [
         'action' => 'delTag',
     ],
 
+    'getViewed' => [
+        'controller' => 'profile',
+        'action' => 'getViewed',
+    ],
 ];

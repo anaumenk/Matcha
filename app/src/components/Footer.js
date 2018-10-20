@@ -5,7 +5,7 @@ export default class Footer extends Component {
     render() {
         return (
             <footer>
-                {/*перечень ссылок сайта, © Designed and built by @liianakastilio 2013 - 2014*/}
+                © Designed and built by @anaumenk 2018
             </footer>
         );
     }

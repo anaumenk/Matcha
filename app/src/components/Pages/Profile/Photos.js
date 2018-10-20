@@ -67,20 +67,24 @@ export default class Photos extends Component {
             this.props.Photo.two = this.props.Photo.three;
             this.props.Photo.three = this.props.Photo.four;
             this.props.Photo.four = this.props.Photo.five;
+            this.props.Photo.five = '';
         }
         else if (this.props.Photo.two === '') {
             this.props.Photo.two = this.props.Photo.three;
             this.props.Photo.three = this.props.Photo.four;
             this.props.Photo.four = this.props.Photo.five;
+            this.props.Photo.five = '';
         }
         else if (this.props.Photo.three === '') {
             this.props.Photo.three = this.props.Photo.four;
             this.props.Photo.four = this.props.Photo.five;
+            this.props.Photo.five = '';
         }
         else if (this.props.Photo.four === '') {
             this.props.Photo.four = this.props.Photo.five;
+            this.props.Photo.five = '';
         }
-        let params = `userId=${this.props.User.userId}&1=${this.props.Photo.one}&2=${this.props.Photo.two
+        let params = `1=${this.props.Photo.one}&2=${this.props.Photo.two
         }&3=${this.props.Photo.three}&4=${this.props.Photo.four}&5=${this.props.Photo.five}`;
         fetchPost('editPhotos', params);
     }
@@ -88,11 +92,11 @@ export default class Photos extends Component {
     render() {
         return (
             <div id="profile_photos">
-                <div style={{marginBottom: 10, alignItems: 'flex-end'}}>
+                <div style={{alignItems: 'flex-end', flexWrap: 'wrap'}}>
                     {this.isPhoto(this.props.Photo.one, 'one')}
                     {this.isPhoto(this.props.Photo.two, 'two')}
                 </div>
-                <div>
+                <div style={{flexWrap: 'wrap'}}>
                     {this.isPhoto(this.props.Photo.three, 'three')}
                     {this.isPhoto(this.props.Photo.four, 'four')}
                     {this.isPhoto(this.props.Photo.five, 'five')}

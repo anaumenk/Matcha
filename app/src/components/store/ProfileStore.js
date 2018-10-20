@@ -22,8 +22,8 @@ class ProfileStore {
         this.content = newContent;
     };
 
-    @action notification(userId) {
-        fetchPost('notification', `userId=${userId}`).then(response => {
+    @action notification() {
+        fetchPost('notification', '').then(response => {
            if (response !== 'TypeError: Failed to fetch') {
                 this.notifications = JSON.parse(response);
                 this.notificationCount = this.notifications.length;
@@ -34,10 +34,18 @@ class ProfileStore {
         });
     }
 
-    @action clearNotifications(userId) {
-        fetchPost('clearNotification', `userId=${userId}`);
+    @action clearNotifications() {
+        fetchPost('clearNotification', '');
     }
 
+    @action clearStyles() {
+        this.firstNameStyle = 'none';
+        this.lastNameStyle = 'none';
+        this.emailStyle = 'none';
+        this.occupationStyle = 'none';
+        this.biographyStyle = 'none';
+        this.newLocationStyle = 'none';
+    }
 }
 
 const Profile = new ProfileStore();

@@ -1,22 +1,22 @@
 
 #notifications {
-    width: 60%;
-    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto 50px;
     height: 100%;
-    /*background-color: white;*/
     display: flex;
     flex-direction: column;
-    margin-bottom: 100px;
     padding-top: 20px;
 }
 
 .news {
     height: 100px;
-    /*background-color: black;*/
     width: 100%;
     display: flex;
+    word-break: break-all;
     align-items: center;
     border-bottom: 1px solid rgba(19, 35, 47, 0.9);
+    overflow: hidden;
 }
 
 .news_img {
@@ -26,7 +26,7 @@
     overflow: hidden;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(19, 35, 47, 0.9);
-    background-color: #aba6a1;
+    background-color: #c4bfba;
 }
 
 .news_img img {

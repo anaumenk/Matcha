@@ -9,8 +9,7 @@ class SearchStore {
     @observable AgeEnd = 30;
     @observable DistanceStart = 0;
     @observable DistanceEnd = 100;
-    @observable RatingStart = 0;
-    @observable RatingEnd = 200;
+    @observable RatingStart = -200;
 
     @observable minAge = 18;
     @observable maxAge = 100;
@@ -46,14 +45,12 @@ class SearchStore {
     }
 
     @action search(latitude, longitude) {
-        let params = `userId=${localStorage.getItem('userId')
-        }&sortBy=${this.sortBy
+        let params = `sortBy=${this.sortBy
         }&AgeStart=${this.AgeStart
         }&AgeEnd=${this.AgeEnd
         }&DistanceStart=${this.DistanceStart
         }&DistanceEnd=${this.DistanceEnd
         }&RatingStart=${this.RatingStart
-        }&RatingEnd=${this.RatingEnd
         }&tags=${this.tags}&latitude=${latitude}&longitude=${longitude}`;
         fetchPost('search', params).then(response => {
             this.listOfPeople = JSON.parse(response);
@@ -62,14 +59,12 @@ class SearchStore {
     };
 
     @action findMatches = (gender, orientation, latitude, longitude) => {
-        let params = `userId=${localStorage.getItem('userId')
-            }&sortBy=${this.sortBy
+        let params = `sortBy=${this.sortBy
             }&AgeStart=${this.AgeStart
             }&AgeEnd=${this.AgeEnd
             }&DistanceStart=${this.DistanceStart
             }&DistanceEnd=${this.DistanceEnd
             }&RatingStart=${this.RatingStart
-            }&RatingEnd=${this.RatingEnd
             }&tags=${this.tags
             }&gender=${gender
             }&orientation=${orientation}&latitude=${latitude}&longitude=${longitude}`;
@@ -85,8 +80,7 @@ class SearchStore {
         this.AgeEnd = 30;
         this.DistanceStart = 0;
         this.DistanceEnd = 100;
-        this.RatingStart = 0;
-        this.RatingEnd = 200;
+        this.RatingStart = -200;
 
         this.minAge = 18;
         this.maxAge = 100;

@@ -3,8 +3,6 @@ import {FormErrors} from './FormErrors';
 import {fetchPost} from "../../fetch";
 import {inject, observer} from 'mobx-react';
 
-@inject('Login')
-@observer
 class ForgotPass extends Component {
 
     state = {
@@ -19,10 +17,10 @@ class ForgotPass extends Component {
     handleUserInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
-        this.setState({[name]: value});
         this.setState({
-                formErrors: {login: '', email: ''}
-            });
+            [name]: value,
+            formErrors: {login: '', email: ''}
+        });
     };
 
     validateField(fieldName) {
@@ -103,8 +101,6 @@ class ForgotPass extends Component {
     }
 }
 
-@inject('Login')
-@observer
 class SignUpForm extends Component {
 
     state = {
@@ -136,26 +132,24 @@ class SignUpForm extends Component {
             fieldValidationErrors = this.state.formErrors;
         switch(fieldName) {
             case 'login':
-                loginValid = value.match(/^([a-zа-яё]+|\d+)$/i);
-                fieldValidationErrors.login = loginValid ? '' : ' contain wrong symbols';
+                loginValid = value.match(/^([a-zа-яё]+|\d+)$/i) && value.length < 21;
+                fieldValidationErrors.login = loginValid ? '' : ' contain wrong symbols or length > 20';
                 break;
             case 'firstName':
-                firstNameValid = value.match(/^([a-zа-яё]+|\d+)$/i);
-                fieldValidationErrors.firstName = firstNameValid ? '' : ' contain wrong symbols';
+                firstNameValid = value.match(/^([a-zа-яё]+|\d+)$/i) && value.length < 21;
+                fieldValidationErrors.firstName = firstNameValid ? '' : ' contain wrong symbols or length > 20';
                 break;
             case 'lastName':
-                lastNameValid = value.match(/^([a-zа-яё]+|\d+)$/i);
-                fieldValidationErrors.lastName = lastNameValid ? '' : ' contain wrong symbols';
+                lastNameValid = value.match(/^([a-zа-яё]+|\d+)$/i) && value.length < 21;
+                fieldValidationErrors.lastName = lastNameValid ? '' : ' contain wrong symbols or length > 20';
                 break;
             case 'email':
                 emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
                 fieldValidationErrors.email = emailValid ? '' : ' is invalid';
                 break;
             case 'password':
-                passwordValid = value.match(/[a-z]*[0-9]+[a-z]*[0-9]+[a-z]*/i);
-                fieldValidationErrors.password = !passwordValid ?
-                    (value.length >= 6 ? ' must contains chars and minimum 2 numbers' : ' is too short')
-                    :(value.length >= 6 ? '' : ' is too short');
+                passwordValid = value.match(/^[a-zA-Z\w]{5,13}$/);
+                fieldValidationErrors.password = passwordValid ? '' : ' must contains min 6 and max 14 symbols';
                 break;
             case 'qlogin':
                 loginValid = false;
@@ -189,17 +183,19 @@ class SignUpForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        navigator.geolocation.getCurrentPosition(position => {
-            this.setState({
-                latitude: position.coords.latitude,
-                longitude: position.coords.longitude,
-            }, this.Register);
-        },() => {
-            this.setState({
-                latitude: 50.45466,
-                longitude: 30.5238,
-            }, this.Register);
-        },{timeout:3000});
+        if (this.state.formValid) {
+            navigator.geolocation.getCurrentPosition(position => {
+                this.setState({
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
+                }, this.Register);
+            },() => {
+                this.setState({
+                    latitude: 50.45466,
+                    longitude: 30.5238,
+                }, this.Register);
+            },{timeout:3000});
+        }
     };
 
     Register() {
@@ -267,7 +263,7 @@ class SignUpForm extends Component {
                         </div>
 
                         <div className="field-wrap">
-                            <select id="gender" name="gender" onClick={(e) => this.handleUserInput(e)}>
+                            <select id="gender" name="gender" onChange={(e) => this.handleUserInput(e)}>
                                 <option value="man">Man</option>
                                 <option value="woman">Woman</option>
                             </select>
@@ -307,7 +303,6 @@ class SignUpForm extends Component {
     }
 }
 
-@inject('Login')
 @inject('User')
 @observer
 class LogInForm extends Component {
@@ -370,7 +365,7 @@ class LogInForm extends Component {
                 }
                 else {
                     this.props.User.userId = array[0]['userId'];
-                    this.props.Login.LogIn(array[0]['userId']);
+                    this.props.User.LogIn(array[0]['userId']);
 
                 }
             }

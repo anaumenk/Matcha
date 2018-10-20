@@ -66,11 +66,15 @@ class Account extends Model{
             ? $this->db->row("SELECT users.userId, users.login, photos.1 AS photo FROM users
                               INNER JOIN photos ON users.userId = photos.userId
                               INNER JOIN likes ON users.userId = likes.userWho
-                              WHERE likes.userWhom = :userId", $params)
+                              WHERE likes.userWhom = :userId
+                              AND users.userId
+                              NOT IN (SELECT block.idWhom FROM block WHERE block.idWho = :userId)", $params)
             : $this->db->row("SELECT users.userId, users.login, photos.1 AS photo FROM users
                               INNER JOIN photos ON users.userId = photos.userId
                               INNER JOIN views ON users.userId = views.userWho
-                              WHERE views.userWhom = :userId", $params);
+                              WHERE views.userWhom = :userId
+                              AND users.userId
+                              NOT IN (SELECT block.idWhom FROM block WHERE block.idWho = :userId)", $params);
         return $result;
     }
 
@@ -85,19 +89,6 @@ class Account extends Model{
                                SET `password` = '$password' 
                                WHERE `login` = '$login'
                                AND `email` = '$email'");
-    }
-
-    public function getViewed($idWho, $idWhom) {
-        $viewed = $this->db->row("SELECT * FROM `views` WHERE `userWho` = '$idWho' AND `userWhom` = '$idWhom'");
-        if (!$viewed) {
-            $this->db->query("INSERT INTO `views` (`userWho`, `userWhom`)
-                                   VALUES ('$idWho', '$idWhom')");
-        }
-        $blocked = $this->db->row("SELECT * FROM `block` WHERE `userWhom` = '$idWho' AND `userWho` = '$idWhom'");
-        if (!$blocked) {
-            $this->db->query("INSERT INTO `notifications` (`idWho`, `idWhom`, `notification`)
-                                   VALUES ('$idWho', '$idWhom', 'viewed your profile')");
-        }
     }
 
     public function getUserTags($userId) {
