@@ -132,7 +132,6 @@ class UserInfo {
         }&birth=${birth
         }&latitude=${latitude}&longitude=${longitude
         }&locationChecked=${checker}`;
-        console.log(params);
         fetchPost('editInfo', params);
     }
 

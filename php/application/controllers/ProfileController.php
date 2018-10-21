@@ -19,9 +19,6 @@ class ProfileController extends Controller {
         $latitude = $_REQUEST['latitude'];
         $longitude = $_REQUEST['longitude'];
         $locationChecked = $_REQUEST['locationChecked'];
-
-        echo $biography;
-
         $this->model->editUser($userId, $firstName, $lastName, $email, $gender, $orientation, $occupation,
             $biography, $birth, $latitude, $longitude, $locationChecked);
     }
