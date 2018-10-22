@@ -108,7 +108,7 @@ class AccountController extends Controller {
     public function prewUserAction() {
         $idWhom = $_REQUEST['idWhom'];
         $user = $this->model->getUserId($idWhom);
-        if ($user[0]['connection'] != 'online') {
+        if ($user[0]['connection'] != '') {
             $user[0]['connection'] = $this->model->lastConnection($user[0]['connection']);
         }
         $photo = $this->model->getUserPhoto($idWhom);

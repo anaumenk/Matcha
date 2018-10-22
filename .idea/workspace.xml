@@ -2,9 +2,243 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ed86eb5-196f-4672-952b-14cc3b6ab21d" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/02.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/NotFound.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538067811.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1538923001.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539024864.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539067309.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539069616.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539070146.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539072294.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539072333.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539072449.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539072470.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539072493.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539072953.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539073038.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539074147.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539074226.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539074966.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539075285.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539075377.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539075516.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539076053.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539076716.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539088839.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539089390.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539089397.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539252614.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539254623.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539254640.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539254683.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539254800.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539254817.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539255851.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539366732.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539367632.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539429430.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539429621.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539429841.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539429957.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539430226.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539430378.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539430475.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539430507.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539430611.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539430633.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539430681.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539430691.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539430832.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539430852.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539430881.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539430888.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539431037.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539431072.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539431118.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539431210.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539431269.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539431610.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539432383.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539433545.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539433689.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539433744.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539433750.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539434336.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539435102.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539435519.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539435548.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539435684.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539435825.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539435880.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539435895.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539436179.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539436214.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539436242.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539436304.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539436367.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539436422.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539436494.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539436517.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539436697.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539436866.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539436944.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437360.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437381.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437517.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437534.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437651.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437663.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437692.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437726.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437781.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437862.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437880.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437893.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539437926.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539438134.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539438227.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539438236.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539438283.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539438374.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539438393.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539438603.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539438752.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539438940.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539439010.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539439039.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539439054.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539439135.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539439340.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539439560.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539439569.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539439633.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539439846.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539439930.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539439972.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539441862.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539441892.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539441929.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539441963.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539442028.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539442065.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539442107.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539442221.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539527288.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539527316.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539527331.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539632916.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539688628.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539693772.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539696365.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539696516.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539700361.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539700632.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539700638.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539700652.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539701259.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539703556.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539703596.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539703612.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539703738.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539703881.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539704335.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539775117.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539884279.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539884285.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539885441.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539886901.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539887123.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539942784.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539942902.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539943105.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539946384.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539947019.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539947038.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539947796.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539948476.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539948482.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539948490.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539948498.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539948875.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539948897.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539948911.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539948925.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539948935.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539949287.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539949293.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539949299.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539949314.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539949378.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539949384.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539949390.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539949394.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539949398.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539949492.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539949507.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539968104.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539972037.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539972046.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539972059.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539972955.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539972989.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973140.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973247.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973383.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973416.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973518.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973529.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973670.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973686.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973697.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973737.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973821.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973826.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973831.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539973836.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539974230.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539974236.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539974242.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539974248.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539974254.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539974528.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539974539.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1539974549.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540035984.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540037686.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540037694.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540037707.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540037783.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540037791.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540037828.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540037961.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540039440.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540042680.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540042835.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540042844.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540042864.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540042870.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/photo1540045377.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/images/test.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/store/UserInfo.js" afterPath="$PROJECT_DIR$/app/src/components/store/UserInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/controllers/ProfileController.php" afterPath="$PROJECT_DIR$/php/application/controllers/ProfileController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/LoginSignup/Form.js" afterPath="$PROJECT_DIR$/app/src/components/LoginSignup/Form.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Notifications.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Notifications.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/Friends.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Friends.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/Setting.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Setting.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/Pages/Search.js" afterPath="$PROJECT_DIR$/app/src/components/Pages/Search.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/store/RegisterStore.js" afterPath="$PROJECT_DIR$/app/src/components/store/RegisterStore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/components/store/SearchStore.js" afterPath="$PROJECT_DIR$/app/src/components/store/SearchStore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/css/profile.css" afterPath="$PROJECT_DIR$/app/src/css/profile.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/controllers/AccountController.php" afterPath="$PROJECT_DIR$/php/application/controllers/AccountController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/core/Model.php" afterPath="$PROJECT_DIR$/php/application/core/Model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/lib/Db.php" afterPath="$PROJECT_DIR$/php/application/lib/Db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/application/models/Search.php" afterPath="$PROJECT_DIR$/php/application/models/Search.php" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,43 +252,85 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Chat.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js">
+      <file leaf-file-name="PrewProfile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1395">
-              <caret line="95" column="44" lean-forward="true" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
+            <state relative-caret-position="32">
+              <caret line="175" column="38" lean-forward="true" selection-start-line="175" selection-start-column="38" selection-end-line="175" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserInfo.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/components/store/UserInfo.js">
+      <file leaf-file-name="Search.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/application/models/Search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="72" lean-forward="true" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
+            <state relative-caret-position="698">
+              <caret line="114" column="27" lean-forward="false" selection-start-line="114" selection-start-column="27" selection-end-line="114" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Router.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/application/core/Router.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="41" column="59" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="41" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/application/core/Controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="62" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Model.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/application/core/Model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
-                <element signature="e#0#40#0" expanded="true" />
+                <marker date="1540201423000" expanded="true" signature="306:380" ph="UPDATE `user... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Setting.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Setting.js">
+      <file leaf-file-name="Db.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/application/lib/Db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="226" column="66" lean-forward="true" selection-start-line="226" selection-start-column="66" selection-end-line="226" selection-end-column="66" />
+            <state relative-caret-position="225">
+              <caret line="15" column="66" lean-forward="false" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
+              <folding>
+                <element signature="e#34#51#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserPhotos.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/store/UserPhotos.js">
+      <file leaf-file-name="db.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/application/config/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state relative-caret-position="75">
+              <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -63,107 +339,8 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/application/config/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1335">
-              <caret line="89" column="13" lean-forward="false" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChatController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/application/controllers/ChatController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="51" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProfileController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/application/controllers/ProfileController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Profile.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/application/models/Profile.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-              <folding>
-                <marker date="1540045887000" expanded="true" signature="320:907" ph="UPDATE `user... " />
-                <marker date="1540045887000" expanded="true" signature="1019:1184" ph="UPDATE `phot... " />
-                <marker date="1540045887000" expanded="true" signature="1282:1331" ph="SELECT * FRO... photos" />
-                <marker date="1540045887000" expanded="true" signature="1386:1512" ph="INSERT INTO `photos`... " />
-                <marker date="1540045887000" expanded="true" signature="1571:1638" ph="UPDATE `phot... " />
-                <marker date="1540045887000" expanded="true" signature="1734:1874" ph="SELECT * FRO... fake" />
-                <marker date="1540045887000" expanded="true" signature="1953:2063" ph="INSERT INTO `fake`... " />
-                <marker date="1540045887000" expanded="true" signature="2108:2207" ph="SELECT COUNT... fake" />
-                <marker date="1540045887000" expanded="true" signature="2295:2403" ph="UPDATE `user... " />
-                <marker date="1540045887000" expanded="true" signature="2604:2708" ph="INSERT INTO `block`... " />
-                <marker date="1540045887000" expanded="true" signature="2789:2937" ph="UPDATE `user... " />
-                <marker date="1540045887000" expanded="true" signature="2973:3166" ph="SELECT * FRO... friend" />
-                <marker date="1540045887000" expanded="true" signature="3220:3403" ph="DELETE FROM " />
-                <marker date="1540045887000" expanded="true" signature="3476:3627" ph="INSERT INTO `notifications`... " />
-                <marker date="1540045887000" expanded="true" signature="3700:3804" ph="UPDATE `user... " />
-                <marker date="1540045887000" expanded="true" signature="3850:4052" ph="SELECT * FRO... views" />
-                <marker date="1540045887000" expanded="true" signature="4106:4298" ph="DELETE FROM " />
-                <marker date="1540045887000" expanded="true" signature="4344:4546" ph="SELECT * FRO... likes" />
-                <marker date="1540045887000" expanded="true" signature="4600:4792" ph="DELETE FROM " />
-                <marker date="1540045887000" expanded="true" signature="4888:4934" ph="SELECT * FRO... likes" />
-                <marker date="1540045887000" expanded="true" signature="4888:4959" ph="SELECT * FRO... likes" />
-                <marker date="1540045887000" expanded="true" signature="5015:5060" ph="INSERT INTO `likes`... " />
-                <marker date="1540045887000" expanded="true" signature="5015:5120" ph="INSERT INTO `likes`... " />
-                <marker date="1540045887000" expanded="true" signature="5195:5300" ph="UPDATE `user... " />
-                <marker date="1540045887000" expanded="true" signature="5343:5410" ph="SELECT * FRO... block" />
-                <marker date="1540045887000" expanded="true" signature="5473:5612" ph="INSERT INTO `notifications`... " />
-                <marker date="1540045887000" expanded="true" signature="5671:5897" ph="SELECT COUNT... likes" />
-                <marker date="1540045887000" expanded="true" signature="5982:6081" ph="INSERT INTO `friend`... " />
-                <marker date="1540045887000" expanded="true" signature="6154:6297" ph="INSERT INTO `notifications`... " />
-                <marker date="1540045887000" expanded="true" signature="6370:6529" ph="UPDATE `user... " />
-                <marker date="1540045887000" expanded="true" signature="6642:6755" ph="SELECT * FRO... likes" />
-                <marker date="1540045887000" expanded="true" signature="6651:6755" ph="DELETE FROM " />
-                <marker date="1540045887000" expanded="true" signature="6810:6921" ph="DELETE FROM " />
-                <marker date="1540045887000" expanded="true" signature="7002:7110" ph="UPDATE `user... " />
-                <marker date="1540045887000" expanded="true" signature="7149:7342" ph="SELECT * FRO... friend" />
-                <marker date="1540045887000" expanded="true" signature="7404:7585" ph="DELETE FROM " />
-                <marker date="1540045887000" expanded="true" signature="7623:7773" ph="INSERT INTO `notifications`... " />
-                <marker date="1540045887000" expanded="true" signature="7811:7914" ph="UPDATE `user... " />
-                <marker date="1540045887000" expanded="true" signature="8029:8572" ph="SELECT notif... notifications" />
-                <marker date="1540045887000" expanded="true" signature="8681:8768" ph="DELETE FROM " />
-                <marker date="1540045887000" expanded="true" signature="8860:8928" ph="SELECT * FRO... tags" />
-                <marker date="1540045887000" expanded="true" signature="8984:9086" ph="INSERT INTO `tags`... " />
-                <marker date="1540045887000" expanded="true" signature="9132:9177" ph="SELECT * FRO... tags" />
-                <marker date="1540045887000" expanded="true" signature="9287:9391" ph="DELETE FROM " />
-                <marker date="1540045887000" expanded="true" signature="9485:9560" ph="SELECT * FRO... views" />
-                <marker date="1540045887000" expanded="true" signature="9618:9725" ph="INSERT INTO `views`... " />
-                <marker date="1540045887000" expanded="true" signature="9774:9845" ph="SELECT * FRO... block" />
-                <marker date="1540045887000" expanded="true" signature="9904:10054" ph="INSERT INTO `notifications`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrewProfile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2325">
-              <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Form.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/components/LoginSignup/Form.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2220">
-              <caret line="151" column="86" lean-forward="false" selection-start-line="151" selection-start-column="86" selection-end-line="151" selection-end-column="86" />
+            <state relative-caret-position="373">
+              <caret line="74" column="9" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -181,15 +358,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>likes</find>
-      <find>new no</find>
-      <find>hand</find>
-      <find>match</find>
-      <find>delT</find>
-      <find>delTag</find>
-      <find>sock</find>
       <find>getV</find>
-      <find>prew</find>
       <find>rew</find>
       <find>sign</find>
       <find>popup</find>
@@ -211,6 +380,14 @@
       <find>localStorage</find>
       <find>edi</find>
       <find>console.log</find>
+      <find>gen</find>
+      <find>pre</find>
+      <find>prew</find>
+      <find>gende</find>
+      <find>man</find>
+      <find>phot</find>
+      <find>img</find>
+      <find>Popup</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -225,30 +402,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/package.json" />
-        <option value="$PROJECT_DIR$/app/public/index.html" />
-        <option value="$PROJECT_DIR$/app/src/components/Footer.js" />
-        <option value="$PROJECT_DIR$/app/src/css/log_sig.css" />
-        <option value="$PROJECT_DIR$/app/node_modules/engine.io/lib/socket.js" />
         <option value="$PROJECT_DIR$/app/src/components/store/LikesStore.js" />
-        <option value="$PROJECT_DIR$/php/application/core/Model.php" />
         <option value="$PROJECT_DIR$/app/src/components/store/ViewsStore.js" />
         <option value="$PROJECT_DIR$/app/src/components/store/ChatStore.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Notifications.js" />
-        <option value="$PROJECT_DIR$/php/application/controllers/AccountController.php" />
         <option value="$PROJECT_DIR$/php/application/config/routes.php" />
         <option value="$PROJECT_DIR$/app/src/components/store/PrewProfileStore.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Friends.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js" />
         <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Profile.js" />
         <option value="$PROJECT_DIR$/php/application/controllers/SearchController.php" />
-        <option value="$PROJECT_DIR$/php/application/models/Search.php" />
-        <option value="$PROJECT_DIR$/app/src/components/store/SearchStore.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Search.js" />
         <option value="$PROJECT_DIR$/app/src/components/Pages/FindMatches.js" />
         <option value="$PROJECT_DIR$/php/application/models/Account.php" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js" />
         <option value="$PROJECT_DIR$/app/src/components/store/UserPhotos.js" />
         <option value="$PROJECT_DIR$/php/application/models/Chat.php" />
         <option value="$PROJECT_DIR$/app/src/components/store/LoginSignup.js" />
@@ -257,7 +419,6 @@
         <option value="$PROJECT_DIR$/app/src/App.js" />
         <option value="$PROJECT_DIR$/app/src/fetch.js" />
         <option value="$PROJECT_DIR$/app/src/components/store/ProfileStore.js" />
-        <option value="$PROJECT_DIR$/app/src/css/profile.css" />
         <option value="$PROJECT_DIR$/app/src/css/index.css" />
         <option value="$PROJECT_DIR$/app/src/css/setting.css" />
         <option value="$PROJECT_DIR$/app/src/css/photos.css" />
@@ -266,16 +427,32 @@
         <option value="$PROJECT_DIR$/app/src/css/notifications.css" />
         <option value="$PROJECT_DIR$/app/src/css/ListofProfiles.css" />
         <option value="$PROJECT_DIR$/app/src/css/chat.css" />
-        <option value="$PROJECT_DIR$/app/src/components/LoginSignup/Form.js" />
         <option value="$PROJECT_DIR$/app/socketServer.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js" />
         <option value="$PROJECT_DIR$/php/application/controllers/ChatController.php" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js" />
-        <option value="$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js" />
         <option value="$PROJECT_DIR$/php/application/models/Profile.php" />
         <option value="$PROJECT_DIR$/php/application/controllers/ProfileController.php" />
         <option value="$PROJECT_DIR$/app/src/components/store/UserInfo.js" />
+        <option value="$PROJECT_DIR$/app/src/components/LoginSignup/Form.js" />
         <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Setting.js" />
+        <option value="$PROJECT_DIR$/app/src/components/store/RegisterStore.js" />
+        <option value="$PROJECT_DIR$/php/application/controllers/AccountController.php" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Friends.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Notifications.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Search.js" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js" />
+        <option value="$PROJECT_DIR$/app/src/components/store/SearchStore.js" />
+        <option value="$PROJECT_DIR$/app/src/css/profile.css" />
+        <option value="$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js" />
+        <option value="$PROJECT_DIR$/php/application/config/setup.php" />
+        <option value="$PROJECT_DIR$/php/index.php" />
+        <option value="$PROJECT_DIR$/php/application/core/Model.php" />
+        <option value="$PROJECT_DIR$/php/application/config/db.php" />
+        <option value="$PROJECT_DIR$/php/application/lib/Db.php" />
+        <option value="$PROJECT_DIR$/php/application/models/Search.php" />
       </list>
     </option>
   </component>
@@ -297,8 +474,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="x" value="2379" />
-    <option name="width" value="181" />
+    <option name="x" value="1282" />
+    <option name="width" value="1278" />
     <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -328,6 +505,59 @@
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="LoginSignup" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Profile" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="store" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
@@ -365,8 +595,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -534,17 +764,20 @@
       <workItem from="1539891114275" duration="804000" />
       <workItem from="1539934849441" duration="27815000" />
       <workItem from="1540026582759" duration="10465000" />
-      <workItem from="1540119741847" duration="1084000" />
+      <workItem from="1540119741847" duration="1531000" />
+      <workItem from="1540139197218" duration="6393000" />
+      <workItem from="1540196650493" duration="6165000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="808194000" />
+    <option name="totallyTimeSpent" value="821199000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1118" y="0" width="1442" height="1440" extended-state="6" />
+    <frame x="923" y="0" width="1637" height="1440" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20571429" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15360501" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -582,271 +815,21 @@
           <line>191</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/src/components/store/SearchStore.js</url>
+          <line>63</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/php/application/core/Router.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="1" lean-forward="false" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/ViewsStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/LoginSignup/FormErrors.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="46" lean-forward="true" selection-start-line="42" selection-start-column="46" selection-end-line="42" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Notifications.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="50" column="33" lean-forward="false" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/css/log_sig.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="104" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/controllers/SearchController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="40" column="47" lean-forward="false" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Search.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="159" column="4" lean-forward="true" selection-start-line="159" selection-start-column="4" selection-end-line="165" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/FindMatches.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/PrewProfileStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="959">
-          <caret line="82" column="5" lean-forward="false" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/SearchStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="84" column="25" lean-forward="true" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="28" lean-forward="true" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/models/Search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/controllers/AccountController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="96" column="65" lean-forward="true" selection-start-line="96" selection-start-column="65" selection-end-line="96" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/models/Account.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="118" column="62" lean-forward="true" selection-start-line="118" selection-start-column="62" selection-end-line="118" selection-end-column="62" />
-          <folding>
-            <marker date="1539971534000" expanded="true" signature="236:276" ph="SELECT * FRO... users" />
-            <marker date="1539971534000" expanded="true" signature="459:501" ph="SELECT * FRO... users" />
-            <marker date="1539971534000" expanded="true" signature="626:765" ph="SELECT idWho... block" />
-            <marker date="1539971534000" expanded="true" signature="878:1015" ph="SELECT userW... likes" />
-            <marker date="1539971534000" expanded="true" signature="1191:1234" ph="SELECT * FRO... photos" />
-            <marker date="1539971534000" expanded="true" signature="1477:1947" ph="INSERT INTO `users`... " />
-            <marker date="1539971534000" expanded="true" signature="2027:2153" ph="INSERT INTO `photos`... " />
-            <marker date="1539971534000" expanded="true" signature="2356:2638" ph="SELECT users... users" />
-            <marker date="1539971534000" expanded="true" signature="2356:2783" ph="SELECT users... users" />
-            <marker date="1539971534000" expanded="true" signature="2724:2782" ph="SELECT block... block" />
-            <marker date="1539971534000" expanded="true" signature="2825:3107" ph="SELECT users... users" />
-            <marker date="1539971534000" expanded="true" signature="2825:3252" ph="SELECT users... users" />
-            <marker date="1539971534000" expanded="true" signature="3193:3251" ph="SELECT block... block" />
-            <marker date="1539971534000" expanded="true" signature="3368:3486" ph="UPDATE `user... " />
-            <marker date="1539971534000" expanded="true" signature="3583:3767" ph="UPDATE users... " />
-            <marker date="1539971534000" expanded="true" signature="3853:3900" ph="SELECT * FRO... tags" />
-            <marker date="1539971534000" expanded="true" signature="4020:4156" ph="UPDATE `user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Friends.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="61" column="48" lean-forward="true" selection-start-line="61" selection-start-column="48" selection-end-line="61" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="101" column="42" lean-forward="false" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/LikesStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/models/Chat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding>
-            <marker date="1539975029000" expanded="true" signature="234:702" ph="SELECT users... users" />
-            <marker date="1539975029000" expanded="true" signature="935:1271" ph="SELECT id, s... chat" />
-            <marker date="1539975029000" expanded="true" signature="1405:1524" ph="INSERT INTO `chat`... " />
-            <marker date="1539975029000" expanded="true" signature="1561:1627" ph="SELECT * FRO... block" />
-            <marker date="1539975029000" expanded="true" signature="1561:1648" ph="SELECT * FRO... block" />
-            <marker date="1539975029000" expanded="true" signature="1561:1673" ph="SELECT * FRO... block" />
-            <marker date="1539975029000" expanded="true" signature="1574:1627" ph="INSERT INTO `chat`... " />
-            <marker date="1539975029000" expanded="true" signature="1730:1877" ph="INSERT INTO `notifications`... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/LoginSignup.js" />
-    <entry file="file://$PROJECT_DIR$/app/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="42" column="58" lean-forward="true" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/scripts/start.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="29" column="41" lean-forward="true" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/fetch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/ProfileStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/RegisterStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/css/profile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/css/photos.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/css/setting.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/css/user_profile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -875,7 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,36 +884,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/ChatStore.js">
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/UserPhotos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="30" />
+        <state relative-caret-position="285">
+          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/LoginSignup/Form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2495">
+          <caret line="267" column="61" lean-forward="false" selection-start-line="267" selection-start-column="61" selection-end-line="267" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js">
+    <entry file="file://$PROJECT_DIR$/app/src/components/LoginSignup/FormErrors.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="100" column="24" lean-forward="false" selection-start-line="100" selection-start-column="24" selection-end-line="111" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="95" column="44" lean-forward="true" selection-start-line="95" selection-start-column="44" selection-end-line="95" selection-end-column="44" />
+        <state relative-caret-position="135">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/config/routes.php">
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/ProfileStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="89" column="13" lean-forward="false" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="13" />
+        <state relative-caret-position="555">
+          <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/RegisterStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/UserInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1920">
+          <caret line="129" column="66" lean-forward="false" selection-start-line="129" selection-start-column="61" selection-end-line="129" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/PrewProfileStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="866">
+          <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/controllers/AccountController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="110" column="39" lean-forward="false" selection-start-line="110" selection-start-column="39" selection-end-line="110" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -944,26 +954,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js">
+    <entry file="file://$PROJECT_DIR$/php/application/controllers/ProfileController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2325">
-          <caret line="158" column="0" lean-forward="false" selection-start-line="158" selection-start-column="0" selection-end-line="158" selection-end-column="0" />
+        <state relative-caret-position="-158">
+          <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/LoginSignup/Form.js">
+    <entry file="file://$PROJECT_DIR$/php/application/controllers/SearchController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="151" column="86" lean-forward="false" selection-start-line="151" selection-start-column="86" selection-end-line="151" selection-end-column="86" />
+        <state relative-caret-position="600">
+          <caret line="40" column="47" lean-forward="false" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="47" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/models/Account.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="922">
+          <caret line="118" column="62" lean-forward="false" selection-start-line="118" selection-start-column="62" selection-end-line="118" selection-end-column="62" />
+          <folding>
+            <marker date="1539971534000" expanded="true" signature="236:276" ph="SELECT * FRO... users" />
+            <marker date="1539971534000" expanded="true" signature="459:501" ph="SELECT * FRO... users" />
+            <marker date="1539971534000" expanded="true" signature="626:765" ph="SELECT idWho... block" />
+            <marker date="1539971534000" expanded="true" signature="878:1015" ph="SELECT userW... likes" />
+            <marker date="1539971534000" expanded="true" signature="1191:1234" ph="SELECT * FRO... photos" />
+            <marker date="1539971534000" expanded="true" signature="1477:1947" ph="INSERT INTO `users`... " />
+            <marker date="1539971534000" expanded="true" signature="2027:2153" ph="INSERT INTO `photos`... " />
+            <marker date="1539971534000" expanded="true" signature="2356:2638" ph="SELECT users... users" />
+            <marker date="1539971534000" expanded="true" signature="2356:2783" ph="SELECT users... users" />
+            <marker date="1539971534000" expanded="true" signature="2724:2782" ph="SELECT block... block" />
+            <marker date="1539971534000" expanded="true" signature="2825:3107" ph="SELECT users... users" />
+            <marker date="1539971534000" expanded="true" signature="2825:3252" ph="SELECT users... users" />
+            <marker date="1539971534000" expanded="true" signature="3193:3251" ph="SELECT block... block" />
+            <marker date="1539971534000" expanded="true" signature="3368:3486" ph="UPDATE `user... " />
+            <marker date="1539971534000" expanded="true" signature="3583:3767" ph="UPDATE users... " />
+            <marker date="1539971534000" expanded="true" signature="3853:3900" ph="SELECT * FRO... tags" />
+            <marker date="1539971534000" expanded="true" signature="4020:4156" ph="UPDATE `user... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/models/Chat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding>
+            <marker date="1539975029000" expanded="true" signature="234:702" ph="SELECT users... users" />
+            <marker date="1539975029000" expanded="true" signature="935:1271" ph="SELECT id, s... chat" />
+            <marker date="1539975029000" expanded="true" signature="1405:1524" ph="INSERT INTO `chat`... " />
+            <marker date="1539975029000" expanded="true" signature="1561:1627" ph="SELECT * FRO... block" />
+            <marker date="1539975029000" expanded="true" signature="1561:1648" ph="SELECT * FRO... block" />
+            <marker date="1539975029000" expanded="true" signature="1561:1673" ph="SELECT * FRO... block" />
+            <marker date="1539975029000" expanded="true" signature="1574:1627" ph="INSERT INTO `chat`... " />
+            <marker date="1539975029000" expanded="true" signature="1730:1877" ph="INSERT INTO `notifications`... " />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/application/models/Profile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        <state relative-caret-position="337">
+          <caret line="147" column="59" lean-forward="false" selection-start-line="146" selection-start-column="35" selection-end-line="147" selection-end-column="59" />
           <folding>
             <marker date="1540045887000" expanded="true" signature="320:907" ph="UPDATE `user... " />
             <marker date="1540045887000" expanded="true" signature="1019:1184" ph="UPDATE `phot... " />
@@ -1017,37 +1070,239 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/application/controllers/ProfileController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Setting.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="226" column="66" lean-forward="true" selection-start-line="226" selection-start-column="66" selection-end-line="226" selection-end-column="66" />
+        <state relative-caret-position="3240">
+          <caret line="218" column="81" lean-forward="false" selection-start-line="218" selection-start-column="81" selection-end-line="218" selection-end-column="81" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/UserPhotos.js">
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Photos.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="75" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/components/store/UserInfo.js">
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Likes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="72" lean-forward="true" selection-start-line="32" selection-start-column="72" selection-end-line="32" selection-end-column="72" />
+        <state relative-caret-position="405">
+          <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Views.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="28" column="21" lean-forward="false" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Footer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="42" column="58" lean-forward="false" selection-start-line="42" selection-start-column="58" selection-end-line="42" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Friends.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="30" column="27" lean-forward="false" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/ChatStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="76" column="10" lean-forward="false" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/store/SearchStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1290">
+          <caret line="87" column="28" lean-forward="false" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/Profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="62" column="55" lean-forward="false" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Search.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="26" column="86" lean-forward="false" selection-start-line="26" selection-start-column="83" selection-end-line="26" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Notifications.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="15" column="77" lean-forward="false" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/css/user_profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="38" lean-forward="false" selection-start-line="37" selection-start-column="38" selection-end-line="37" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/css/profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="802">
+          <caret line="60" column="6" lean-forward="false" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/Profile/UserProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/FindMatches.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="67" column="40" lean-forward="false" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/core/Router.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="59" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="41" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/core/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="62" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/core/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="e#0#40#0" expanded="true" />
+            <marker date="1540201423000" expanded="true" signature="306:380" ph="UPDATE `user... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="74" column="9" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/config/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/config/setup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/config/matcha.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/lib/Db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="66" lean-forward="false" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
+          <folding>
+            <element signature="e#34#51#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/components/Pages/PrewProfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="175" column="38" lean-forward="true" selection-start-line="175" selection-start-column="38" selection-end-line="175" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/application/models/Search.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="698">
+          <caret line="114" column="27" lean-forward="false" selection-start-line="114" selection-start-column="27" selection-end-line="114" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

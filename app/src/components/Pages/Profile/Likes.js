@@ -28,7 +28,8 @@ class Like extends Component {
                         }}
                     >
                         <a>
-                            {like.photo && <img src={require(`../../../${like.photo}`)} alt={like.login} />}
+                            {(like.photo && like.photo.match(/http/)) && <img src={like.photo} alt={like.login} />}
+                            {(like.photo && !like.photo.match(/http/)) && <img src={require(`../../../${like.photo}`)} alt={like.login} />}
                         </a>
                     </div>
                 );

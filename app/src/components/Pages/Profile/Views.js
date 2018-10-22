@@ -28,7 +28,8 @@ class View extends Component {
                         }}
                     >
                         <a>
-                            {view.photo && <img src={require(`../../../${view.photo}`)} alt={view.login} />}
+                            {(view.photo && view.photo.match(/http/)) && <img src={view.photo} alt={view.login} />}
+                            {(view.photo && !view.photo.match(/http/)) && <img src={require(`../../../${view.photo}`)} alt={view.login} />}
                         </a>
                     </div>
                 );

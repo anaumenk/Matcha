@@ -97,7 +97,8 @@ export default class UserProfile extends Component {
             <div id="user_profile">
                 {one &&
                     <div className="user_profile_photo">
-                        <img src={require(`../../../${currPhoto}`)} alt={login}/>
+                        {currPhoto.match(/http/) && <img src={currPhoto} alt={login}/>}
+                        {!currPhoto.match(/http/) && <img src={require(`../../../${currPhoto}`)} alt={login}/>}
                         {
                             one !== currPhoto
                             && <i className="fas fa-arrow-left" onClick={() => this.PhotoLeft()}></i>

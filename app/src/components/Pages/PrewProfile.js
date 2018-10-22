@@ -173,7 +173,7 @@ export default class PrewProfile extends Component {
             <div
                 id="user_profile"
                 style={{
-                    position: 'absolute',
+                    position: 'fixed',
                     right:0,
                     left:0,
                     margin: 'auto',
@@ -213,7 +213,8 @@ export default class PrewProfile extends Component {
                 </div>
                 {currPhoto &&
                 <div className="user_profile_photo">
-                    <img src={require(`../../${currPhoto}`)} alt={login}/>
+                    {currPhoto.match(/http/) && <img src={currPhoto} alt={login}/>}
+                    {!currPhoto.match(/http/) && <img src={require(`../../${currPhoto}`)} alt={login}/>}
                     {
                         photoOne !== currPhoto
                         && <i className="fas fa-arrow-left" onClick={() => this.PhotoLeft()}></i>

@@ -9,6 +9,7 @@ abstract class Model {
     public $db;
 
     public function __construct() {
+
         $this->db = new Db;
         $connection = $_REQUEST['connection'];
         $userId = $_REQUEST['userId'];

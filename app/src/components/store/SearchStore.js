@@ -79,13 +79,13 @@ class SearchStore {
         this.AgeStart = 18;
         this.AgeEnd = 30;
         this.DistanceStart = 0;
-        this.DistanceEnd = 100;
+        this.DistanceEnd = 1000;
         this.RatingStart = -200;
 
         this.minAge = 18;
         this.maxAge = 100;
         this.minDistance = 0;
-        this.maxDistance = 100;
+        this.maxDistance = 5000;
         this.minRating = 0;
         this.maxRating = 200;
 

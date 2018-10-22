@@ -7,7 +7,7 @@ class RegisterStore {
     @observable firstName = '';
     @observable lastName = '';
     @observable email = '';
-    @observable gender = 1;
+    @observable gender = 'Male';
     @observable formErrors = {password: '', email: '', login: ''};
     @observable emailValid = false;
     @observable passwordValid = false;

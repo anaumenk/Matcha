@@ -27,7 +27,8 @@ class SelectedUser extends Component {
                 onClick={() => this.returnToList()}
             >
                 <div className="chat_user_image">
-                    {friendPhoto && <img src={require(`../../../${friendPhoto}`)} alt={friendLogin} />}
+                    {(friendPhoto && friendPhoto.match(/http/)) && <img src={friendPhoto} alt={friendLogin} />}
+                    {(friendPhoto && !friendPhoto.match(/http/)) &&<img src={require(`../../../${friendPhoto}`)} alt={friendLogin} />}
                 </div>
                 <div style={{marginLeft: 10, width: '60%'}}>
                     <p>{friendFirstName} {friendLastName}</p>
@@ -63,7 +64,8 @@ class FriendsList extends Component {
                                  this.props.Chat.friendLastName = friend.lastName;
                              }}>
                             <div className="chat_user_image">
-                                {friend.photo && <img src={require(`../../../${friend.photo}`)} alt={friend.login} />}
+                                {(friend.photo && friend.photo.match(/http/)) && <img src={friend.photo} alt={friend.login} />}
+                                {(friend.photo && !friend.photo.match(/http/)) && <img src={require(`../../../${friend.photo}`)} alt={friend.login} />}
                             </div>
                             <div style={{marginLeft: 10, width: '60%'}}>
                                 <p>{friend.firstName} {friend.lastName}</p>

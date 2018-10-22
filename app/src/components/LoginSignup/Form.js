@@ -109,7 +109,7 @@ class SignUpForm extends Component {
         firstName: '',
         lastName: '',
         email: '',
-        gender: 'man',
+        gender: 'Male',
         formErrors: {password: '', email: '', login: '', firstName: '', lastName: ''},
         latitude: '',
         longitude: '',
@@ -264,8 +264,8 @@ class SignUpForm extends Component {
 
                         <div className="field-wrap">
                             <select id="gender" name="gender" onChange={(e) => this.handleUserInput(e)}>
-                                <option value="man">Man</option>
-                                <option value="woman">Woman</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
                             </select>
                         </div>
                     </div>

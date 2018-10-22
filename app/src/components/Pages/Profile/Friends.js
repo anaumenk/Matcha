@@ -29,7 +29,8 @@ class Friend extends Component {
                         }}
                     >
                         <a>
-                            {friend.photo && <img src={require(`../../../${friend.photo}`)} alt={friend.login} />}
+                            {(friend.photo && friend.photo.match(/http/)) && <img src={friend.photo} alt={friend.login} />}
+                            {(friend.photo && !friend.photo.match(/http/)) && <img src={require(`../../../${friend.photo}`)} alt={friend.login} />}
                         </a>
                     </div>
                 );

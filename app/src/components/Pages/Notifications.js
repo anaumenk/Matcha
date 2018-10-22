@@ -13,7 +13,8 @@ class Notific extends Component {
                         key={note.id}
                     >
                         <div className="news_img">
-                            {note.photo && <img src={require(`../../${note.photo}`)} alt={note.lastName}/>}
+                            {(note.photo && note.photo.match(/http/)) && <img src={note.photo} alt={note.lastName}/>}
+                            {(note.photo && !note.photo.match(/http/)) && <img src={require(`../../${note.photo}`)} alt={note.lastName}/>}
                         </div>
                         <div style={{width: '60%'}}>
                             <p>{`${note.firstName} ${note.lastName}`}</p>

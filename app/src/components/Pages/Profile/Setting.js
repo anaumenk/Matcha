@@ -179,8 +179,8 @@ class Setting extends Component {
                 <div className="edit_field">
                     <p>Gender</p>
                     <select name="gender" value={gender} onChange={(e) => this.handleChange(e)}>
-                        <option>woman</option>
-                        <option>man</option>
+                        <option>Male</option>
+                        <option>Female</option>
                     </select>
                 </div>
                 <div className="edit_field">

@@ -23,7 +23,8 @@ export class People extends Component {
                                     socket.emit('notification', people.userId);
                                 }}
                             >
-                                {people.photo && <img src={require(`../../${people.photo}`)} alt={people.firstName}/>}
+                                {(people.photo && people.photo.match(/http/)) && <img src={people.photo} alt={people.firstName}/>}
+                                {(people.photo && !people.photo.match(/http/)) && <img src={require(`../../${people.photo}`)} alt={people.firstName}/>}
                             </div>
                        </div>
                     )

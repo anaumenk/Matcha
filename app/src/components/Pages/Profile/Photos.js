@@ -19,7 +19,8 @@ export default class Photos extends Component {
             <div className={`photo ${className}`}>
                 {photo ?
                 <div>
-                    <img src={require(`../../../${photo}`)} alt={name}/>
+                    {photo.match(/http/) && <img src={photo} alt={name} />}
+                    {!photo.match(/http/) && <img src={require(`../../../${photo}`)} alt={name}/>}
                     <i
                         className="fas fa-times"
                         onClick={() => this.delPhoto(name)}

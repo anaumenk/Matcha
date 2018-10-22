@@ -1,7 +1,7 @@
 <?php
 
 namespace application\lib;
-
+use PDOException;
 use PDO;
 
 class Db {
@@ -9,7 +9,13 @@ class Db {
 
     public function __construct() {
         $config = require 'application/config/db.php';
-        $this->db = new PDO("mysql:host=$config[host];dbname=$config[dbname]", $config['user'], $config['password']);
+
+        try{
+            $this->db = new PDO("mysql:host=$config[host];dbname=$config[dbname]", $config['user'], $config['password']);
+        } catch (PDOException $e) {
+            exec ("/Users/anaumenk/MAMP/mysql/bin/mysql -u root -pfktrcfylhf < /Users/anaumenk/MAMP/apache2/htdocs/php/application/config/matcha.sql");
+            $this->db = new PDO("mysql:host=$config[host];dbname=$config[dbname]", $config['user'], $config['password']);
+        }
     }
 
     public function query($sql, $params = []) {
