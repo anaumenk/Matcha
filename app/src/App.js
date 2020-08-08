@@ -9,8 +9,7 @@ import './css/views_likes.css';
 import './css/chat.css';
 import './css/setting.css';
 import './css/photos.css';
-import './css/user_profile.css'
-
+import './css/user_profile.css';
 
 import Form from './components/LoginSignup/Form';
 import Header from './components/Header';
@@ -29,7 +28,7 @@ export default class App extends Component {
     render() {
         return (
             <Router>
-                <div>
+                <div className='content_container'>
                 <Header />
                 {
                     this.props.User.isAuthenticated

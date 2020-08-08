@@ -17,6 +17,7 @@ export default class FindMatches extends Component {
         this.props.Search.clear();
         this.props.User.push();
         this.props.Photo.push();
+        this.props.Prew.clean();
     }
 
     handleSliderChange = () => {

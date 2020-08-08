@@ -5,6 +5,14 @@ This project is a dating website.
 A users are able to register, connect, fill his/her profile, search and look into
 the profile of other users, like them, chat with those that “liked” back.
 
+## Quickstart
+1. Start Apache and MySQL servers using MAMP.
+2. Set Apache port as 8080
+3. Change in php/application/config/db.php mysql user and password if it's not default.
+4. Upload to phpmyadmin db from php/application/config/matcha.sql
+5. Change php.ini in MAMP folder: sendmail_path = "env -i /usr/sbin/sendmail -t -i".
+6. Enable sending messages. This instruction helps me to send emails from Catalina: https://gist.github.com/loziju/66d3f024e102704ff5222e54a4bfd50e
+7. cd app && npm i && npm run start
 
 ### Home page
 <img src="https://github.com/anaumenk/Matcha/blob/master/app/src/images/screenshots/home-page.png" alt="home-page" />

@@ -15,11 +15,10 @@ export function fetchPost(url, params) {
         }
         throw new Error(response.statusText);
     })
-        .then(function(response) {
-            return response;
-        }).catch(() => {
-            return 'TypeError: Failed to fetch';
-        })
-
+    .then(function(response) {
+        return response;
+    }).catch(() => {
+        return '{"error": "Failed to fetch"}';
+    });
 }
 

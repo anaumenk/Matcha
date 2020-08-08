@@ -11,6 +11,7 @@ import {Popup} from "./Setting";
 import Friends from "./Friends";
 
 @inject('Profile')
+@inject('Prew')
 @observer
 export default class Profile extends Component {
     changeColor(e) {
@@ -19,6 +20,10 @@ export default class Profile extends Component {
             element.style.color = 'rgba(19, 35, 47, 0.9)';
         }
         e.target.style.color = '#179b77';
+    }
+
+    componentWillMount() {
+        this.props.Prew.clean();
     }
 
     render() {
@@ -36,6 +41,7 @@ export default class Profile extends Component {
                         }}>Edit profile</a></li>
                         <li><a className="nav" onClick={(e) => {
                             this.props.Profile.contentChange(<Friends />);
+                            this.props.Prew.clean();
                             this.changeColor(e);
                         }}>Friends</a></li>
                         <li><a className="nav" onClick={(e) => {
@@ -45,10 +51,12 @@ export default class Profile extends Component {
 
                         <li><a className="nav" onClick={(e) => {
                             this.props.Profile.contentChange(<Views />);
+                            this.props.Prew.clean();
                             this.changeColor(e);
                         }}>Views</a></li>
                         <li><a className="nav" onClick={(e) => {
                             this.props.Profile.contentChange(<Likes />);
+                            this.props.Prew.clean();
                             this.changeColor(e);
                         }}>Likes</a></li>
                         <li><a className="nav" onClick={(e) => {

@@ -82,6 +82,9 @@ class PrewProfileStore {
         fetchPost('getViewed', `idWhom=${idWhom}`);
     }
 
+    @action clean() {
+        this.profile = '';
+    }
 }
 
 const Prew = new PrewProfileStore();

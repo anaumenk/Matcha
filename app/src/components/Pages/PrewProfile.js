@@ -66,13 +66,11 @@ export default class PrewProfile extends Component {
                                  socket.emit('notification', this.props.Prew.userId);
                              }
                              this.props.Prew.likeUser(this.props.Prew.userId, this.props.User.userId);
-                             this.props.Prew.profile = '';
                              this.props.Prew.openUserProfile(this.props.User.userId, this.props.Prew.userId);
                              socket.emit('notification', this.props.Prew.userId);
                              this.props.User.push();
                              this.setState({
-                                 likeUnlike: !this.props.User.ifInLike(this.props.Prew.userId) ? this.Like() : this.Unlike(),
-                                 blockBlocked: !this.props.User.ifInBlock(this.props.Prew.userId) ? this.Block() : <button className='redButton'>Blocked</button>,
+                                 likeUnlike: this.Unlike(),
                              })
                          }
                          else {
@@ -98,12 +96,10 @@ export default class PrewProfile extends Component {
                         socket.emit('notification', this.props.Prew.userId);
                     }
                     this.props.Prew.unLikeUser(this.props.Prew.userId, this.props.User.userId);
-                    this.props.Prew.profile = '';
                     this.props.Prew.openUserProfile(this.props.User.userId, this.props.Prew.userId);
                     this.props.User.push();
                     this.setState({
-                        likeUnlike: !this.props.User.ifInLike(this.props.Prew.userId) ? this.Like() : this.Unlike(),
-                        blockBlocked: !this.props.User.ifInBlock(this.props.Prew.userId) ? this.Block() : <button className='redButton'>Blocked</button>,
+                        likeUnlike: this.Like(),
                     });
                 }}
             >Unlike</button>
@@ -190,7 +186,7 @@ export default class PrewProfile extends Component {
                     <div>
                         <i
                             className="fas fa-times"
-                            onClick={() => this.props.Prew.profile = ''}
+                            onClick={() => this.props.Prew.clean()}
                         ></i>
                     </div>
                 </div>
@@ -258,12 +254,10 @@ export default class PrewProfile extends Component {
                                     }
                                 }
                                 this.props.Prew.blockUser(this.props.Prew.userId, this.props.User.userId);
-                                this.props.Prew.profile = '';
                                 this.props.Prew.openUserProfile(this.props.User.userId, this.props.Prew.userId);
                                 this.props.User.push();
                                 this.setState({
-                                    likeUnlike: !this.props.User.ifInLike(this.props.Prew.userId) ? this.Like() : this.Unlike(),
-                                    blockBlocked: !this.props.User.ifInBlock(this.props.Prew.userId) ? this.Block() : <button className='redButton'>Blocked</button>,
+                                    blockBlocked: <button className='redButton'>Blocked</button>,
                                 });
 
                             }}

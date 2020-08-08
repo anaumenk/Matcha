@@ -110,7 +110,7 @@ class SignUpForm extends Component {
         lastName: '',
         email: '',
         gender: 'Male',
-        formErrors: {password: '', email: '', login: '', firstName: '', lastName: ''},
+        formErrors: {password: '', email: '', login: '', firstName: '', lastName: '', error: ''},
         latitude: '',
         longitude: '',
         passwordValid: false,
@@ -148,7 +148,7 @@ class SignUpForm extends Component {
                 fieldValidationErrors.email = emailValid ? '' : ' is invalid';
                 break;
             case 'password':
-                passwordValid = value.match(/^[a-zA-Z\w]{5,13}$/);
+                passwordValid = value.match(/^[a-zA-Z\w]{6,13}$/);
                 fieldValidationErrors.password = passwordValid ? '' : ' must contains min 6 and max 14 symbols';
                 break;
             case 'qlogin':
@@ -156,6 +156,7 @@ class SignUpForm extends Component {
                 fieldValidationErrors.login = 'already exist';
                 break;
             default:
+                fieldValidationErrors.error = 'Something went wrong';
                 break;
         }
         this.setState({formErrors: fieldValidationErrors,
@@ -204,7 +205,7 @@ class SignUpForm extends Component {
             }&gender=${this.state.gender}&latitude=${this.state.latitude}&longitude=${this.state.longitude}&hostname=${window.location.hostname}`;
         fetchPost('register', params).then(response => {
             let array = JSON.parse(response);
-            if (array['error'] === 'true') {
+            if (array['error'] !== 'false') {
                 this.validateField(array['fieldName']);
             }
             else if (array['error'] === 'false') {
@@ -310,7 +311,7 @@ class LogInForm extends Component {
     state = {
         login: '',
         password: '',
-        formErrors: {password: '', login: '', account: ''},
+        formErrors: {password: '', login: '', account: '', error: ''},
         passwordValid: false,
         loginValid: false,
         formValid: false,
@@ -333,6 +334,7 @@ class LogInForm extends Component {
                 fieldValidationErrors.account = 'not activate';
                 break;
             default:
+                fieldValidationErrors.error = 'Something went wrong';
                 break;
         }
         this.setState({formErrors: fieldValidationErrors,
@@ -358,16 +360,14 @@ class LogInForm extends Component {
         this.noErrors();
         let params = `login=${this.state.login}&password=${this.state.password}`;
         fetchPost('login', params).then(response => {
-            if (response !== 'TypeError: Failed to fetch') {
-                let array = JSON.parse(response);
-                if (array['error']) {
-                    this.validateField(array['fieldName']);
-                }
-                else {
-                    this.props.User.userId = array[0]['userId'];
-                    this.props.User.LogIn(array[0]['userId']);
+            let array = JSON.parse(response);
+            if (array['error']) {
+                this.validateField(array['fieldName']);
+            }
+            else {
+                this.props.User.userId = array[0]['userId'];
+                this.props.User.LogIn(array[0]['userId']);
 
-                }
             }
         });
     }

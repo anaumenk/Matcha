@@ -5,6 +5,12 @@
 
 .edit_field input, .edit_field textarea {
     padding-left: 10px;
+    padding-right: 10px;
+}
+
+.edit_field select {
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 .edit_field input, .edit_field select, #inputLocation input, .edit_field textarea {
@@ -21,6 +27,8 @@
 
 #bio {
     height: 200px;
+    padding-top: 6px;
+    padding-bottom: 6px;
 }
 
 #birth_data {

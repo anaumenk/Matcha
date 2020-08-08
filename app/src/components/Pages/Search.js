@@ -156,6 +156,7 @@ export default class Search extends Component {
         this.props.User.push();
         this.props.Search.clear();
         this.props.Photo.push();
+        this.props.Prew.clean();
     }
 
     handleSliderChange = () => {

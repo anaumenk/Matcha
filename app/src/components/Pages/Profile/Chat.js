@@ -128,8 +128,6 @@ class Messages extends Component {
         let drug = await this.props.Chat.friendId;
         if ((msg[1] === this.props.User.userId && msg[0] === drug) || (msg[0] === this.props.User.userId && msg[1] === drug)) {
             this.props.Chat.selectUser();
-            // this.setState({updated: true});
-            // this.forceUpdate();
         }
     };
 
